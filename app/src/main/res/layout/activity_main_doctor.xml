@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainDoctorActivity"
+    android:background="#3A3838">
+
+    <LinearLayout
+        android:id="@+id/lay1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lay2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/doctor2"></ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="326dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:background="#FFFFFF"></View>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/DoctorID"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/pgbutton"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_vertical"
+                android:hint="Doctor ID"
+                android:inputType="text"
+                android:paddingHorizontal="20dp"
+                android:textColorHint="#757575"
+                android:textSize="16sp"></EditText>
+
+            <EditText
+                android:id="@+id/Pincode"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/pgbutton"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_vertical"
+                android:hint="Pincode"
+                android:textColorHint="#757575"
+                android:paddingHorizontal="20dp"
+                android:inputType="textPassword"
+                android:textSize="16sp"></EditText>
+
+            <TextView
+                android:id="@+id/FPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif"
+                android:text="Forgot Password?"
+                android:textColor="#BFBFBF"
+                android:textSize="12sp"></TextView>
+
+            <TextView
+                android:id="@+id/Register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif"
+                android:text="Register?"
+                android:textColor="#BFBFBF"
+                android:textSize="12sp"></TextView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/Login"
+            android:layout_width="350dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/grbutton"
+            android:text="Login"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:textStyle="bold">
+
+        </Button>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lay3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/lay2"
+        >
+
+        <View
+            android:layout_width="326dp"
+            android:layout_height="2dp"
+            android:background="#FFFFFF"
+            android:layout_gravity="center"
+            android:layout_marginTop="26dp"
+            >
+        </View>
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="4"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="90dp"
+            >
+            <View
+                android:id="@+id/Facebook"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/facebook"
+                android:layout_gravity="center"
+                android:layout_margin="8dp">
+            </View>
+            <View
+                android:id="@+id/Google"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/googleplus"
+                android:layout_gravity="center"
+                android:layout_margin="8dp">
+            </View>
+            <View
+                android:id="@+id/Twitter"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/twitter"
+                android:layout_gravity="center"
+                android:layout_margin="8dp">
+            </View>
+            <View
+                android:id="@+id/Line"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/line"
+                android:layout_gravity="center"
+                android:layout_margin="8dp">
+            </View>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Patient"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttondorp2"
+            android:text="Patient">
+
+        </Button>
+
+        <Button
+            android:id="@+id/Doctor"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttonpord2"
+            android:text="Doctor">
+
+        </Button>
+    </LinearLayout>
+</RelativeLayout>
