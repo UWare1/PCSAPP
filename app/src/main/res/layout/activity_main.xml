@@ -43,7 +43,6 @@
             android:layout_gravity="center"
             android:orientation="vertical">
 
-
             <EditText
                 android:id="@+id/UserID"
                 android:layout_width="match_parent"
@@ -169,29 +168,30 @@
         </GridLayout>
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
         android:gravity="bottom"
-        >
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/Patient"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="50dp"
-            android:text="Patient"
-            android:background="@drawable/buttondorp">
+            android:layout_weight="1"
+            android:background="@drawable/buttondorp"
+            android:text="Patient">
 
         </Button>
+
         <Button
             android:id="@+id/Doctor"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="50dp"
-            android:text="Doctor"
-            android:background="@drawable/buttonpord">
+            android:layout_weight="1"
+            android:background="@drawable/buttonpord"
+            android:text="Doctor">
 
         </Button>
     </LinearLayout>

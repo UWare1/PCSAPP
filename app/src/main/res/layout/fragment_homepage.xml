@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomepageFragment"
     android:background="@color/colorPrimaryDark">
 
@@ -12,5 +13,26 @@
         android:background="@drawable/backgroundhome">
 
     </View>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="180dp"
+        android:hint="User ID"
+        android:background="@drawable/pgbutton"
+        app:startIconTint="#000"
+        app:hintTextColor="#000"
+        android:textColorHint="#000"
+        app:endIconMode="password_toggle"
+        app:endIconTint="#000"
+        app:boxStrokeWidthFocused="2dp"
+        app:boxStrokeColor="#000"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
 
 </FrameLayout>
