@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PRegisActivity"
+    tools:context=".PRegis2Activity"
     android:background="#3A3838">
 
 
@@ -48,67 +48,18 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/UserID"
+                android:id="@+id/NameSurname"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginTop="36dp"
                 android:background="@drawable/pgbutton"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center_vertical"
-                android:hint="User ID"
+                android:hint="Name/Surname"
                 android:paddingStart="20dp"
                 android:textSize="16sp"></EditText>
 
-            <EditText
-                android:id="@+id/Password"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/pgbutton"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center_vertical"
-                android:hint="Password"
-                android:paddingStart="20dp"
-                android:inputType="textPassword"
-                android:textSize="16sp"></EditText>
 
-            <EditText
-                android:id="@+id/ConfirmPassword"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/pgbutton"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center_vertical"
-                android:hint="Confirm Password"
-                android:paddingStart="20dp"
-                android:inputType="textPassword"
-                android:textSize="16sp"></EditText>
-
-            <EditText
-                android:id="@+id/Email"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/pgbutton"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center_vertical"
-                android:hint="Email"
-                android:paddingStart="20dp"
-                android:textSize="16sp"></EditText>
-
-            <EditText
-                android:id="@+id/NationalID"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/pgbutton"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center_vertical"
-                android:hint="National ID Card"
-                android:paddingStart="20dp"
-                android:inputType="number"
-                android:textSize="16sp"></EditText>
         </LinearLayout>
 
         <Button
