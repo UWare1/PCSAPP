@@ -1,9 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PRegis3Activity">
+    tools:context=".PRegis3Activity"
+    android:background="#3A3838"
+    android:transitionName="transition_OTP_screen"
+    android:id="@+id/S3SSV">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/lay1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lay2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp">
+
+        <ImageView
+            android:id="@+id/titletext"
+            android:layout_width="150dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center"
+            android:background="@drawable/patient"
+            android:transitionName="transition_title"></ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="326dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:background="#FFFFFF"></View>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/CCP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_showFlag="true"
+                app:ccp_showNameCode="true"
+                app:ccp_showFullName="true"
+                app:ccp_areaCodeDetectedCountry="true"
+                app:ccp_rememberLastSelection="true"
+                android:background="@drawable/black_border"
+                android:layout_marginVertical="20dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/PhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Phone Number"
+                android:textColorHint="#000"
+                app:boxStrokeColor="#000"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconMode="clear_text"
+                app:endIconTint="#000"
+                app:hintTextColor="#000"
+                app:startIconTint="#000"
+                app:startIconDrawable="@drawable/user2"
+                android:background="@drawable/pgbutton2"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:textSize="14sp"
+                    android:background="@drawable/pgbutton2"
+                    android:paddingHorizontal="20dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+            <EditText
+                android:id="@+id/Phone"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/pgbutton"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_vertical"
+                android:hint="Phone Number"
+                android:paddingStart="20dp"
+                android:textSize="16sp"></EditText>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/Next"
+            android:layout_width="350dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/yobutton"
+            android:onClick="CallVerifyOTPScreen"
+            android:text="Next"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:transitionName="transition_nextbtn">
+
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Patient"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttondorp"
+            android:text="Patient"
+            android:transitionName="transition_patient_btn">
+
+        </Button>
+
+        <Button
+            android:id="@+id/Doctor"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttonpord"
+            android:text="Doctor"
+            android:transitionName="transition_doctor_btn">
+
+        </Button>
+    </LinearLayout>
+</RelativeLayout>

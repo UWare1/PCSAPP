@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.icu.text.CaseMap;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.View;
@@ -19,7 +20,6 @@ public class PRegisActivity extends AppCompatActivity {
 
 
     ImageView TitleText;
-    View Linep;
     EditText UserID;
     Button Next, Patient, Doctor;
     @Override
@@ -33,7 +33,6 @@ public class PRegisActivity extends AppCompatActivity {
         Patient   = findViewById(R.id.Patient);
         Doctor    = findViewById(R.id.Doctor);
         TitleText = findViewById(R.id.titletext);
-        Linep      = findViewById(R.id.linep);
 
         Patient.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,15 +55,18 @@ public class PRegisActivity extends AppCompatActivity {
 
         Intent call = new Intent(getApplicationContext(), PRegis2Activity.class);
 
-        Pair[] pairs = new Pair[5];
+        Pair[] pairs = new Pair[4];
 
         pairs[0] = new Pair<View, String>(TitleText, "transition_title");
-        pairs[1] = new Pair<View, String>(Linep, "transition_line");
-        pairs[2] = new Pair<View, String>(Next, "transition_nextbtn");
-        pairs[3] = new Pair<View, String>(Patient, "transition_patient_btn");
-        pairs[4] = new Pair<View, String>(Doctor, "transition_doctor_btn");
+        pairs[1] = new Pair<View, String>(Next, "transition_nextbtn");
+        pairs[2] = new Pair<View, String>(Patient, "transition_patient_btn");
+        pairs[3] = new Pair<View, String>(Doctor, "transition_doctor_btn");
 
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PRegisActivity.this, pairs);
-        startActivity(call, options.toBundle());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PRegisActivity.this,pairs);
+            startActivity(call, options.toBundle());
+        } else {
+            startActivity(call);
+        }
     }
 }

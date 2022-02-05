@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "48660117631",
+    "project_id": "pcsapp-5fb3d",
+    "storage_bucket": "pcsapp-5fb3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:48660117631:android:662ca443bf1b5b14d8e74a",
+        "android_client_info": {
+          "package_name": "com.example.pcs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "48660117631-o841rh2mm0noc2l0urhca5m07tfgn2e8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2TLCoyyvA6CuPS9rmzz9iJcgmn9Xyap8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "48660117631-o841rh2mm0noc2l0urhca5m07tfgn2e8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

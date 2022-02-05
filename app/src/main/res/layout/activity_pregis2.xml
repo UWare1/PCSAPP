@@ -34,12 +34,10 @@
         android:orientation="vertical">
 
         <View
-            android:id="@+id/linep"
             android:layout_width="326dp"
             android:layout_height="2dp"
             android:layout_gravity="center"
-            android:background="#FFFFFF"
-            android:transitionName="transition_line"></View>
+            android:background="#FFFFFF"></View>
 
         <LinearLayout
             android:layout_width="300dp"
