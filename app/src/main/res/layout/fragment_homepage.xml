@@ -15,6 +15,22 @@
 
     </View>
 
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="80dp"
+        android:background="@drawable/pcst2"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="5dp">
+
+    </ImageView>
+    <View
+        android:layout_width="130dp"
+        android:layout_height="1.5dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
+        android:background="#fff"></View>
+
     <View
         android:layout_width="310dp"
         android:layout_height="120dp"
