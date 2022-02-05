@@ -3,9 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PCS/app/src/main/res/drawable-v24/buttonpord.xml" value="0.114" />
+        <entry key="..\:/PCS/app/src/main/res/drawable-v24/pgbutton.xml" value="0.1045" />
         <entry key="..\:/PCS/app/src/main/res/drawable/backgroundhome.xml" value="0.167" />
+        <entry key="..\:/PCS/app/src/main/res/drawable/homehistory.xml" value="0.151" />
+        <entry key="..\:/PCS/app/src/main/res/drawable/homeslide.xml" value="0.151" />
         <entry key="..\:/PCS/app/src/main/res/drawable/ic_chat.xml" value="0.1665" />
         <entry key="..\:/PCS/app/src/main/res/drawable/ic_history.xml" value="0.1255" />
+        <entry key="..\:/PCS/app/src/main/res/drawable/pgbutton2.xml" value="0.114" />
+        <entry key="..\:/PCS/app/src/main/res/drawable/thumbscroll.xml" value="0.151" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_main2.xml" value="0.1" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_main_doctor.xml" value="0.2" />
@@ -13,7 +19,7 @@
         <entry key="..\:/PCS/app/src/main/res/layout/activity_pregis.xml" value="0.171875" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_chat.xml" value="0.21981981981981982" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_history.xml" value="0.20765765765765765" />
-        <entry key="..\:/PCS/app/src/main/res/layout/fragment_homepage.xml" value="0.21981981981981982" />
+        <entry key="..\:/PCS/app/src/main/res/layout/fragment_homepage.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_noti.xml" value="0.21981981981981982" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_user.xml" value="0.14855072463768115" />
         <entry key="..\:/PCS/app/src/main/res/mipmap-anydpi-v26/PCSPD.xml" value="0.1045" />
