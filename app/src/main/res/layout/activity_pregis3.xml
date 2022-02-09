@@ -82,7 +82,7 @@
                     android:inputType="phone"
                     android:textSize="14sp"
                     android:background="@drawable/pgbutton2"
-                    android:paddingHorizontal="20dp"/>
+                    android:paddingHorizontal="20dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
