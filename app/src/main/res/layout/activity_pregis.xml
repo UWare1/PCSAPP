@@ -7,6 +7,15 @@
     tools:context=".PRegisActivity"
     android:background="#C8F4EB">
 
+    <ImageView
+        android:id="@+id/Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back2"
+        android:onClick="CallBack"
+        android:layout_marginTop="26dp"
+        android:layout_marginStart="26dp"
+        android:transitionName="transition_back"/>
 
     <LinearLayout
         android:id="@+id/lay1"
@@ -81,7 +90,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Pass"
+                android:id="@+id/Password"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

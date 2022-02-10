@@ -8,6 +8,16 @@
     android:background="#fdd1ae">
 
 
+    <ImageView
+        android:id="@+id/Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back2"
+        android:onClick="CallBack"
+        android:layout_marginTop="26dp"
+        android:layout_marginStart="26dp"
+        android:transitionName="transition_back"/>
+
     <LinearLayout
         android:id="@+id/lay1"
         android:layout_width="wrap_content"

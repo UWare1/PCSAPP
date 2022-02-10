@@ -19,7 +19,7 @@ import com.hbb20.CountryCodePicker;
 
 public class PRegis3Activity extends AppCompatActivity {
 
-    ImageView TitleText;
+    ImageView TitleText, Back;
     Button Next, Patient, Doctor;
     TextInputLayout PhoneNumber;
     CountryCodePicker CCP;
@@ -34,9 +34,11 @@ public class PRegis3Activity extends AppCompatActivity {
         Patient     = findViewById(R.id.Patient);
         Doctor      = findViewById(R.id.Doctor);
         TitleText   = findViewById(R.id.titletext);
+        Back      = findViewById(R.id.Back);
         CCP         = findViewById(R.id.CCP);
         PhoneNumber = findViewById(R.id.PhoneNumber);
         S3SSV       = findViewById(R.id.S3SSV);
+
 
         Patient.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,8 +74,9 @@ public class PRegis3Activity extends AppCompatActivity {
 
         call.putExtra("phoneNo", _phoneNo);
 
-        Pair[] pairs = new Pair[1];
+        Pair[] pairs = new Pair[2];
         pairs[0] = new Pair<View, String>(S3SSV, "transition_OTP_screen");
+        pairs[1] = new Pair<View, String>(Back, "transition_back");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PRegis3Activity.this,pairs);
@@ -82,6 +85,25 @@ public class PRegis3Activity extends AppCompatActivity {
             startActivity(call);
         }
 
+    }
+    public void CallBack(View view) {
+
+        Intent call = new Intent(getApplicationContext(), PRegis2Activity.class);
+
+        Pair[] pairs = new Pair[5];
+
+        pairs[0] = new Pair<View, String>(TitleText, "transition_title");
+        pairs[1] = new Pair<View, String>(Next, "transition_nextbtn");
+        pairs[2] = new Pair<View, String>(Patient, "transition_patient_btn");
+        pairs[3] = new Pair<View, String>(Doctor, "transition_doctor_btn");
+        pairs[4] = new Pair<View, String>(Back, "transition_back");
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PRegis3Activity.this,pairs);
+            startActivity(call, options.toBundle());
+        } else {
+            startActivity(call);
+        }
     }
 
 }
