@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Main2Activity"
-    android:background="#3A3838"
+    android:background="@color/background"
     android:orientation="vertical">
 
     <FrameLayout
@@ -22,6 +22,6 @@
         app:mbn_countTextColor="#fff"
         app:mbn_countBackgroundColor="#ff6f00"
         app:mbn_defaultIconColor="#333333"
-        app:mbn_backgroundBottomColor="#FFCF41"/>
+        app:mbn_backgroundBottomColor="@color/pbutton"/>
 
 </LinearLayout>

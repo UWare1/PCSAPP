@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PRegis2Activity"
-    android:background="#3A3838">
+    android:background="@color/background">
 
 
     <LinearLayout
@@ -63,13 +63,14 @@
         <Button
             android:id="@+id/Next"
             android:layout_width="350dp"
-            android:layout_height="36dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginTop="26dp"
             android:background="@drawable/yobutton"
             android:onClick="CallNextRegister"
             android:text="Next"
             android:textColor="#fff"
+            app:backgroundTint="@null"
             android:textSize="16dp"
             android:textStyle="bold"
             android:transitionName="transition_nextbtn">
@@ -90,6 +91,8 @@
             android:layout_weight="1"
             android:layout_height="50dp"
             android:text="Patient"
+            app:backgroundTint="@null"
+            android:textColor="#000"
             android:background="@drawable/buttondorp"
             android:transitionName="transition_patient_btn">
 
@@ -100,6 +103,8 @@
             android:layout_weight="1"
             android:layout_height="50dp"
             android:text="Doctor"
+            app:backgroundTint="@null"
+            android:textColor="#000"
             android:background="@drawable/buttonpord"
             android:transitionName="transition_doctor_btn">
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PRegis3Activity"
-    android:background="#3A3838"
+    android:background="@drawable/backgradient"
     android:transitionName="transition_OTP_screen"
     android:id="@+id/S3SSV">
 
@@ -85,20 +85,34 @@
                     android:paddingHorizontal="20dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
-
-
-            <EditText
-                android:id="@+id/Phone"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/signup_fullname"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="36dp"
-                android:background="@drawable/pgbutton"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center_vertical"
-                android:hint="Phone Number"
-                android:paddingStart="20dp"
-                android:textSize="16sp"></EditText>
+                android:layout_height="wrap_content"
+                android:hint="USERNAME"
+                android:textColorHint="@color/background"
+                app:boxStrokeColor="@color/background"
+                app:boxStrokeErrorColor="#FF5D5D"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/background"
+                app:hintTextColor="@color/background"
+                app:startIconDrawable="@drawable/user2"
+                app:counterMaxLength="10"
+                app:counterTextColor="@color/background"
+                app:startIconTint="@color/background">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="phone"
+                    android:textColor="@color/background"
+                    android:textCursorDrawable="@null" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
 
 
         </LinearLayout>
@@ -106,12 +120,13 @@
         <Button
             android:id="@+id/Next"
             android:layout_width="350dp"
-            android:layout_height="36dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginTop="26dp"
             android:background="@drawable/yobutton"
             android:onClick="CallVerifyOTPScreen"
             android:text="Next"
+            app:backgroundTint="@null"
             android:textColor="#fff"
             android:textSize="16dp"
             android:textStyle="bold"
@@ -133,7 +148,9 @@
             android:layout_weight="1"
             android:background="@drawable/buttondorp"
             android:text="Patient"
-            android:transitionName="transition_patient_btn">
+            android:textColor="#fff"
+            android:transitionName="transition_patient_btn"
+            app:backgroundTint="#000">
 
         </Button>
 
@@ -144,7 +161,9 @@
             android:layout_weight="1"
             android:background="@drawable/buttonpord"
             android:text="Doctor"
-            android:transitionName="transition_doctor_btn">
+            android:textColor="#000"
+            android:transitionName="transition_doctor_btn"
+            app:backgroundTint="@null">
 
         </Button>
     </LinearLayout>

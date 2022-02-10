@@ -22,7 +22,6 @@ public class PRegis3Activity extends AppCompatActivity {
     ImageView TitleText;
     Button Next, Patient, Doctor;
     TextInputLayout PhoneNumber;
-    EditText Phone;
     CountryCodePicker CCP;
     RelativeLayout S3SSV;
 
@@ -37,7 +36,6 @@ public class PRegis3Activity extends AppCompatActivity {
         TitleText   = findViewById(R.id.titletext);
         CCP         = findViewById(R.id.CCP);
         PhoneNumber = findViewById(R.id.PhoneNumber);
-        Phone       = findViewById(R.id.Phone);
         S3SSV       = findViewById(R.id.S3SSV);
 
         Patient.setOnClickListener(new View.OnClickListener() {

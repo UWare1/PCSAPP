@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#3A3838">
+    android:background="#393837">
 
     <LinearLayout
         android:id="@+id/lay1"
@@ -98,9 +98,10 @@
         <Button
             android:id="@+id/Login"
             android:layout_width="350dp"
-            android:layout_height="36dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            app:backgroundTint="@null"
             android:background="@drawable/yobutton"
             android:text="Login"
             android:textColor="#fff"
@@ -182,7 +183,9 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@drawable/buttondorp"
-            android:text="Patient">
+            android:text="Patient"
+            android:textColor="#333333"
+            app:backgroundTint="@null">
 
         </Button>
 
@@ -192,7 +195,9 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@drawable/buttonpord"
-            android:text="Doctor">
+            android:text="Doctor"
+            app:backgroundTint="@null"
+            android:textColor="#333333">
 
         </Button>
     </LinearLayout>
