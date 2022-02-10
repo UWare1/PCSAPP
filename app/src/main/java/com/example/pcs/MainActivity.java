@@ -10,10 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class MainActivity extends AppCompatActivity {
 
     String User = "", Pass = "", test1 = "TestID", test2 = "TestPassword";
-    EditText UserID, Password;
+    TextInputLayout UserID, Password;
     TextView FPassword, Register;
     View Facebook, Google, Twitter, Line;
     Button Login, Patient, Doctor;
@@ -35,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         Line      = findViewById(R.id.Line);
 
 
-        User = UserID.getText().toString();
-        Pass = Password.getText().toString();
+        User = UserID.getEditText().toString().trim();
+        Pass = Password.getEditText().toString().trim();
 
         FPassword.setOnClickListener(new View.OnClickListener() {
             @Override

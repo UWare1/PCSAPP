@@ -20,15 +20,12 @@ public class PRegisActivity extends AppCompatActivity {
 
 
     ImageView TitleText;
-    EditText UserID;
     Button Next, Patient, Doctor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pregis);
 
-
-        UserID    = findViewById(R.id.UserID);
         Next      = findViewById(R.id.Next);
         Patient   = findViewById(R.id.Patient);
         Doctor    = findViewById(R.id.Doctor);

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#393837">
+    android:background="#FFDEBE">
 
     <LinearLayout
         android:id="@+id/lay1"
@@ -43,33 +43,57 @@
             android:layout_gravity="center"
             android:orientation="vertical">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/UserID"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="36dp"
-                android:background="@drawable/pgbutton"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:hint="User ID"
-                android:inputType="text"
-                android:paddingHorizontal="20dp"
-                android:textColorHint="#757575"
-                android:textSize="16sp"></EditText>
+                android:textColorHint="@color/background"
+                app:boxStrokeColor="@color/background"
+                app:boxStrokeErrorColor="#FF5D5D"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/background"
+                app:hintTextColor="@color/background"
+                app:startIconDrawable="@drawable/user2"
+                app:startIconTint="@color/background">
 
-            <EditText
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:textColor="@color/background"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/Password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/pgbutton"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
                 android:hint="Password"
-                android:textColorHint="#757575"
-                android:paddingHorizontal="20dp"
-                android:inputType="textPassword"
-                android:textSize="16sp"></EditText>
+                android:textColorHint="@color/background"
+                app:boxStrokeColor="@color/background"
+                app:boxStrokeErrorColor="#FF5D5D"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/background"
+                app:hintTextColor="@color/background"
+                app:startIconDrawable="@drawable/user2"
+                app:startIconTint="@color/background">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword"
+                    android:textColor="@color/background"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <TextView
@@ -80,7 +104,7 @@
                 android:layout_marginTop="12dp"
                 android:fontFamily="sans-serif"
                 android:text="Forgot Password?"
-                android:textColor="#BFBFBF"
+                android:textColor="#373737"
                 android:textSize="12sp"></TextView>
 
             <TextView
@@ -91,7 +115,7 @@
                 android:layout_marginTop="3dp"
                 android:fontFamily="sans-serif"
                 android:text="Register?"
-                android:textColor="#BFBFBF"
+                android:textColor="#474747"
                 android:textSize="12sp"></TextView>
         </LinearLayout>
 
