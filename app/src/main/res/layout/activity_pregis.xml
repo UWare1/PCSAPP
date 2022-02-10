@@ -68,7 +68,7 @@
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/background"
                 app:hintTextColor="@color/background"
-                app:startIconDrawable="@drawable/user2"
+                app:startIconDrawable="@drawable/user5"
                 app:startIconTint="@color/background">
 
 
@@ -96,7 +96,7 @@
                 app:endIconMode="password_toggle"
                 app:endIconTint="@color/background"
                 app:hintTextColor="@color/background"
-                app:startIconDrawable="@drawable/user2"
+                app:startIconDrawable="@drawable/password"
                 app:startIconTint="@color/background">
 
 
@@ -123,7 +123,7 @@
                 app:endIconMode="password_toggle"
                 app:endIconTint="@color/background"
                 app:hintTextColor="@color/background"
-                app:startIconDrawable="@drawable/user2"
+                app:startIconDrawable="@drawable/password"
                 app:startIconTint="@color/background">
 
 
@@ -150,7 +150,7 @@
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/background"
                 app:hintTextColor="@color/background"
-                app:startIconDrawable="@drawable/user2"
+                app:startIconDrawable="@drawable/email"
                 app:startIconTint="@color/background">
 
 
@@ -177,7 +177,7 @@
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/background"
                 app:hintTextColor="@color/background"
-                app:startIconDrawable="@drawable/user2"
+                app:startIconDrawable="@drawable/idcard"
                 app:startIconTint="@color/background">
 
 

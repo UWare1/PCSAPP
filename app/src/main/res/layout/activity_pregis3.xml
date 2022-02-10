@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PRegis3Activity"
-    android:background="@drawable/backgradient"
+    android:background="#F8D2FF"
     android:transitionName="transition_OTP_screen"
     android:id="@+id/S3SSV">
 
@@ -73,7 +73,7 @@
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/background"
                 app:hintTextColor="@color/background"
-                app:startIconDrawable="@drawable/user2"
+                app:startIconDrawable="@drawable/phone1"
                 app:counterEnabled="true"
                 app:counterMaxLength="10"
                 app:counterTextColor="@color/background"
