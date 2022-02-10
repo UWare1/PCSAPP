@@ -16,7 +16,7 @@ public class PRegis2Activity extends AppCompatActivity {
 
     ImageView TitleText, Back;
     Button Next, Patient, Doctor;
-
+    String UserID, Password, Email, NationalIDCard;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +27,12 @@ public class PRegis2Activity extends AppCompatActivity {
         Doctor = findViewById(R.id.Doctor);
         TitleText = findViewById(R.id.titletext);
         Back      = findViewById(R.id.Back);
+
+        UserID = getIntent().getStringExtra("UserID");
+        Password = getIntent().getStringExtra("Password");
+        Email = getIntent().getStringExtra("Email");
+        NationalIDCard = getIntent().getStringExtra("NationalIDCard");
+
 
         Patient.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,8 +75,12 @@ public class PRegis2Activity extends AppCompatActivity {
 
         Intent call = new Intent(getApplicationContext(), PRegisActivity.class);
 
-        Pair[] pairs = new Pair[5];
+        /*call.putExtra("X1", UserID);
+        call.putExtra("X2", Password);
+        call.putExtra("X3", Email);
+        call.putExtra("X4", NationalIDCard);*/
 
+        Pair[] pairs = new Pair[5];
         pairs[0] = new Pair<View, String>(TitleText, "transition_title");
         pairs[1] = new Pair<View, String>(Next, "transition_nextbtn");
         pairs[2] = new Pair<View, String>(Patient, "transition_patient_btn");
