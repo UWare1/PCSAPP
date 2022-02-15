@@ -12,8 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class PRegis2Activity extends AppCompatActivity {
 
+    TextInputLayout Fullname, Address, Medical, Allergy;
     ImageView TitleText, Back;
     Button Next, Patient, Doctor;
     String UserID, Password, Email, NationalIDCard;
@@ -22,16 +25,22 @@ public class PRegis2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pregis2);
 
+
+        Fullname          = findViewById(R.id.Fullname);
+        Address           = findViewById(R.id.Address);
+        Medical           = findViewById(R.id.Medical);
+        Allergy           = findViewById(R.id.Allergy);
         Next = findViewById(R.id.Next);
         Patient = findViewById(R.id.Patient);
         Doctor = findViewById(R.id.Doctor);
         TitleText = findViewById(R.id.titletext);
         Back      = findViewById(R.id.Back);
 
-        UserID = getIntent().getStringExtra("UserID");
-        Password = getIntent().getStringExtra("Password");
-        Email = getIntent().getStringExtra("Email");
+        UserID         = getIntent().getStringExtra("UserID");
+        Password       = getIntent().getStringExtra("Password");
+        Email          = getIntent().getStringExtra("Email");
         NationalIDCard = getIntent().getStringExtra("NationalIDCard");
+
 
 
         Patient.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +64,16 @@ public class PRegis2Activity extends AppCompatActivity {
     public void CallNextRegister(View view) {
 
         Intent call = new Intent(getApplicationContext(), PRegis3Activity.class);
+
+        call.putExtra("UserID", UserID);
+        call.putExtra("Password", Password);
+        call.putExtra("Email", Email);
+        call.putExtra("NationalIDCard", NationalIDCard);
+        call.putExtra("Fullname", Fullname.getEditText().getText().toString().trim());
+        call.putExtra("Address", Address.getEditText().getText().toString().trim());
+        call.putExtra("Medical", Medical.getEditText().getText().toString().trim());
+        call.putExtra("Allergy", Allergy.getEditText().getText().toString().trim());
+
 
         Pair[] pairs = new Pair[5];
 

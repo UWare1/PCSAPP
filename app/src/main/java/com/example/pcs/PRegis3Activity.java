@@ -24,7 +24,8 @@ public class PRegis3Activity extends AppCompatActivity {
     TextInputLayout PhoneNumber;
     CountryCodePicker CCP;
     RelativeLayout S3SSV;
-
+    String UserID, Password, Email, NationalIDCard,
+           Fullname, Address, Medical, Allergy, _phoneNo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,15 @@ public class PRegis3Activity extends AppCompatActivity {
         CCP         = findViewById(R.id.CCP);
         PhoneNumber = findViewById(R.id.PhoneNumber);
         S3SSV       = findViewById(R.id.S3SSV);
+
+        UserID         = getIntent().getStringExtra("UserID");
+        Password       = getIntent().getStringExtra("Password");
+        Email          = getIntent().getStringExtra("Email");
+        NationalIDCard = getIntent().getStringExtra("NationalIDCard");
+        Fullname       = getIntent().getStringExtra("Fullname");
+        Address        = getIntent().getStringExtra("Address");
+        Medical        = getIntent().getStringExtra("Medical");
+        Allergy        = getIntent().getStringExtra("Allergy");
 
 
         Patient.setOnClickListener(new View.OnClickListener() {
@@ -68,11 +78,19 @@ public class PRegis3Activity extends AppCompatActivity {
         if (_getUserEnteredPhoneNumber.charAt(0) == '0') {
             _getUserEnteredPhoneNumber = _getUserEnteredPhoneNumber.substring(1);
         }
-        String _phoneNo = "+" + CCP.getFullNumber() + _getUserEnteredPhoneNumber;
+        _phoneNo = "+" + CCP.getFullNumber() + _getUserEnteredPhoneNumber;
 
         Intent call = new Intent(getApplicationContext(), VerifyOTP.class);
 
         call.putExtra("phoneNo", _phoneNo);
+        call.putExtra("UserID", UserID);
+        call.putExtra("Password", Password);
+        call.putExtra("Email", Email);
+        call.putExtra("NationalIDCard", NationalIDCard);
+        call.putExtra("Fullname", Fullname);
+        call.putExtra("Address", Address);
+        call.putExtra("Medical", Medical);
+        call.putExtra("Allergy", Allergy);
 
         Pair[] pairs = new Pair[2];
         pairs[0] = new Pair<View, String>(S3SSV, "transition_OTP_screen");

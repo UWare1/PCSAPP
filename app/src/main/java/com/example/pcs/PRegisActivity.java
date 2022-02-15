@@ -229,6 +229,9 @@ public class PRegisActivity extends AppCompatActivity {
         } else if (val.length() > 13) {
             NationalIDCard.setError("National ID Card is too large!");
             return false;
+        } else if (val.length() < 13) {
+            NationalIDCard.setError("National ID Card is too short!");
+            return false;
         } else {
             NationalIDCard.setError(null);
             NationalIDCard.setErrorEnabled(false);

@@ -23,6 +23,8 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.concurrent.TimeUnit;
 
@@ -30,6 +32,8 @@ public class VerifyOTP extends AppCompatActivity {
 
     PinView Pin_View;
     String codeBySystem;
+    String UserID, Password, Email, NationalIDCard,
+            Fullname, Address, Medical, Allergy, _phoneNo;
     TextView otpDescriptionText;
     ImageView Exit;
     private FirebaseAuth mAuth;
@@ -44,7 +48,16 @@ public class VerifyOTP extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        String _phoneNo = getIntent().getStringExtra("phoneNo");
+        _phoneNo       = getIntent().getStringExtra("phoneNo");
+        UserID         = getIntent().getStringExtra("UserID");
+        Password       = getIntent().getStringExtra("Password");
+        Email          = getIntent().getStringExtra("Email");
+        NationalIDCard = getIntent().getStringExtra("NationalIDCard");
+        Fullname       = getIntent().getStringExtra("Fullname");
+        Address        = getIntent().getStringExtra("Address");
+        Medical        = getIntent().getStringExtra("Medical");
+        Allergy        = getIntent().getStringExtra("Allergy");
+
         otpDescriptionText.setText("Enter One Time Password Sent On " + _phoneNo);
 
         SendVerificationCodeToUser(_phoneNo);
@@ -105,9 +118,7 @@ public class VerifyOTP extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(VerifyOTP.this, "Verification Cpmpleted", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            startActivity(intent);
-                            finish();
+                            storeNewUsersData();
                         } else {
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 Toast.makeText(VerifyOTP.this, "Verification Not Completed! Try again.", Toast.LENGTH_SHORT).show();
@@ -115,6 +126,19 @@ public class VerifyOTP extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void storeNewUsersData() {
+        FirebaseDatabase rootNode = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        DatabaseReference reference = rootNode.getReference("Teacher");
+
+        UserHelperClass addNewUser = new UserHelperClass(UserID, Password, Email, NationalIDCard,
+                Fullname, Address, Medical, Allergy, _phoneNo);
+        reference.child(_phoneNo).setValue(addNewUser);
+
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     public void callNextScreenFromOTP(View view){
