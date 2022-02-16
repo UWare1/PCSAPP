@@ -108,6 +108,7 @@ public class PRegisActivity extends AppCompatActivity {
         String a = ConPass.getEditText().getText().toString().trim();
         String b = Password.getEditText().getText().toString().trim();
         Pair[] pairs = new Pair[5];
+
         pairs[0] = new Pair<View, String>(TitleText, "transition_title");
         pairs[1] = new Pair<View, String>(Next, "transition_nextbtn");
         pairs[2] = new Pair<View, String>(Patient, "transition_patient_btn");
@@ -238,4 +239,6 @@ public class PRegisActivity extends AppCompatActivity {
             return true;
         }
     }
+
+
 }
