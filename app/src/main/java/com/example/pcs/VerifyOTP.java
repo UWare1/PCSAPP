@@ -33,7 +33,7 @@ public class VerifyOTP extends AppCompatActivity {
     PinView Pin_View;
     String codeBySystem;
     String UserID, Password, Email, NationalIDCard,
-            Fullname, Address, Medical, Allergy, _phoneNo;
+            Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo;
     TextView otpDescriptionText;
     ImageView Exit;
     private FirebaseAuth mAuth;
@@ -57,6 +57,8 @@ public class VerifyOTP extends AppCompatActivity {
         Address        = getIntent().getStringExtra("Address");
         Medical        = getIntent().getStringExtra("Medical");
         Allergy        = getIntent().getStringExtra("Allergy");
+        Gender         = getIntent().getStringExtra("Gender");
+        Date           = getIntent().getStringExtra("Date");
 
         otpDescriptionText.setText("Enter One Time Password Sent On " + _phoneNo);
 
@@ -133,7 +135,7 @@ public class VerifyOTP extends AppCompatActivity {
         DatabaseReference reference = rootNode.getReference("Teacher");
 
         UserHelperClass addNewUser = new UserHelperClass(UserID, Password, Email, NationalIDCard,
-                Fullname, Address, Medical, Allergy, _phoneNo);
+                Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo);
         reference.child(UserID).setValue(addNewUser);
 
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);

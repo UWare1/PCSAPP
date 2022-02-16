@@ -3,11 +3,11 @@ package com.example.pcs;
 public class UserHelperClass {
 
     String UserID, Password, Email, NationalIDCard,
-            Fullname, Address, Medical, Allergy, _phoneNo;
+            Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo;
 
     public UserHelperClass(){}
 
-    public UserHelperClass(String userID, String password, String email, String nationalIDCard, String fullname, String address, String medical, String allergy, String _phoneNo) {
+    public UserHelperClass(String userID, String password, String email, String nationalIDCard, String fullname, String address, String medical, String allergy, String gender, String date, String _phoneNo) {
         UserID = userID;
         Password = password;
         Email = email;
@@ -16,6 +16,8 @@ public class UserHelperClass {
         Address = address;
         Medical = medical;
         Allergy = allergy;
+        Gender = gender;
+        Date = date;
         this._phoneNo = _phoneNo;
     }
 
@@ -81,6 +83,22 @@ public class UserHelperClass {
 
     public void setAllergy(String allergy) {
         Allergy = allergy;
+    }
+
+    public String getGender() {
+        return Gender;
+    }
+
+    public void setGender(String gender) {
+        Gender = gender;
+    }
+
+    public String getDate() {
+        return Date;
+    }
+
+    public void setDate(String date) {
+        Date = date;
     }
 
     public String get_phoneNo() {

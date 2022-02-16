@@ -25,7 +25,7 @@ public class PRegis3Activity extends AppCompatActivity {
     CountryCodePicker CCP;
     RelativeLayout S3SSV;
     String UserID, Password, Email, NationalIDCard,
-           Fullname, Address, Medical, Allergy, _phoneNo;
+           Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +48,8 @@ public class PRegis3Activity extends AppCompatActivity {
         Address        = getIntent().getStringExtra("Address");
         Medical        = getIntent().getStringExtra("Medical");
         Allergy        = getIntent().getStringExtra("Allergy");
+        Gender         = getIntent().getStringExtra("Gender");
+        Date           = getIntent().getStringExtra("Date");
 
 
         Patient.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +93,8 @@ public class PRegis3Activity extends AppCompatActivity {
         call.putExtra("Address", Address);
         call.putExtra("Medical", Medical);
         call.putExtra("Allergy", Allergy);
+        call.putExtra("Gender", Gender);
+        call.putExtra("Date", Date);
 
         Pair[] pairs = new Pair[2];
         pairs[0] = new Pair<View, String>(S3SSV, "transition_OTP_screen");
