@@ -33,7 +33,7 @@ public class VerifyOTP extends AppCompatActivity {
     PinView Pin_View;
     String codeBySystem;
     String UserID, Password, Email, NationalIDCard,
-            Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo;
+            Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo,whaToDO;
     TextView otpDescriptionText;
     ImageView Exit;
     private FirebaseAuth mAuth;
@@ -49,6 +49,7 @@ public class VerifyOTP extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         _phoneNo       = getIntent().getStringExtra("phoneNo");
+        whaToDO       = getIntent().getStringExtra("whaToDO");
         UserID         = getIntent().getStringExtra("UserID");
         Password       = getIntent().getStringExtra("Password");
         Email          = getIntent().getStringExtra("Email");
@@ -121,6 +122,12 @@ public class VerifyOTP extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(VerifyOTP.this, "Verification Cpmpleted", Toast.LENGTH_SHORT).show();
                             storeNewUsersData();
+                            if(whaToDO.equals("updateData")){
+                                updateOldUserData();
+                            }
+                            else{
+                                storeNewUsersData();
+                            }
                         } else {
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 Toast.makeText(VerifyOTP.this, "Verification Not Completed! Try again.", Toast.LENGTH_SHORT).show();
@@ -128,6 +135,14 @@ public class VerifyOTP extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void updateOldUserData() {
+
+        Intent intent = new Intent(getApplicationContext(),PSetNewPassword.class);
+        intent.putExtra("phoneNo",_phoneNo);
+        startActivity(intent);
+        finish();
     }
 
     private void storeNewUsersData() {

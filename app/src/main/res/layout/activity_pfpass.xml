@@ -126,8 +126,8 @@
             android:layout_weight="1"
             android:background="@drawable/buttondorp"
             android:text="Patient"
-            android:transitionName="transition_patient_btn"
             android:textColor="#000"
+            android:transitionName="transition_patient_btn"
             app:backgroundTint="@null">
 
         </Button>

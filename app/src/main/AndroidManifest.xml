@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".PNewPassChange"
+            android:exported="false" />
+        <activity
+            android:name=".PSetNewPassword"
+            android:exported="false" />
+        <activity
             android:name=".VerifyOTP"
             android:exported="false" />
         <activity
@@ -24,7 +30,8 @@
         <activity android:name=".MainDoctorActivity" />
         <activity android:name=".PRegisActivity" />
         <activity android:name=".PFPassActivity" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
