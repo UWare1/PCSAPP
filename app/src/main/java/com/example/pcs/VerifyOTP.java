@@ -33,10 +33,11 @@ public class VerifyOTP extends AppCompatActivity {
     PinView Pin_View;
     String codeBySystem;
     String UserID, Password, Email, NationalIDCard,
-            Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo,whaToDO;
+            Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo, whatToDO;
     TextView otpDescriptionText;
     ImageView Exit;
     private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,18 +49,18 @@ public class VerifyOTP extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        _phoneNo       = getIntent().getStringExtra("phoneNo");
-        whaToDO       = getIntent().getStringExtra("whaToDO");
-        UserID         = getIntent().getStringExtra("UserID");
-        Password       = getIntent().getStringExtra("Password");
-        Email          = getIntent().getStringExtra("Email");
+        _phoneNo = getIntent().getStringExtra("phoneNo");
+        whatToDO = getIntent().getStringExtra("whatToDO");
+        UserID = getIntent().getStringExtra("UserID");
+        Password = getIntent().getStringExtra("Password");
+        Email = getIntent().getStringExtra("Email");
         NationalIDCard = getIntent().getStringExtra("NationalIDCard");
-        Fullname       = getIntent().getStringExtra("Fullname");
-        Address        = getIntent().getStringExtra("Address");
-        Medical        = getIntent().getStringExtra("Medical");
-        Allergy        = getIntent().getStringExtra("Allergy");
-        Gender         = getIntent().getStringExtra("Gender");
-        Date           = getIntent().getStringExtra("Date");
+        Fullname = getIntent().getStringExtra("Fullname");
+        Address = getIntent().getStringExtra("Address");
+        Medical = getIntent().getStringExtra("Medical");
+        Allergy = getIntent().getStringExtra("Allergy");
+        Gender = getIntent().getStringExtra("Gender");
+        Date = getIntent().getStringExtra("Date");
 
         otpDescriptionText.setText("Enter One Time Password Sent On " + _phoneNo);
 
@@ -84,6 +85,7 @@ public class VerifyOTP extends AppCompatActivity {
                 .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
+
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks =
             new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                 @Override
@@ -95,7 +97,7 @@ public class VerifyOTP extends AppCompatActivity {
                 @Override
                 public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
                     String code = phoneAuthCredential.getSmsCode();
-                    if (code!=null){
+                    if (code != null) {
                         Pin_View.setText(code);
                         verifyCode(code);
                     }
@@ -108,7 +110,7 @@ public class VerifyOTP extends AppCompatActivity {
             };
 
     private void verifyCode(String code) {
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codeBySystem,code);
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codeBySystem, code);
         signInWithPhoneAuthCredential(credential);
     }
 
@@ -120,12 +122,10 @@ public class VerifyOTP extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(VerifyOTP.this, "Verification Cpmpleted", Toast.LENGTH_SHORT).show();
-                            storeNewUsersData();
-                            if(whaToDO.equals("updateData")){
+                            Toast.makeText(VerifyOTP.this, "Verification Completed", Toast.LENGTH_SHORT).show();
+                            if (whatToDO.equals("updateData")) {
                                 updateOldUserData();
-                            }
-                            else{
+                            } else {
                                 storeNewUsersData();
                             }
                         } else {
@@ -139,8 +139,9 @@ public class VerifyOTP extends AppCompatActivity {
 
     private void updateOldUserData() {
 
-        Intent intent = new Intent(getApplicationContext(),PSetNewPassword.class);
-        intent.putExtra("phoneNo",_phoneNo);
+        Intent intent = new Intent(getApplicationContext(), PSetNewPassword.class);
+        intent.putExtra("phoneNo", _phoneNo);
+        intent.putExtra("UserID", UserID);
         startActivity(intent);
         finish();
     }
@@ -158,10 +159,10 @@ public class VerifyOTP extends AppCompatActivity {
         finish();
     }
 
-    public void callNextScreenFromOTP(View view){
+    public void callNextScreenFromOTP(View view) {
 
         String code = Pin_View.getText().toString();
-        if (!code.isEmpty()){
+        if (!code.isEmpty()) {
             verifyCode(code);
         }
     }

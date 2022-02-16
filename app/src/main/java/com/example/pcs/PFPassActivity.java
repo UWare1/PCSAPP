@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
@@ -27,21 +28,23 @@ import com.hbb20.CountryCodePicker;
 public class PFPassActivity extends AppCompatActivity {
 
     ImageView TitleText;
-    TextInputLayout PhoneNumber;
+    TextInputLayout UserID, PhoneNumber;
     Button Recover, Patient, Doctor;
     CountryCodePicker CCP;
+    String User, _phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pfpass);
 
+        UserID = findViewById(R.id.UserID);
         PhoneNumber = findViewById(R.id.PhoneNumber);
-        Recover   = findViewById(R.id.Recover);
-        Patient   = findViewById(R.id.Patient);
-        Doctor    = findViewById(R.id.Doctor);
+        Recover = findViewById(R.id.Recover);
+        Patient = findViewById(R.id.Patient);
+        Doctor = findViewById(R.id.Doctor);
         TitleText = findViewById(R.id.titletext);
-        CCP         = findViewById(R.id.CCP);
+        CCP = findViewById(R.id.CCP);
 
         Patient.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +67,7 @@ public class PFPassActivity extends AppCompatActivity {
 
 
     }
+
     public void CallBack(View view) {
 
         Intent call = new Intent(getApplicationContext(), MainActivity.class);
@@ -75,11 +79,65 @@ public class PFPassActivity extends AppCompatActivity {
         pairs[2] = new Pair<View, String>(Doctor, "transition_doctor_btn");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PFPassActivity.this,pairs);
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PFPassActivity.this, pairs);
             startActivity(call, options.toBundle());
         } else {
             startActivity(call);
         }
+    }
+
+    public void VerifyPhoneNumber(View view) {
+        //check net
+        //validate phone number
+        if (!validatePhoneNumber() | !validateUserID()) {
+            return;
+        }
+
+        User = UserID.getEditText().getText().toString().trim();
+        _phoneNumber = PhoneNumber.getEditText().getText().toString().trim();
+
+        if (_phoneNumber.charAt(0) == '0') {
+            _phoneNumber = _phoneNumber.substring(1);
+        }
+
+        final String _completePhoneNumber = "+" + CCP.getFullNumber() + _phoneNumber;
+
+        Query checkPhoneNumber = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").orderByChild("userID").equalTo(User);
+        checkPhoneNumber.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    UserID.setError(null);
+                    UserID.setErrorEnabled(false);
+
+                    String SystemPhoneNumber = dataSnapshot.child(User).child("_phoneNo").getValue(String.class);
+                    if (SystemPhoneNumber.equals(_completePhoneNumber)){
+                        PhoneNumber.setError(null);
+                        PhoneNumber.setErrorEnabled(false);
+
+                        Intent intent = new Intent(getApplicationContext(), VerifyOTP.class);
+                        intent.putExtra("phoneNo", _completePhoneNumber);
+                        intent.putExtra("UserID", User);
+                        intent.putExtra("whatToDO", "updateData");
+                        startActivity(intent);
+                        finish();
+                    }
+                    else {
+                        Toast.makeText(PFPassActivity.this, "User and Phone Number does not match!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else {
+                    //progressBar
+                    UserID.setError("No such user exist!");
+                    UserID.requestFocus();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(PFPassActivity.this, "Error", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     private boolean validatePhoneNumber() {
         String val = PhoneNumber.getEditText().getText().toString().trim();
@@ -95,55 +153,18 @@ public class PFPassActivity extends AppCompatActivity {
             return true;
         }
     }
-
-    public void VerifyPhoneNumber(View view) {
-        //check net
-        //validate phone number
-        if(!validatePhoneNumber()){
-            return ;
+    private boolean validateUserID() {
+        String val = UserID.getEditText().getText().toString().trim();
+        if (val.isEmpty()) {
+            UserID.setError("Field can not be empty");
+            return false;
+        } else {
+            UserID.setError(null);
+            UserID.setErrorEnabled(false);
+            return true;
         }
-
-
-
-        String _phoneNumber = PhoneNumber.getEditText().getText().toString().trim();
-
-        if (_phoneNumber.charAt(0) == '0') {
-            _phoneNumber = _phoneNumber.substring(1);
-        }
-        final String _completePhoneNumber = "+" + CCP.getFullNumber()+_phoneNumber;
-
-        Query checkPhoneNumber = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").orderByChild("_phoneNo").equalTo(_completePhoneNumber);
-        checkPhoneNumber.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
-                    PhoneNumber.setError(null);
-                    PhoneNumber.setErrorEnabled(false);
-
-                        Intent intent = new Intent(getApplicationContext(), VerifyOTP.class);
-                        intent.putExtra("phoneNo",_completePhoneNumber);
-                        intent.putExtra("whaToDO","updateData");
-                        startActivity(intent);
-                        finish();
-
-
-                }
-                else {
-                    //progressBar
-                    PhoneNumber.setError("No such user exist!");
-                    PhoneNumber.requestFocus();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(PFPassActivity.this, "Error", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
-
-
-    }
+}
 
 

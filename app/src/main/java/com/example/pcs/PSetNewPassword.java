@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
@@ -13,9 +14,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.regex.Pattern;
 
 public class PSetNewPassword extends AppCompatActivity {
-    TextInputLayout PhoneNumber,Password,ConPass;
 
 
+    TextInputLayout PhoneNumber, Password, ConPass;
+    String UserID , _phoneNumber, _newPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -27,39 +29,27 @@ public class PSetNewPassword extends AppCompatActivity {
     }
 
 
-
-    /*private boolean validatePhoneNumber() {
-        String val = PhoneNumber.getEditText().getText().toString().trim();
-        if (val.isEmpty()) {
-            PhoneNumber.setError("Field can not be empty");
-            return false;
-        } else if (val.length() > 10) {
-            PhoneNumber.setError("Phone Number is too large!");
-            return false;
-        } else {
-            PhoneNumber.setError(null);
-            PhoneNumber.setErrorEnabled(false);
-            return true;
-        }
-    }*/
-
-
-
     public void setNewPasswordBtn(View view) {
 
-        if(!validatePassword() | !validateConfirmPassword()){
+        if (!validatePassword() | !validateConfirmPassword()) {
             return;
         }
-        String _newPassword = Password.getEditText().getText().toString().trim();
-        String _phoneNumber = getIntent().getStringExtra("phoneNo");
+        _newPassword = Password.getEditText().getText().toString().trim();
+        _phoneNumber = getIntent().getStringExtra("phoneNo");
+        UserID = getIntent().getStringExtra("UserID");
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-        reference.child(_phoneNumber).child("password").setValue(_newPassword);
 
-        startActivity(new Intent(getApplicationContext(),PNewPassChange.class));
-        finish();
+        if (_newPassword.equals(ConPass.getEditText().getText().toString().trim())) {
+            DatabaseReference reference = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher");
+            reference.child(UserID).child("password").setValue(_newPassword);
 
+            startActivity(new Intent(getApplicationContext(), PNewPassChange.class));
+            finish();
+        } else {
+            Toast.makeText(this, "Password not match!", Toast.LENGTH_SHORT).show();
+        }
     }
+
     private boolean validatePassword() {
         String val = Password.getEditText().getText().toString().trim();
         String checkPassword = "^" +
@@ -85,6 +75,7 @@ public class PSetNewPassword extends AppCompatActivity {
             return true;
         }
     }
+
     private boolean validateConfirmPassword() {
         String val = ConPass.getEditText().getText().toString().trim();
         String checkPassword = "^" +

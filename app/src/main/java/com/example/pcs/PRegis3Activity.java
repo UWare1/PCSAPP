@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -50,7 +51,6 @@ public class PRegis3Activity extends AppCompatActivity {
         Allergy        = getIntent().getStringExtra("Allergy");
         Gender         = getIntent().getStringExtra("Gender");
         Date           = getIntent().getStringExtra("Date");
-
 
         Patient.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +95,7 @@ public class PRegis3Activity extends AppCompatActivity {
         call.putExtra("Allergy", Allergy);
         call.putExtra("Gender", Gender);
         call.putExtra("Date", Date);
+        call.putExtra("whatToDO", "Regis");
 
         Pair[] pairs = new Pair[2];
         pairs[0] = new Pair<View, String>(S3SSV, "transition_OTP_screen");
