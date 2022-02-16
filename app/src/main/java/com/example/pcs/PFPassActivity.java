@@ -88,5 +88,9 @@ public class PFPassActivity extends AppCompatActivity {
             return true;
         }
     }
+
+    public void VerifyPhoneNumber(View view) {
+
+    }
 }
 
