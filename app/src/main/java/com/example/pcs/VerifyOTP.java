@@ -134,7 +134,7 @@ public class VerifyOTP extends AppCompatActivity {
 
         UserHelperClass addNewUser = new UserHelperClass(UserID, Password, Email, NationalIDCard,
                 Fullname, Address, Medical, Allergy, _phoneNo);
-        reference.child(_phoneNo).setValue(addNewUser);
+        reference.child(UserID).setValue(addNewUser);
 
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);

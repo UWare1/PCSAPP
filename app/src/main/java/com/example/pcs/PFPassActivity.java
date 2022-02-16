@@ -19,14 +19,14 @@ import com.google.android.material.textfield.TextInputLayout;
 public class PFPassActivity extends AppCompatActivity {
 
     ImageView TitleText;
-    TextInputLayout RecoverEmail;
+    TextInputLayout PhoneNumber;
     Button Recover, Patient, Doctor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pfpass);
 
-        RecoverEmail = findViewById(R.id.RecoverEmail);
+        PhoneNumber = findViewById(R.id.PhoneNumber);
         Recover      = findViewById(R.id.Recover);
         Patient   = findViewById(R.id.Patient);
         Doctor    = findViewById(R.id.Doctor);
@@ -72,6 +72,20 @@ public class PFPassActivity extends AppCompatActivity {
             startActivity(call, options.toBundle());
         } else {
             startActivity(call);
+        }
+    }
+    private boolean validatePhoneNumber() {
+        String val = PhoneNumber.getEditText().getText().toString().trim();
+        if (val.isEmpty()) {
+            PhoneNumber.setError("Field can not be empty");
+            return false;
+        } else if (val.length() > 10) {
+            PhoneNumber.setError("Phone Number is too large!");
+            return false;
+        } else {
+            PhoneNumber.setError(null);
+            PhoneNumber.setErrorEnabled(false);
+            return true;
         }
     }
 }

@@ -70,9 +70,9 @@ public class PRegis3Activity extends AppCompatActivity {
 
     public void CallVerifyOTPScreen(View view) {
 
-        /*if (!validatePhoneNumber()){
+        if (!validatePhoneNumber()){
             return;
-        }*/
+        }
 
         String _getUserEnteredPhoneNumber = PhoneNumber.getEditText().getText().toString().trim();
         if (_getUserEnteredPhoneNumber.charAt(0) == '0') {
@@ -123,5 +123,20 @@ public class PRegis3Activity extends AppCompatActivity {
             startActivity(call);
         }
     }
+    private boolean validatePhoneNumber() {
+        String val = PhoneNumber.getEditText().getText().toString().trim();
+        if (val.isEmpty()) {
+            PhoneNumber.setError("Field can not be empty");
+            return false;
+        } else if (val.length() > 10) {
+            PhoneNumber.setError("Phone Number is too large!");
+            return false;
+        } else {
+            PhoneNumber.setError(null);
+            PhoneNumber.setErrorEnabled(false);
+            return true;
+        }
+    }
+
 
 }
