@@ -1,5 +1,6 @@
 package com.example.pcs;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
@@ -16,6 +17,11 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
 
 public class PRegis3Activity extends AppCompatActivity {
@@ -25,6 +31,7 @@ public class PRegis3Activity extends AppCompatActivity {
     TextInputLayout PhoneNumber;
     CountryCodePicker CCP;
     RelativeLayout S3SSV;
+    boolean x;
     String UserID, Password, Email, NationalIDCard,
            Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo;
     @Override
@@ -71,16 +78,15 @@ public class PRegis3Activity extends AppCompatActivity {
     }
 
     public void CallVerifyOTPScreen(View view) {
-
-        if (!validatePhoneNumber()){
-            return;
-        }
-
         String _getUserEnteredPhoneNumber = PhoneNumber.getEditText().getText().toString().trim();
         if (_getUserEnteredPhoneNumber.charAt(0) == '0') {
             _getUserEnteredPhoneNumber = _getUserEnteredPhoneNumber.substring(1);
         }
         _phoneNo = "+" + CCP.getFullNumber() + _getUserEnteredPhoneNumber;
+
+        if (!CheckPhoneNumberinDB() | !validatePhoneNumber()){
+            return;
+        }
 
         Intent call = new Intent(getApplicationContext(), VerifyOTP.class);
 
@@ -128,6 +134,31 @@ public class PRegis3Activity extends AppCompatActivity {
             startActivity(call);
         }
     }
+
+    private boolean CheckPhoneNumberinDB() {
+        Query checkUser = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").orderByChild("_phoneNo").equalTo(_phoneNo);
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    PhoneNumber.setError("Phone Number has been use!");
+                    PhoneNumber.setErrorEnabled(true);
+                    x = false;
+                } else {
+                    PhoneNumber.setError(null);
+                    PhoneNumber.setErrorEnabled(false);
+                    x = true;
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(PRegis3Activity.this, "Error", Toast.LENGTH_SHORT).show();
+            }
+        });
+        return x;
+    }
+
     private boolean validatePhoneNumber() {
         String val = PhoneNumber.getEditText().getText().toString().trim();
         if (val.isEmpty()) {

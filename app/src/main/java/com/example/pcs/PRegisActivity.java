@@ -1,5 +1,6 @@
 package com.example.pcs;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
@@ -17,6 +18,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
@@ -28,22 +34,24 @@ public class PRegisActivity extends AppCompatActivity {
     TextInputLayout UserID, Password, ConPass, Email, NationalIDCard;
     ImageView TitleText, Back;
     Button Next, Patient, Doctor;
-    String X1, X2, X3, X4;
+    boolean x, y;
+    String UserString, PassString, EmailString, NationalString, a, b;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pregis);
 
-        UserID            = findViewById(R.id.UserID);
-        Password          = findViewById(R.id.Password);
-        ConPass           = findViewById(R.id.ConPass);
-        Email             = findViewById(R.id.Email);
-        NationalIDCard    = findViewById(R.id.NationalIDCard);
-        Next              = findViewById(R.id.Next);
-        Patient           = findViewById(R.id.Patient);
-        Doctor            = findViewById(R.id.Doctor);
-        TitleText         = findViewById(R.id.titletext);
-        Back              = findViewById(R.id.Back);
+        UserID = findViewById(R.id.UserID);
+        Password = findViewById(R.id.Password);
+        ConPass = findViewById(R.id.ConPass);
+        Email = findViewById(R.id.Email);
+        NationalIDCard = findViewById(R.id.NationalIDCard);
+        Next = findViewById(R.id.Next);
+        Patient = findViewById(R.id.Patient);
+        Doctor = findViewById(R.id.Doctor);
+        TitleText = findViewById(R.id.titletext);
+        Back = findViewById(R.id.Back);
 
         /*User        = UserID.getEditText().getText().toString().trim();
         Pass        = Password.getEditText().getText().toString().trim();
@@ -92,23 +100,29 @@ public class PRegisActivity extends AppCompatActivity {
             }
         });
     }
-    public void CallNextRegister(View view){
 
-        if (!validateUserID() | !validatePassword() | !validateConfirmPassword() | !validateEmail() | !validateNationalIDCard()) {
+    public void CallNextRegister(View view) {
+
+        UserString = UserID.getEditText().getText().toString().trim();
+        PassString = Password.getEditText().getText().toString().trim();
+        EmailString = Email.getEditText().getText().toString().trim();
+        NationalString = NationalIDCard.getEditText().getText().toString().trim();
+
+        if (!CheckUserinDB() | !CheckEmailinDB() | !validateUserID() | !validatePassword() | !validateConfirmPassword() | !validateEmail() | !validateNationalIDCard()) {
             return;
         }
 
         Intent call = new Intent(getApplicationContext(), PRegis2Activity.class);
 
-        call.putExtra("UserID", UserID.getEditText().getText().toString().trim());
-        call.putExtra("Password", Password.getEditText().getText().toString().trim());
-        call.putExtra("Email", Email.getEditText().getText().toString().trim());
-        call.putExtra("NationalIDCard", NationalIDCard.getEditText().getText().toString().trim());
+        call.putExtra("UserID", UserString);
+        call.putExtra("Password", PassString);
+        call.putExtra("Email", EmailString);
+        call.putExtra("NationalIDCard", NationalString);
 
-        String a = ConPass.getEditText().getText().toString().trim();
-        String b = Password.getEditText().getText().toString().trim();
+        a = ConPass.getEditText().getText().toString().trim();
+        b = Password.getEditText().getText().toString().trim();
+
         Pair[] pairs = new Pair[5];
-
         pairs[0] = new Pair<View, String>(TitleText, "transition_title");
         pairs[1] = new Pair<View, String>(Next, "transition_nextbtn");
         pairs[2] = new Pair<View, String>(Patient, "transition_patient_btn");
@@ -116,12 +130,62 @@ public class PRegisActivity extends AppCompatActivity {
         pairs[4] = new Pair<View, String>(Back, "transition_back");
 
         if (a.equals(b)) {
-            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PRegisActivity.this,pairs);
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PRegisActivity.this, pairs);
             startActivity(call, options.toBundle());
         } else {
-            Toast.makeText(this, "Password Mismatch!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(PRegisActivity.this, "Password Mismatch!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    private boolean CheckUserinDB() {
+        Query checkUser = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").orderByChild("userID").equalTo(UserString);
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    UserID.setError("User has been use!");
+                    UserID.setErrorEnabled(true);
+                    x = false;
+                } else {
+                    UserID.setError(null);
+                    UserID.setErrorEnabled(false);
+                    x = true;
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(PRegisActivity.this, "Error", Toast.LENGTH_SHORT).show();
+            }
+        });
+        return x;
+    }
+
+    private boolean CheckEmailinDB() {
+        Query checkUser = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").orderByChild("email").equalTo(EmailString);
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    Email.setError("Email has been use!");
+                    Email.setErrorEnabled(true);
+                    y = false;
+                } else {
+                    Email.setError(null);
+                    Email.setErrorEnabled(false);
+                    y = true;
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(PRegisActivity.this, "Error", Toast.LENGTH_SHORT).show();
+            }
+        });
+        return y;
+    }
+
     public void CallBack(View view) {
 
         Intent call = new Intent(getApplicationContext(), MainActivity.class);
@@ -133,12 +197,13 @@ public class PRegisActivity extends AppCompatActivity {
         pairs[2] = new Pair<View, String>(Doctor, "transition_doctor_btn");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PRegisActivity.this,pairs);
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PRegisActivity.this, pairs);
             startActivity(call, options.toBundle());
         } else {
             startActivity(call);
         }
     }
+
     private boolean validateUserID() {
         String val = UserID.getEditText().getText().toString().trim();
         String checkspaces = "\\A\\w{1,20}\\z";
@@ -157,6 +222,7 @@ public class PRegisActivity extends AppCompatActivity {
             return true;
         }
     }
+
     private boolean validatePassword() {
         String val = Password.getEditText().getText().toString().trim();
         String checkPassword = "^" +
@@ -182,6 +248,7 @@ public class PRegisActivity extends AppCompatActivity {
             return true;
         }
     }
+
     private boolean validateConfirmPassword() {
         String val = ConPass.getEditText().getText().toString().trim();
         String checkPassword = "^" +
@@ -207,6 +274,7 @@ public class PRegisActivity extends AppCompatActivity {
             return true;
         }
     }
+
     private boolean validateEmail() {
         String val = Email.getEditText().getText().toString().trim();
         String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+.+[a-z]+";
@@ -222,6 +290,7 @@ public class PRegisActivity extends AppCompatActivity {
             return true;
         }
     }
+
     private boolean validateNationalIDCard() {
         String val = NationalIDCard.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
