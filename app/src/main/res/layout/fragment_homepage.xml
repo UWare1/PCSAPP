@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomepageFragment"
+    android:id="@+id/HomePage"
     android:background="@color/colorPrimaryDark">
 
     <View
@@ -86,12 +87,19 @@
 
                 </View>
                 <View
+                    android:id="@+id/ToADD"
                     android:layout_width="70dp"
                     android:layout_height="30dp"
                     android:layout_alignParentEnd="true"
                     android:background="@drawable/homehistory">
 
                 </View>
+
+                <Button
+                    android:id="@+id/ToRecentsHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#00000000" />
 
             </RelativeLayout>
         </FrameLayout>

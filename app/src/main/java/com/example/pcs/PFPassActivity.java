@@ -32,6 +32,7 @@ public class PFPassActivity extends AppCompatActivity {
     Button Recover, Patient, Doctor;
     CountryCodePicker CCP;
     String User, _phoneNumber;
+    View decorView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class PFPassActivity extends AppCompatActivity {
         Doctor = findViewById(R.id.Doctor);
         TitleText = findViewById(R.id.titletext);
         CCP = findViewById(R.id.CCP);
+        decorView = getWindow().getDecorView();
 
         Patient.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,7 +166,21 @@ public class PFPassActivity extends AppCompatActivity {
             return true;
         }
     }
-
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus){
+            decorView.setSystemUiVisibility(hideSystemBars());
+        }
+    }
+    private int hideSystemBars(){
+        return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+    }
 }
 
 

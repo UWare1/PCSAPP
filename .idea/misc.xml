@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PCS/app/src/main/res/drawable-v24/backhistory.xml" value="0.203" />
+        <entry key="..\:/PCS/app/src/main/res/drawable-v24/bottom_sheet_background.xml" value="0.203" />
         <entry key="..\:/PCS/app/src/main/res/drawable-v24/buttonpord.xml" value="0.114" />
         <entry key="..\:/PCS/app/src/main/res/drawable-v24/pgbutton.xml" value="0.1045" />
         <entry key="..\:/PCS/app/src/main/res/drawable-v24/pgbutton2.xml" value="0.142" />
@@ -17,21 +19,22 @@
         <entry key="..\:/PCS/app/src/main/res/drawable/ic_history.xml" value="0.1255" />
         <entry key="..\:/PCS/app/src/main/res/drawable/pgbutton2.xml" value="0.114" />
         <entry key="..\:/PCS/app/src/main/res/drawable/thumbscroll.xml" value="0.151" />
+        <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet.xml" value="0.19342053111375346" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/PCS/app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="..\:/PCS/app/src/main/res/layout/activity_main2.xml" value="0.16" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_main_doctor.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_pfpass.xml" value="0.176" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_pnew_pass_change.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_pregis.xml" value="0.264" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_pregis2.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_pregis3.xml" value="0.2" />
-        <entry key="..\:/PCS/app/src/main/res/layout/activity_pset_new_password.xml" value="0.264" />
+        <entry key="..\:/PCS/app/src/main/res/layout/activity_pset_new_password.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_verify_otp.xml" value="0.16" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_chat.xml" value="0.176" />
-        <entry key="..\:/PCS/app/src/main/res/layout/fragment_history.xml" value="0.20765765765765765" />
+        <entry key="..\:/PCS/app/src/main/res/layout/fragment_history.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_homepage.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_noti.xml" value="0.2" />
-        <entry key="..\:/PCS/app/src/main/res/layout/fragment_user.xml" value="0.2" />
+        <entry key="..\:/PCS/app/src/main/res/layout/fragment_user.xml" value="0.12" />
         <entry key="..\:/PCS/app/src/main/res/mipmap-anydpi-v26/PCSPD.xml" value="0.1045" />
         <entry key="..\:/PCS/app/src/main/res/mipmap-anydpi-v26/pcspd.xml" value="0.1045" />
         <entry key="..\:/PCS/app/src/main/res/mipmap-anydpi-v26/pcspd_round.xml" value="0.1045" />

@@ -28,8 +28,8 @@
             android:id="@+id/passupdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:fontFamily="@font/ubuntubold"
+            android:gravity="center"
             android:text="Password Updated !"
             android:textAlignment="center"
             android:textAllCaps="true"
@@ -41,8 +41,8 @@
             android:id="@+id/successPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:fontFamily="@font/ubuntulight"
+            android:gravity="center"
             android:text="your password has been changed"
             android:textAlignment="center"
             android:textColor="#787878"
@@ -56,9 +56,9 @@
             android:layout_marginTop="36dp"
             android:background="@drawable/yobutton"
             android:text="Login"
-            android:textStyle="bold"
+            android:textColor="@color/white"
             android:textSize="18sp"
-            android:textColor="@color/white" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 

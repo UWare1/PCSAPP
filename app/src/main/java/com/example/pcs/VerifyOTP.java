@@ -36,6 +36,7 @@ public class VerifyOTP extends AppCompatActivity {
             Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo, whatToDO;
     TextView otpDescriptionText;
     ImageView Exit;
+    View decorView;
     private FirebaseAuth mAuth;
 
     @Override
@@ -46,6 +47,7 @@ public class VerifyOTP extends AppCompatActivity {
         Pin_View = findViewById(R.id.Pin_View);
         otpDescriptionText = findViewById(R.id.otpDescriptionText);
         Exit = findViewById(R.id.Exit);
+        decorView = getWindow().getDecorView();
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -165,5 +167,20 @@ public class VerifyOTP extends AppCompatActivity {
         if (!code.isEmpty()) {
             verifyCode(code);
         }
+    }
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus){
+            decorView.setSystemUiVisibility(hideSystemBars());
+        }
+    }
+    private int hideSystemBars(){
+        return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
 }

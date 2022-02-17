@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Main2Activity"
-    android:background="@color/background"
+    android:background="#3A3838"
     android:orientation="vertical">
 
     <FrameLayout
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bottom_navigation"
-        app:mbn_circleColor="#FFCF41"
+        app:mbn_circleColor="@color/colorPrimary"
         app:mbn_selectedIconColor="#fff"
         app:mbn_countTextColor="#fff"
         app:mbn_countBackgroundColor="#ff6f00"

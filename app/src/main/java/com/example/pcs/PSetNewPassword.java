@@ -18,6 +18,7 @@ public class PSetNewPassword extends AppCompatActivity {
 
     TextInputLayout PhoneNumber, Password, ConPass;
     String UserID , _phoneNumber, _newPassword;
+    View decorView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -26,6 +27,7 @@ public class PSetNewPassword extends AppCompatActivity {
         setContentView(R.layout.activity_pset_new_password);
         Password = findViewById(R.id.Password);
         ConPass = findViewById(R.id.ConPass);
+        decorView = getWindow().getDecorView();
     }
 
 
@@ -101,6 +103,20 @@ public class PSetNewPassword extends AppCompatActivity {
             return true;
         }
     }
-
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus){
+            decorView.setSystemUiVisibility(hideSystemBars());
+        }
+    }
+    private int hideSystemBars(){
+        return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+    }
 
 }

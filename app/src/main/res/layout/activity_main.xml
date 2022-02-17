@@ -197,6 +197,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay4"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
@@ -221,8 +222,8 @@
             android:layout_weight="1"
             android:background="@drawable/buttonpord"
             android:text="Doctor"
-            app:backgroundTint="@null"
-            android:textColor="#333333">
+            android:textColor="#333333"
+            app:backgroundTint="@null">
 
         </Button>
     </LinearLayout>

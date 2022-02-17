@@ -1,14 +1,309 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".HistoryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Button
+        android:id="@+id/HistoryRefresh"
+        android:layout_width="120dp"
+        android:layout_height="36dp"
+        android:layout_gravity="end"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/yobutton"
+        android:gravity="center"
+        android:text="History"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_gravity="center">
 
-</FrameLayout>
+        <View
+            android:id="@+id/ViewCheck"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/backhistory" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarThumbHorizontal="@drawable/thumbscroll">
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:collapseColumns="">
+
+                <TableRow
+                    android:paddingVertical="6dp">
+
+                    <TextView
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:gravity="center"
+                        android:text="Date"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"
+                        ></View>
+
+                    <TextView
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:text="Time"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"></View>
+
+                    <TextView
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:gravity="center"
+                        android:text="Pressure"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"></View>
+
+                    <TextView
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:gravity="center"
+                        android:text="Temp."
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"></View>
+
+                    <TextView
+                        android:id="@+id/TextDescription"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:gravity="center"
+                        android:text="Description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                </TableRow>
+
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/white"></View>
+
+                <TableRow
+                    android:layout_marginTop="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:gravity="center"
+                        android:text="26/01/65"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"></View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:gravity="center"
+                        android:text="22:53:00"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"></View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:gravity="center"
+                        android:text="38"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"></View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:gravity="center"
+                        android:text="34"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"></View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:gravity="center"
+                        android:text="Cough..."
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="3dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:gravity="center"
+                        android:text="27/01/65"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"></View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:gravity="center"
+                        android:text="22:53:00"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"></View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:gravity="center"
+                        android:text="38"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"></View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:gravity="center"
+                        android:text="34"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"></View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jostvariablefontwght"
+                        android:gravity="center"
+                        android:text="Cough... "
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </TableRow>
+            </TableLayout>
+        </HorizontalScrollView>
+
+
+        <Button
+            android:id="@+id/ADDHistory"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="50dp"
+            android:text="ADD"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

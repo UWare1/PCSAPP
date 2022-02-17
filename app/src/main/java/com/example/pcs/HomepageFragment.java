@@ -1,12 +1,15 @@
 package com.example.pcs;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +26,8 @@ public class HomepageFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    View view;
+    Button ToRecentsHistory;
 
     public HomepageFragment() {
         // Required empty public constructor
@@ -59,6 +64,26 @@ public class HomepageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_homepage, container, false);
+        view = inflater.inflate(R.layout.fragment_homepage, container, false);
+        ToRecentsHistory = view.findViewById(R.id.ToRecentsHistory);
+
+        ToRecentsHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*// Create new fragment and transaction
+                Fragment newFragment = new HistoryFragment();
+                // consider using Java coding conventions (upper first char class names!!!)
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+                // Replace whatever is in the fragment_container view with this fragment,
+                // and add the transaction to the back stack
+                transaction.replace(R.id.HomePage, newFragment);
+                transaction.addToBackStack(null);
+
+                // Commit the transaction
+                transaction.commit();*/
+            }
+        });
+        return view;
     }
 }

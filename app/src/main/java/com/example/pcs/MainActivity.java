@@ -14,8 +14,11 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,11 +31,15 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
+    LinearLayout Lay, Lay2, Lay3, Lay4;
     String User, Pass;
     TextInputLayout UserID, Password;
     TextView FPassword, Register;
     View Facebook, Google, Twitter, Line;
     Button Login, Patient, Doctor;
+    Animation FadeInUp;
+    View decorView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +56,17 @@ public class MainActivity extends AppCompatActivity {
         Google    = findViewById(R.id.Google);
         Twitter   = findViewById(R.id.Twitter);
         Line      = findViewById(R.id.Line);
+        Lay       = findViewById(R.id.lay1);
+        Lay2      = findViewById(R.id.lay2);
+        Lay3      = findViewById(R.id.lay3);
+        Lay4      = findViewById(R.id.lay4);
+        decorView = getWindow().getDecorView();
 
+        FadeInUp = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadeinup);
+        Lay.startAnimation(FadeInUp);
+        Lay2.startAnimation(FadeInUp);
+        Lay3.startAnimation(FadeInUp);
+        Lay4.startAnimation(FadeInUp);
 
 
         FPassword.setOnClickListener(new View.OnClickListener() {
@@ -206,5 +223,19 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
-
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus){
+            decorView.setSystemUiVisibility(hideSystemBars());
+        }
+    }
+    private int hideSystemBars(){
+        return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+    }
 }

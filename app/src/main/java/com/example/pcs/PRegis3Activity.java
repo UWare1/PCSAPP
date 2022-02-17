@@ -31,6 +31,7 @@ public class PRegis3Activity extends AppCompatActivity {
     TextInputLayout PhoneNumber;
     CountryCodePicker CCP;
     RelativeLayout S3SSV;
+    View decorView;
     boolean x;
     String UserID, Password, Email, NationalIDCard,
            Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo;
@@ -47,6 +48,7 @@ public class PRegis3Activity extends AppCompatActivity {
         CCP         = findViewById(R.id.CCP);
         PhoneNumber = findViewById(R.id.PhoneNumber);
         S3SSV       = findViewById(R.id.S3SSV);
+        decorView = getWindow().getDecorView();
 
         UserID         = getIntent().getStringExtra("UserID");
         Password       = getIntent().getStringExtra("Password");
@@ -173,6 +175,20 @@ public class PRegis3Activity extends AppCompatActivity {
             return true;
         }
     }
-
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus){
+            decorView.setSystemUiVisibility(hideSystemBars());
+        }
+    }
+    private int hideSystemBars(){
+        return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+    }
 
 }

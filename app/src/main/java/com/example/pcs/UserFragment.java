@@ -69,20 +69,6 @@ public class UserFragment extends Fragment {
         C1   = view.findViewById(R.id.C1);
         FullnameProfile = view.findViewById(R.id.FullnameProfile);
 
-        /*Query checkUser = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").orderByChild("userID");
-        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
-                    String SystemPassword = snapshot.child(User).child("password").getValue(String.class);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });*/
         FullnameProfile.setText("Thanakorn Kuankure");
         C1.setOnClickListener(new View.OnClickListener() {
             @Override

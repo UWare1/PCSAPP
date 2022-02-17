@@ -3,6 +3,7 @@ package com.example.pcs;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 
@@ -10,6 +11,7 @@ public class Main2Activity extends AppCompatActivity {
 
     //Initialize variable
     MeowBottomNavigation bottomNavigation;
+    View decorView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +20,7 @@ public class Main2Activity extends AppCompatActivity {
 
         //Assign variable
         bottomNavigation = findViewById(R.id.bottom_navigation);
+        decorView = getWindow().getDecorView();
 
         //Add menu item
         bottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.ic_chat));
@@ -74,9 +77,7 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
                 //Display toast
-                Toast.makeText(getApplicationContext()
-                        ,"You Clicked" + item.getId()
-                        ,Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -84,9 +85,7 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onReselectItem(MeowBottomNavigation.Model item) {
                 //Display toast
-                Toast.makeText(getApplicationContext()
-                        ,"You Reselected"+ item.getId()
-                        ,Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -97,5 +96,20 @@ public class Main2Activity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.frame_layout,fragment)
                 .commit();
+    }
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus){
+            decorView.setSystemUiVisibility(hideSystemBars());
+        }
+    }
+    private int hideSystemBars(){
+        return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
 }
