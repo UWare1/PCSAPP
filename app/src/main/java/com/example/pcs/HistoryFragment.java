@@ -24,12 +24,19 @@ import android.widget.Toast;
 import com.google.android.material.badge.BadgeUtils;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,6 +58,8 @@ public class HistoryFragment extends Fragment {
     Button HistoryRefresh, ADDHistory;
     String currentDate, currentTime,
             Dated, Timed, Press, Temp, Desc;
+    TextInputLayout Pressure, Temperature, Description;
+    TextView DaTe1;
 
     public HistoryFragment() {
         // Required empty public constructor
@@ -96,8 +105,27 @@ public class HistoryFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_history, container, false);
         HistoryRefresh = view.findViewById(R.id.HistoryRefresh);
         ADDHistory = view.findViewById(R.id.ADDHistory);
+        DaTe1 = view.findViewById(R.id.DaTe1);
         currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+
+        /*Query dbRef = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher");
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                String text = "";
+                for (DataSnapshot dsp : snapshot.getChildren()){
+                    Map<String, Object> datas = (Map<String, Object>) dsp.getValue();
+                    text += datas.get("time").toString() + "\n";
+                }
+                DaTe1.setText(text);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });*/
 
 
         ADDHistory.setOnClickListener(new View.OnClickListener() {
@@ -113,25 +141,34 @@ public class HistoryFragment extends Fragment {
                         );
                 final TextView Date = bottomSheetView.findViewById(R.id.Date);
                 final TextView Time = bottomSheetView.findViewById(R.id.Time);
-                final TextInputLayout Pressure = (TextInputLayout) bottomSheetView.findViewById(R.id.Pressure);
-                final TextInputLayout Temperature = (TextInputLayout) bottomSheetView.findViewById(R.id.Temperature);
-                final TextInputLayout Description = (TextInputLayout) bottomSheetView.findViewById(R.id.Description);
+                Pressure = (TextInputLayout) bottomSheetView.findViewById(R.id.Pressure);
+                Temperature = (TextInputLayout) bottomSheetView.findViewById(R.id.Temperature);
+                Description = (TextInputLayout) bottomSheetView.findViewById(R.id.Description);
                 Date.setText("Date: " + currentDate);
                 Time.setText("Time: " + currentTime);
 
                 Dated = Date.getText().toString().trim();
                 Timed = Time.getText().toString().trim();
+
                 bottomSheetView.findViewById(R.id.ADD).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (!validatePressure() | !validateTemperature() | !validateDescription()) {
+                            return;
+                        }
                         Press = Pressure.getEditText().getText().toString().trim();
-                        Temp  = Temperature.getEditText().getText().toString().trim();
-                        Desc  = Description.getEditText().getText().toString().trim();
+                        Temp = Temperature.getEditText().getText().toString().trim();
+                        Desc = Description.getEditText().getText().toString().trim();
+
+                        SessionManager sessionManager = new SessionManager(getActivity());
+                        HashMap<String, String> userDetails = sessionManager.getUserDatailFromSession();
+                        String UserID = userDetails.get(SessionManager.KEY_USERID);
+
                         FirebaseDatabase rootNode = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/");
-                        DatabaseReference reference = rootNode.getReference("PatientInfo");
+                        DatabaseReference reference = rootNode.getReference("Teacher");
 
                         HistoryHelperClass addNewHistory = new HistoryHelperClass(Dated, Timed, Press, Temp, Desc);
-                        reference.child(Dated).child(Timed).setValue(addNewHistory);
+                        reference.child(UserID).child("PatientInfo").child(Dated).child(Timed).setValue(addNewHistory);
                         bottomSheetDialog.dismiss();
                     }
                 });
@@ -140,5 +177,41 @@ public class HistoryFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    private boolean validatePressure() {
+        String val = Pressure.getEditText().getText().toString().trim();
+        if (val.isEmpty()) {
+            Pressure.setError("Field can not be empty");
+            return false;
+        } else {
+            Pressure.setError(null);
+            Pressure.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean validateTemperature() {
+        String val = Temperature.getEditText().getText().toString().trim();
+        if (val.isEmpty()) {
+            Temperature.setError("Field can not be empty");
+            return false;
+        } else {
+            Temperature.setError(null);
+            Temperature.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean validateDescription() {
+        String val = Description.getEditText().getText().toString().trim();
+        if (val.isEmpty()) {
+            Description.setError("Field can not be empty");
+            return false;
+        } else {
+            Description.setError(null);
+            Description.setErrorEnabled(false);
+            return true;
+        }
     }
 }

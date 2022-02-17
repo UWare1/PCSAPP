@@ -145,8 +145,18 @@ public class MainActivity extends AppCompatActivity {
 
                         String Fullname1 = dataSnapshot.child(User).child("fullname").getValue(String.class);
                         String Email1 = dataSnapshot.child(User).child("email").getValue(String.class);
+                        String _phoneNo = dataSnapshot.child(User).child("_phoneNo").getValue(String.class);
+                        String _address = dataSnapshot.child(User).child("address").getValue(String.class);
+                        String _alleryg = dataSnapshot.child(User).child("allergy").getValue(String.class);
+                        String _medical = dataSnapshot.child(User).child("medical").getValue(String.class);
+                        String _nationallCard = dataSnapshot.child(User).child("nationallCard").getValue(String.class);
+                        String _password = dataSnapshot.child(User).child("password").getValue(String.class);
+                        String _userID = dataSnapshot.child(User).child("userID").getValue(String.class);
+                        String _dateOfBirth = dataSnapshot.child(User).child("date").getValue(String.class);
+                        String _gender = dataSnapshot.child(User).child("gender").getValue(String.class);
 
-                        Toast.makeText(MainActivity.this, Fullname1 + "\n" + Email1 + " ", Toast.LENGTH_SHORT).show();
+                        SessionManager sessionManager = new  SessionManager(MainActivity.this);
+                        sessionManager.createLoginSession(Fullname1,_userID,Email1,_phoneNo,_password,_dateOfBirth,_gender);
 
                         Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
                         startActivity(intent);

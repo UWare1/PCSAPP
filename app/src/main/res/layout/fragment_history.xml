@@ -36,15 +36,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbarThumbHorizontal="@drawable/thumbscroll">
+
             <TableLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:collapseColumns=""
                 android:orientation="horizontal"
-                android:padding="16dp"
-                android:collapseColumns="">
+                android:padding="16dp">
 
-                <TableRow
-                    android:paddingVertical="6dp">
+                <TableRow android:paddingVertical="6dp">
 
                     <TextView
                         android:layout_width="106dp"
@@ -60,16 +60,15 @@
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:layout_margin="5dp"
-                        android:background="@color/white"
-                        ></View>
+                        android:background="@color/white"></View>
 
                     <TextView
                         android:layout_width="106dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/jostvariablefontwght"
-                        android:text="Time"
                         android:gravity="center"
+                        android:text="Time"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
@@ -131,10 +130,10 @@
                     android:layout_margin="5dp"
                     android:background="@color/white"></View>
 
-                <TableRow
-                    android:layout_marginTop="6dp">
+                <TableRow android:layout_marginTop="6dp">
 
                     <TextView
+                        android:id="@+id/DaTe1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -142,8 +141,7 @@
                         android:gravity="center"
                         android:text="26/01/65"
                         android:textColor="@color/white"
-                        android:textSize="14sp"
-                        />
+                        android:textSize="14sp" />
 
                     <View
                         android:layout_width="1dp"
@@ -211,8 +209,7 @@
 
                 </TableRow>
 
-                <TableRow
-                    android:layout_marginTop="3dp">
+                <TableRow android:layout_marginTop="3dp">
 
                     <TextView
                         android:layout_width="wrap_content"
