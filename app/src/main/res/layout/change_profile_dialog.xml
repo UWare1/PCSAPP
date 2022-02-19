@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="408dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <Button
+        android:id="@+id/exit2"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="275dp"
+        android:background="@drawable/exit"
+        android:translationZ="50dp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toStartOf="@+id/cardView" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="50dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:text="Avatar"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+        <View
+            android:id="@+id/ViewAnim"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="51.5dp"
+            android:background="#CFCFCF" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="6dp"
+            android:scrollbarSize="3dp"
+            android:scrollbarThumbVertical="@drawable/thumbscroll">
+
+            <GridLayout
+                android:id="@+id/GridAnim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:rowCount="6"
+                android:padding="6dp">
+
+                <Button
+                    android:id="@+id/item1"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile1"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp"
+                    />
+                <Button
+                    android:id="@+id/item2"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile2"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item3"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile3"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item4"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile4"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp"
+                    />
+                <Button
+                    android:id="@+id/item5"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile5"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item6"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile6"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item7"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile7"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item8"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile8"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item9"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile9"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp"
+                    />
+                <Button
+                    android:id="@+id/item10"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile10"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item11"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile11"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item12"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile12"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item13"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile13"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp"
+                    />
+                <Button
+                    android:id="@+id/item14"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile14"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item15"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile15"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item16"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile16"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item17"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile17"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp"
+                    />
+                <Button
+                    android:id="@+id/item18"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile18"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item19"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile19"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item20"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile20"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item21"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile21"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp"
+                    />
+                <Button
+                    android:id="@+id/item22"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile22"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+                <Button
+                    android:id="@+id/item23"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/iconprofile23"
+                    app:backgroundTint="@null"
+                    android:translationZ="-5dp" />
+
+
+
+            </GridLayout>
+
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

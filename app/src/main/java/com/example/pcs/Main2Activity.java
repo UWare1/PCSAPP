@@ -2,6 +2,8 @@ package com.example.pcs;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -12,6 +14,9 @@ public class Main2Activity extends AppCompatActivity {
     //Initialize variable
     MeowBottomNavigation bottomNavigation;
     View decorView;
+    MediaPlayer mediaPlayer;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +26,10 @@ public class Main2Activity extends AppCompatActivity {
         //Assign variable
         bottomNavigation = findViewById(R.id.bottom_navigation);
         decorView = getWindow().getDecorView();
+
+        mediaPlayer = MediaPlayer.create(Main2Activity.this, R.raw.bgsound);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
 
         //Add menu item
         bottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.ic_chat));
@@ -89,6 +98,14 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
+        decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
+            @Override
+            public void onSystemUiVisibilityChange(int visibility) {
+                if (visibility == 0)
+                    decorView.setSystemUiVisibility(hideSystemBars());
+            }
+        });
+
     }
     private void loadFragment(Fragment fragment) {
         //Replace fragment
@@ -111,5 +128,23 @@ public class Main2Activity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mediaPlayer.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mediaPlayer.pause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mediaPlayer.stop();
+        mediaPlayer.release();
     }
 }

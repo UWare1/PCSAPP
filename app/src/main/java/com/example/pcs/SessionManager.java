@@ -18,6 +18,7 @@ public class SessionManager {
     public static final String KEY_PASSWORD = "password";
     public static final String KEY_DATE = "age";
     public static final String KEY_GENDER = "gender";
+    public static final String KEY_PROFILEID = "profileid";
 
     public SessionManager(Context _context) {
         context = _context;
@@ -25,7 +26,7 @@ public class SessionManager {
         editor = userSession.edit();
     }
 
-    public void createLoginSession(String fullname, String userid, String email, String phoneNo, String password, String age, String gender){
+    public void createLoginSession(String fullname, String userid, String email, String phoneNo, String password, String age, String gender, String profileid){
         editor.putBoolean(IS_LOGIN,true);
 
         editor.putString(KEY_FULLNAME,fullname);
@@ -35,6 +36,7 @@ public class SessionManager {
         editor.putString(KEY_PASSWORD,password);
         editor.putString(KEY_DATE,age);
         editor.putString(KEY_GENDER,gender);
+        editor.putString(KEY_PROFILEID,profileid);
 
         editor.commit();
     }
@@ -49,6 +51,7 @@ public class SessionManager {
         userData.put(KEY_PASSWORD, userSession.getString(KEY_PASSWORD,null));
         userData.put(KEY_DATE, userSession.getString(KEY_DATE,null));
         userData.put(KEY_GENDER, userSession.getString(KEY_GENDER,null));
+        userData.put(KEY_PROFILEID, userSession.getString(KEY_PROFILEID,null));
 
         return  userData;
     }

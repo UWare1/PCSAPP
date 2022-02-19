@@ -10,6 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -67,9 +74,22 @@ public class HomepageFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_homepage, container, false);
         ToRecentsHistory = view.findViewById(R.id.ToRecentsHistory);
 
+        ImageSlider imageSlider = view.findViewById(R.id.slider);
+
+        List<SlideModel> slideModels = new ArrayList<>();
+
+        slideModels.add(new SlideModel(R.drawable.show));
+        slideModels.add(new SlideModel(R.drawable.show1));
+        slideModels.add(new SlideModel(R.drawable.show2));
+        slideModels.add(new SlideModel(R.drawable.show3));
+
+        imageSlider.setImageList(slideModels,true);
+
         ToRecentsHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);*/
                 /*// Create new fragment and transaction
                 Fragment newFragment = new HistoryFragment();
                 // consider using Java coding conventions (upper first char class names!!!)

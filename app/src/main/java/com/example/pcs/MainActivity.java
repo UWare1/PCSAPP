@@ -8,6 +8,7 @@ import android.app.DownloadManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -67,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
         Lay2.startAnimation(FadeInUp);
         Lay3.startAnimation(FadeInUp);
         Lay4.startAnimation(FadeInUp);
-
 
         FPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,9 +154,10 @@ public class MainActivity extends AppCompatActivity {
                         String _userID = dataSnapshot.child(User).child("userID").getValue(String.class);
                         String _dateOfBirth = dataSnapshot.child(User).child("date").getValue(String.class);
                         String _gender = dataSnapshot.child(User).child("gender").getValue(String.class);
+                        String ProfileID = dataSnapshot.child(User).child("profileID").getValue(String.class);
 
                         SessionManager sessionManager = new  SessionManager(MainActivity.this);
-                        sessionManager.createLoginSession(Fullname1,_userID,Email1,_phoneNo,_password,_dateOfBirth,_gender);
+                        sessionManager.createLoginSession(Fullname1,_userID,Email1,_phoneNo,_password,_dateOfBirth,_gender, ProfileID);
 
                         Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
                         startActivity(intent);
@@ -248,4 +249,5 @@ public class MainActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
+
 }

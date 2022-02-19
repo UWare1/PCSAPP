@@ -33,7 +33,8 @@ public class VerifyOTP extends AppCompatActivity {
     PinView Pin_View;
     String codeBySystem;
     String UserID, Password, Email, NationalIDCard,
-            Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo, whatToDO;
+            Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo, whatToDO,
+            ProfileID = "iconprofile1";
     TextView otpDescriptionText;
     ImageView Exit;
     View decorView;
@@ -153,7 +154,7 @@ public class VerifyOTP extends AppCompatActivity {
         DatabaseReference reference = rootNode.getReference("Teacher");
 
         UserHelperClass addNewUser = new UserHelperClass(UserID, Password, Email, NationalIDCard,
-                Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo);
+                Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo, ProfileID);
         reference.child(UserID).setValue(addNewUser);
 
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);

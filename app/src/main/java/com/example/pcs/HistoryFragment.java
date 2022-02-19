@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
@@ -24,6 +25,7 @@ import android.widget.Toast;
 import com.google.android.material.badge.BadgeUtils;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.FirebaseError;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -109,23 +111,9 @@ public class HistoryFragment extends Fragment {
         currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
 
-        /*Query dbRef = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher");
-        dbRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                String text = "";
-                for (DataSnapshot dsp : snapshot.getChildren()){
-                    Map<String, Object> datas = (Map<String, Object>) dsp.getValue();
-                    text += datas.get("time").toString() + "\n";
-                }
-                DaTe1.setText(text);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });*/
+        SessionManager sessionManager = new SessionManager(getActivity());
+        HashMap<String, String> UserDetails = sessionManager.getUserDatailFromSession();
+        String UserID = UserDetails.get(SessionManager.KEY_USERID);
 
 
         ADDHistory.setOnClickListener(new View.OnClickListener() {

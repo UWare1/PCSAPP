@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/FragmentUser"
     android:elevation="5dp"
     tools:context=".UserFragment">
 
@@ -59,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="24dp"
                 android:orientation="vertical"
@@ -99,6 +100,11 @@
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/profile11"
                         app:layout_constraintTop_toTopOf="@+id/profile11" />
+                    <Button
+                        android:id="@+id/EditProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00F6F6F6"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -132,6 +138,11 @@
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/secure11"
                         app:layout_constraintTop_toTopOf="@+id/secure11" />
+                    <Button
+                        android:id="@+id/SecurityProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00F6F6F6"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -165,6 +176,11 @@
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/language11"
                         app:layout_constraintTop_toTopOf="@+id/language11" />
+                    <Button
+                        android:id="@+id/LanguageProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00F6F6F6"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -198,6 +214,11 @@
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/set11"
                         app:layout_constraintTop_toTopOf="@+id/set11" />
+                    <Button
+                        android:id="@+id/SettingProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00F6F6F6"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -231,6 +252,11 @@
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/help11"
                         app:layout_constraintTop_toTopOf="@+id/help11" />
+                    <Button
+                        android:id="@+id/HelpProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00F6F6F6"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -264,20 +290,25 @@
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@+id/log11"
                         app:layout_constraintTop_toTopOf="@+id/log11" />
+                    <Button
+                        android:id="@+id/Logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00F6F6F6"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
-            android:id="@+id/Profileimage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/ProfileImage"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:elevation="8dp"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/constraintLayout"
-            tools:src="@tools:sample/avatars" />
+            android:background="@drawable/iconprofile" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
