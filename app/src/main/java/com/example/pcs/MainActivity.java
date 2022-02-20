@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
         String pass = Password.getEditText().getText().toString().trim();
 
         if (user.isEmpty()){
-            UserID.setError("User ID can not be Empty");
+            UserID.setError(getString(R.string.user_empty));
             UserID.requestFocus();
             return false;
         }  else if (pass.isEmpty()){

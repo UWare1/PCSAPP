@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PCS</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="user_id">User ID</string>
     <string name="password">Password</string>
     <string name="forgot_password">Forgot Password?</string>
@@ -52,4 +52,6 @@
     <string name="bright">Bright</string>
     <string name="music">Music</string>
     <string name="on">ON</string>
+    <string name="select_language">Select Language</string>
+    <string name="user_empty">User ID can not be Empty</string>
 </resources>

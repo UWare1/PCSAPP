@@ -11,8 +11,8 @@
     <string name="full_name">"ชื่อ-นามสกุล "</string>
     <string name="address">ที่อยู่</string>
     <string name="choose_gender">"เลือกเพศ "</string>
-    <string name="date">วันที่</string>
-    <string name="time">เวลา</string>
+    <string name="date">"วันที่: "</string>
+    <string name="time">"เวลา: "</string>
     <string name="pressure">ความดัน</string>
     <string name="temperature">อุณหภูมิ</string>
     <string name="description">รายละเอียด</string>
@@ -23,7 +23,7 @@
     <string name="allergy">โรคประจำตัว</string>
     <string name="confirm_new_password">ยืนยันรหัสผ่านใหม่</string>
     <string name="new_password">รหัสผ่านใหม่</string>
-    <string name="enter_one_time_password_nsent_on_n_66809703295">ใส่รหัส OTP ที่ได้รับ</string>
+    <string name="enter_one_time_password_nsent_on_n_66809703295">ใส่รหัส OTP ที่ได้รับตามเบอร์</string>
     <string name="avatar">อวาตาร์</string>
     <string name="history">ประวัติ</string>
     <string name="temp">อุณหภูมิ</string>
@@ -51,4 +51,6 @@
     <string name="other">อื่นๆ</string>
     <string name="female">ผู้หญิง</string>
     <string name="male">ผู้ชาย</string>
+    <string name="select_language">เลือกภาษา</string>
+    <string name="user_empty">ชื่อผู้ใช้ไม่สามารถเว้นว่างได้</string>
 </resources>

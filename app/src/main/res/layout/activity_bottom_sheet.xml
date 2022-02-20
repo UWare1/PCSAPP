@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="15dp"
-        android:text="Symptom"
+        android:text="@string/symptom"
         android:textAllCaps="true"
         android:textStyle="bold"
         android:textColor="#000000"
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:text="Date: "
+            android:text="@string/date"
             android:textSize="20sp"
             android:textColor="@color/black"/>
 
@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="Time: "
+            android:text="@string/time"
             android:textSize="20sp"
             android:textColor="@color/black"/>
     </RelativeLayout>
@@ -58,7 +58,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Pressure"
+        android:hint="@string/pressure"
         android:textColorHint="@color/background"
         app:boxStrokeColor="@color/colorPrimary"
         app:boxStrokeErrorColor="#FF5D5D"
@@ -84,7 +84,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Temperature"
+        android:hint="@string/temperature"
         android:textColorHint="@color/background"
         app:boxStrokeColor="@color/colorPrimary"
         app:boxStrokeErrorColor="#FF5D5D"
@@ -110,7 +110,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Description"
+        android:hint="@string/description"
         android:textColorHint="@color/background"
         app:boxStrokeColor="@color/colorPrimary"
         app:boxStrokeErrorColor="#FF5D5D"
@@ -142,7 +142,7 @@
         android:layout_height="42dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="25dp"
-        android:text="ADD"
+        android:text="@string/add"
         android:textSize="18sp"
         android:textStyle="bold"
         android:background="@drawable/yobutton"/>

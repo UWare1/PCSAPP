@@ -11,48 +11,56 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".PNewPassChange"
-            android:exported="false"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PSetNewPassword"
-            android:exported="false"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".VerifyOTP"
-            android:exported="false"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PRegis3Activity"
-            android:exported="false"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PRegis2Activity"
-            android:exported="false"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Main2Activity"
+            android:configChanges="orientation"
             android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainDoctorActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainDoctorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PRegisActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".PRegisActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PFPassActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".PFPassActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
             android:configChanges="orientation"
-            android:screenOrientation="portrait">
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+            <activity
+                android:name=".LanguagePage"
+                android:configChanges="orientation"
+                android:exported="true"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
