@@ -369,19 +369,7 @@ public class UserFragment extends Fragment {
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) { }
                 });*/
-                MusicButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Main2Activity main2Activity = new Main2Activity();
-                        if (PLAY == false){
-                            main2Activity.onPause();
-                            PLAY = true;
-                        } else {
-                            main2Activity.onResume();
-                            PLAY = false;
-                        }
-                    }
-                });
+
 
                 exit.bringToFront();
                 exit.setOnClickListener(new View.OnClickListener() {

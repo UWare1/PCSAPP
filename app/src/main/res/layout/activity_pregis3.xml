@@ -111,7 +111,7 @@
             android:layout_marginTop="26dp"
             android:background="@drawable/yobutton"
             android:onClick="CallVerifyOTPScreen"
-            android:text="Next"
+            android:text="@string/next"
             app:backgroundTint="@null"
             android:textColor="#fff"
             android:textSize="16dp"
@@ -133,7 +133,7 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@drawable/buttondorp"
-            android:text="Patient"
+            android:text="@string/patient"
             android:textColor="#000000"
             android:transitionName="transition_patient_btn"
             app:backgroundTint="#FFFFFF">
@@ -146,7 +146,7 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@drawable/buttonpord"
-            android:text="Doctor"
+            android:text="@string/doctor"
             android:textColor="#000"
             android:transitionName="transition_doctor_btn"
             app:backgroundTint="@null">

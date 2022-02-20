@@ -15,7 +15,7 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/yobutton"
         android:gravity="center"
-        android:text="History"
+        android:text="@string/history"
         android:textSize="14sp"
         android:textStyle="bold" />
 
@@ -52,7 +52,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/jostvariablefontwght"
                         android:gravity="center"
-                        android:text="Date"
+                        android:text="@string/date"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
@@ -68,7 +68,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/jostvariablefontwght"
                         android:gravity="center"
-                        android:text="Time"
+                        android:text="@string/time"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
@@ -84,7 +84,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/jostvariablefontwght"
                         android:gravity="center"
-                        android:text="Pressure"
+                        android:text="@string/pressure"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
@@ -101,7 +101,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/jostvariablefontwght"
                         android:gravity="center"
-                        android:text="Temp."
+                        android:text="@string/temp"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
@@ -118,7 +118,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/jostvariablefontwght"
                         android:gravity="center"
-                        android:text="Description"
+                        android:text="@string/description"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
 
@@ -297,7 +297,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="50dp"
-            android:text="ADD"
+            android:text="@string/add"
             android:textStyle="bold" />
 
     </RelativeLayout>

@@ -32,7 +32,7 @@
                 android:layout_marginLeft="24.5dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="5dp"
-                android:text="Security"
+                android:text="@string/security"
                 android:textAllCaps="true"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -42,14 +42,14 @@
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
                 android:layout_marginTop="6dp"
-                android:text="Have a Login Page before using Patient Checking System Application and safe to use Firebase to store critical parts of your data" />
+                android:text="@string/have_a_login_page_before_using_patient_checking_system_application_and_safe_to_use_firebase_to_store_critical_parts_of_your_data" />
             <Button
                 android:id="@+id/MusicButton"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_margin="40dp"
                 android:background="@drawable/yobutton"
-                android:text="Understand"
+                android:text="@string/understand"
                 android:textSize="18sp"/>
 
         </LinearLayout>

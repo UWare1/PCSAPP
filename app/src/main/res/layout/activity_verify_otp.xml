@@ -48,7 +48,7 @@
             android:id="@+id/otpDescriptionText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter One Time Password\nSent On\n +66809703295"
+            android:text="@string/enter_one_time_password_nsent_on_n_66809703295"
             android:textSize="16sp"
             android:layout_marginTop="50dp"
             android:textColor="#000"

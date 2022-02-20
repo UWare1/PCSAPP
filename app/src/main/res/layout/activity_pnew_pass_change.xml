@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/ubuntubold"
             android:gravity="center"
-            android:text="Password Updated !"
+            android:text="@string/password_updated"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@color/black"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/ubuntulight"
             android:gravity="center"
-            android:text="your password has been changed"
+            android:text="@string/your_password_has_been_changed"
             android:textAlignment="center"
             android:textColor="#787878"
             android:textSize="16sp" />
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:background="@drawable/yobutton"
-            android:text="Login"
+            android:text="@string/login"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />

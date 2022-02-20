@@ -111,9 +111,9 @@ public class HistoryFragment extends Fragment {
         currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
 
-        SessionManager sessionManager = new SessionManager(getActivity());
+        /*SessionManager sessionManager = new SessionManager(getActivity());
         HashMap<String, String> UserDetails = sessionManager.getUserDatailFromSession();
-        String UserID = UserDetails.get(SessionManager.KEY_USERID);
+        String UserID = UserDetails.get(SessionManager.KEY_USERID);*/
 
 
         ADDHistory.setOnClickListener(new View.OnClickListener() {
@@ -149,8 +149,8 @@ public class HistoryFragment extends Fragment {
                         Desc = Description.getEditText().getText().toString().trim();
 
                         SessionManager sessionManager = new SessionManager(getActivity());
-                        HashMap<String, String> userDetails = sessionManager.getUserDatailFromSession();
-                        String UserID = userDetails.get(SessionManager.KEY_USERID);
+                        HashMap<String, String> UserDetails = sessionManager.getUserDatailFromSession();
+                        String UserID = UserDetails.get(SessionManager.KEY_USERID);
 
                         FirebaseDatabase rootNode = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/");
                         DatabaseReference reference = rootNode.getReference("Teacher");
