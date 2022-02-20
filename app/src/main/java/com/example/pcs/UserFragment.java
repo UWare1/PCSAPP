@@ -39,6 +39,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.sql.Struct;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -64,7 +65,7 @@ public class UserFragment extends Fragment {
     ImageView ProfileImage;
     Button EditProfile, SettingProfile, Logout;
     Dialog dialog;
-    boolean IFCHOOSE = false;
+    boolean IFCHOOSE = false, PLAY = false;
     int Brightness;
     String ProfileID = "iconprofile1", UserID, Fullname, Email, ProfileIDImage;
 
@@ -337,6 +338,7 @@ public class UserFragment extends Fragment {
                 dialog.setContentView(R.layout.setting_layout_dialog);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
+                Button MusicButton = dialog.findViewById(R.id.MusicButton);
                 Button exit       = dialog.findViewById(R.id.exit);
                 SeekBar LightBar  = dialog.findViewById(R.id.Lightbar);
                 final ContentResolver contentResolver = getActivity().getContentResolver();
@@ -367,6 +369,19 @@ public class UserFragment extends Fragment {
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) { }
                 });*/
+                MusicButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Main2Activity main2Activity = new Main2Activity();
+                        if (PLAY == false){
+                            main2Activity.onPause();
+                            PLAY = true;
+                        } else {
+                            main2Activity.onResume();
+                            PLAY = false;
+                        }
+                    }
+                });
 
                 exit.bringToFront();
                 exit.setOnClickListener(new View.OnClickListener() {

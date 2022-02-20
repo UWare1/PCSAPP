@@ -130,13 +130,13 @@ public class Main2Activity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         mediaPlayer.start();
     }
 
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
         mediaPlayer.pause();
     }
