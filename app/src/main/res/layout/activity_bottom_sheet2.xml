@@ -147,13 +147,13 @@
     <Button
         android:id="@+id/SAVE"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
+        android:layout_height="48dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/yobutton"
         android:fontFamily="@font/promptbold"
-        android:text="@string/save"
+        android:text="@string/understand"
         android:textSize="18sp"
         android:textStyle="bold" />
     <View
