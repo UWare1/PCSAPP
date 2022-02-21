@@ -74,6 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="text"
+                android:fontFamily="@font/promptlight"
                 android:textColor="@color/background"
                 android:textCursorDrawable="@null" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -117,6 +118,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="phone"
+                android:fontFamily="@font/promptlight"
                 android:textColor="@color/background"
                 android:textCursorDrawable="@null" />
 
@@ -132,6 +134,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/yobutton"
             android:text="@string/next"
+            android:fontFamily="@font/promptbold"
             android:onClick="VerifyPhoneNumber"
             android:textColor="#fff"
             android:textSize="16sp"
@@ -153,6 +156,7 @@
             android:layout_weight="1"
             android:background="@drawable/buttondorp"
             android:text="@string/patient"
+            android:fontFamily="@font/promptbold"
             android:textColor="#000"
             android:transitionName="transition_patient_btn"
             app:backgroundTint="@null">
@@ -166,6 +170,7 @@
             android:layout_weight="1"
             android:background="@drawable/buttonpord"
             android:text="@string/doctor"
+            android:fontFamily="@font/promptbold"
             android:textColor="#000"
             android:transitionName="transition_doctor_btn"
             app:backgroundTint="@null">

@@ -33,6 +33,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="5dp"
                 android:text="@string/language"
+                android:fontFamily="@font/promptbold"
                 android:textAllCaps="true"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -43,7 +44,8 @@
                 android:layout_margin="40dp"
                 android:background="@drawable/yobutton"
                 android:text="@string/understand"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:fontFamily="@font/promptbold"/>
 
         </LinearLayout>
 

@@ -82,6 +82,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/recents"
+                    android:fontFamily="@font/promptlight"
                     android:textColor="#fff"
                     android:textSize="16sp"></TextView>
 
@@ -91,6 +92,7 @@
                     android:paddingStart="10dp"
                     android:paddingTop="16dp"
                     android:text="@string/history"
+                    android:fontFamily="@font/promptbold"
                     android:textStyle="bold"
                     android:textColor="#fff"
                     android:textSize="26sp"></TextView>
@@ -134,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/function"
                 android:textStyle="bold"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="@font/promptbold"
                 android:textColor="#fff"
                 android:textSize="30sp"
                 android:layout_marginEnd="30dp">

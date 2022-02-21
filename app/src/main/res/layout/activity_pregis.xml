@@ -85,6 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="text"
+                    android:fontFamily="@font/promptlight"
                     android:textColor="@color/background"
                     android:textCursorDrawable="@null" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -113,6 +114,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textPassword"
+                    android:fontFamily="@font/promptlight"
                     android:textColor="@color/background"
                     android:textCursorDrawable="@null" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -140,6 +142,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textPassword"
+                    android:fontFamily="@font/promptlight"
                     android:textColor="@color/background"
                     android:textCursorDrawable="@null" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -167,6 +170,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textEmailAddress"
+                    android:fontFamily="@font/promptlight"
                     android:textColor="@color/background"
                     android:textCursorDrawable="@null" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -194,6 +198,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="numberDecimal"
+                    android:fontFamily="@font/promptlight"
                     android:textColor="@color/background"
                     android:textCursorDrawable="@null" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -209,6 +214,7 @@
             android:onClick="CallNextRegister"
             android:text="@string/next"
             android:textColor="#fff"
+            android:fontFamily="@font/promptbold"
             android:textSize="16dp"
             android:textStyle="bold"
             app:backgroundTint="@null"
@@ -230,6 +236,7 @@
             android:layout_weight="1"
             android:background="@drawable/buttondorp"
             android:text="@string/patient"
+            android:fontFamily="@font/promptbold"
             android:textColor="#000"
             android:transitionName="transition_patient_btn"
             app:backgroundTint="@null">
@@ -243,6 +250,7 @@
             android:layout_weight="1"
             android:background="@drawable/buttonpord"
             android:text="@string/doctor"
+            android:fontFamily="@font/promptbold"
             android:textColor="#000"
             android:transitionName="transition_doctor_btn"
             app:backgroundTint="@null">

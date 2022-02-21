@@ -54,7 +54,7 @@
             android:textColor="#000"
             android:textAlignment="center"
             android:includeFontPadding="false"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/promptlight"
             android:layout_gravity="center" />
 
         <com.chaos.view.PinView
@@ -79,8 +79,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
-            android:text="Verify Code"
+            android:text="@string/verify_code"
             android:layout_marginTop="30dp"
+            android:fontFamily="@font/promptbold"
             android:onClick="callNextScreenFromOTP"
             android:textColor="#000"
             android:transitionName="transition_OTP_screen"/>

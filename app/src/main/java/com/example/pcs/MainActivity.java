@@ -3,22 +3,27 @@ package com.example.pcs;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.app.AlertDialog;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     TextInputLayout UserID, Password;
     TextView FPassword, Register;
     View Facebook, Google, Twitter, Line;
+    ImageView TitleText;
     Button Login, Patient, Doctor;
     Animation FadeInUp;
     View decorView;
@@ -46,21 +52,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        UserID    = findViewById(R.id.UserID);
-        Password  = findViewById(R.id.Password);
+        TitleText = findViewById(R.id.titletext);
+        UserID = findViewById(R.id.UserID);
+        Password = findViewById(R.id.Password);
         FPassword = findViewById(R.id.FPassword);
-        Register  = findViewById(R.id.Register);
-        Login     = findViewById(R.id.Login);
-        Patient   = findViewById(R.id.Patient);
-        Doctor    = findViewById(R.id.Doctor);
-        Facebook  = findViewById(R.id.Facebook);
-        Google    = findViewById(R.id.Google);
-        Twitter   = findViewById(R.id.Twitter);
-        Line      = findViewById(R.id.Line);
-        Lay       = findViewById(R.id.lay1);
-        Lay2      = findViewById(R.id.lay2);
-        Lay3      = findViewById(R.id.lay3);
-        Lay4      = findViewById(R.id.lay4);
+        Register = findViewById(R.id.Register);
+        Login = findViewById(R.id.Login);
+        Patient = findViewById(R.id.Patient);
+        Doctor = findViewById(R.id.Doctor);
+        Facebook = findViewById(R.id.Facebook);
+        Google = findViewById(R.id.Google);
+        Twitter = findViewById(R.id.Twitter);
+        Line = findViewById(R.id.Line);
+        Lay = findViewById(R.id.lay1);
+        Lay2 = findViewById(R.id.lay2);
+        Lay3 = findViewById(R.id.lay3);
+        Lay4 = findViewById(R.id.lay4);
         decorView = getWindow().getDecorView();
 
         FadeInUp = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadeinup);
@@ -98,7 +105,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(Doct);
                 finish();
             }
-        });Doctor.setOnClickListener(new View.OnClickListener() {
+        });
+        Doctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent Doct = new Intent(getApplicationContext(), MainDoctorActivity.class);
@@ -109,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void RestartActivity(){
+    private void RestartActivity() {
         Intent intent = getIntent();
         overridePendingTransition(0, 0);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
@@ -120,11 +128,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void letTheUserLoggedIn(View view) {
 
-        if (!isConnected(this)){
+        if (!isConnected(this)) {
             showCustomDialog();
         }
 
-        if (!validateFields()){
+        if (!validateFields()) {
             return;
         }
 
@@ -135,11 +143,11 @@ public class MainActivity extends AppCompatActivity {
         checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
+                if (dataSnapshot.exists()) {
                     UserID.setError(null);
                     UserID.setErrorEnabled(false);
                     String SystemPassword = dataSnapshot.child(User).child("password").getValue(String.class);
-                    if (SystemPassword.equals(Pass)){
+                    if (SystemPassword.equals(Pass)) {
                         Password.setError(null);
                         Password.setErrorEnabled(false);
 
@@ -156,17 +164,16 @@ public class MainActivity extends AppCompatActivity {
                         String _gender = dataSnapshot.child(User).child("gender").getValue(String.class);
                         String ProfileID = dataSnapshot.child(User).child("profileID").getValue(String.class);
 
-                        SessionManager sessionManager = new  SessionManager(MainActivity.this);
-                        sessionManager.createLoginSession(Fullname1,_userID,Email1,_phoneNo,_password,_dateOfBirth,_gender, ProfileID);
+                        SessionManager sessionManager = new SessionManager(MainActivity.this);
+                        sessionManager.createLoginSession(Fullname1, _userID, Email1, _phoneNo, _password, _dateOfBirth, _gender, ProfileID);
 
                         Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
                         startActivity(intent);
                         finish();
-                    }else {
+                    } else {
                         Toast.makeText(MainActivity.this, "Password does not match!", Toast.LENGTH_SHORT).show();
                     }
-                }
-                else {
+                } else {
                     Toast.makeText(MainActivity.this, "No such user exist!", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -185,12 +192,29 @@ public class MainActivity extends AppCompatActivity {
         NetworkInfo wifiConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo mobileConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-        if ((wifiConn != null && wifiConn.isConnected() || (mobileConn != null && mobileConn.isConnected()))){
+        if ((wifiConn != null && wifiConn.isConnected() || (mobileConn != null && mobileConn.isConnected()))) {
             return true;
         } else {
             return false;
         }
     }
+
+    public void CallBack(View view) {
+
+        Intent call = new Intent(getApplicationContext(), LanguagePage.class);
+
+        Pair[] pairs = new Pair[1];
+
+        pairs[0] = new Pair<View, String>(TitleText, "transition_title");
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
+            startActivity(call, options.toBundle());
+        } else {
+            startActivity(call);
+        }
+    }
+
     private void showCustomDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setMessage("Please connect to the internet to proceed further")
@@ -213,17 +237,17 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    private boolean validateFields(){
+    private boolean validateFields() {
 
         String user = UserID.getEditText().getText().toString().trim();
         String pass = Password.getEditText().getText().toString().trim();
 
-        if (user.isEmpty()){
+        if (user.isEmpty()) {
             UserID.setError(getString(R.string.user_empty));
             UserID.requestFocus();
             return false;
-        }  else if (pass.isEmpty()){
-            Password.setError("Password can not be Empty");
+        } else if (pass.isEmpty()) {
+            Password.setError(getString(R.string.password_empty));
             Password.requestFocus();
             return false;
         } else {
@@ -234,14 +258,16 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
+
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        if (hasFocus){
+        if (hasFocus) {
             decorView.setSystemUiVisibility(hideSystemBars());
         }
     }
-    private int hideSystemBars(){
+
+    private int hideSystemBars() {
         return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN

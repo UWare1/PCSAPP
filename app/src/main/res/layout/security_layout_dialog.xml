@@ -33,6 +33,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="5dp"
                 android:text="@string/security"
+                android:fontFamily="@font/promptbold"
                 android:textAllCaps="true"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -42,7 +43,8 @@
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
                 android:layout_marginTop="6dp"
-                android:text="@string/have_a_login_page_before_using_patient_checking_system_application_and_safe_to_use_firebase_to_store_critical_parts_of_your_data" />
+                android:text="@string/have_a_login_page_before_using_patient_checking_system_application_and_safe_to_use_firebase_to_store_critical_parts_of_your_data"
+                android:fontFamily="@font/promptlight"/>
             <Button
                 android:id="@+id/MusicButton"
                 android:layout_width="match_parent"
@@ -50,7 +52,8 @@
                 android:layout_margin="40dp"
                 android:background="@drawable/yobutton"
                 android:text="@string/understand"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:fontFamily="@font/promptbold"/>
 
         </LinearLayout>
 

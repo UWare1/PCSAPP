@@ -53,4 +53,7 @@
     <string name="male">ผู้ชาย</string>
     <string name="select_language">เลือกภาษา</string>
     <string name="user_empty">ชื่อผู้ใช้ไม่สามารถเว้นว่างได้</string>
+    <string name="password_empty">รหัสผ่านไม่สามารถเว้นว่างได้</string>
+    <string name="verify_code">ตรวจสอบรหัส</string>
+    <string name="about">เกี่ยวกับ</string>
 </resources>

@@ -94,6 +94,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="phone"
+                    android:fontFamily="@font/promptlight"
                     android:textColor="@color/background"
                     android:textCursorDrawable="@null" />
 
@@ -116,6 +117,7 @@
             android:textColor="#fff"
             android:textSize="16dp"
             android:textStyle="bold"
+            android:fontFamily="@font/promptbold"
             android:transitionName="transition_nextbtn">
 
         </Button>
@@ -135,6 +137,7 @@
             android:background="@drawable/buttondorp"
             android:text="@string/patient"
             android:textColor="#000000"
+            android:fontFamily="@font/promptbold"
             android:transitionName="transition_patient_btn"
             app:backgroundTint="#FFFFFF">
 
@@ -147,6 +150,7 @@
             android:layout_weight="1"
             android:background="@drawable/buttonpord"
             android:text="@string/doctor"
+            android:fontFamily="@font/promptbold"
             android:textColor="#000"
             android:transitionName="transition_doctor_btn"
             app:backgroundTint="@null">

@@ -87,6 +87,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="text"
+                        android:fontFamily="@font/promptlight"
                         android:textColor="@color/background"
                         android:textCursorDrawable="@null" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -115,6 +116,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="text"
+                        android:fontFamily="@font/promptlight"
                         android:textColor="@color/background"
                         android:textCursorDrawable="@null" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -123,6 +125,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/choose_gender"
+                    android:fontFamily="@font/promptlight"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -140,7 +143,8 @@
                         android:id="@+id/male"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/male" />
+                        android:text="@string/male"
+                        android:fontFamily="@font/promptlight"/>
 
 
                     <RadioButton
@@ -148,7 +152,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="@string/female" />
+                        android:text="@string/female"
+                        android:fontFamily="@font/promptlight"/>
 
 
                     <RadioButton
@@ -156,7 +161,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="@string/other" />
+                        android:text="@string/other"
+                        android:fontFamily="@font/promptlight"/>
                 </RadioGroup>
 
 
@@ -172,6 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/select_your_age"
+                    android:fontFamily="@font/promptlight"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -209,6 +216,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="text"
+                        android:fontFamily="@font/promptlight"
                         android:textColor="@color/background"
                         android:textCursorDrawable="@null" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -237,6 +245,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="text"
+                        android:fontFamily="@font/promptlight"
                         android:textColor="@color/background"
                         android:textCursorDrawable="@null" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -252,6 +261,7 @@
             android:background="@drawable/yobutton"
             android:onClick="CallNextRegister"
             android:text="@string/next"
+            android:fontFamily="@font/promptbold"
             android:textColor="#fff"
             android:textSize="16dp"
             android:textStyle="bold"
@@ -274,6 +284,7 @@
             android:layout_weight="1"
             android:background="@drawable/buttondorp"
             android:text="@string/patient"
+            android:fontFamily="@font/promptbold"
             android:textColor="#000"
             android:transitionName="transition_patient_btn"
             app:backgroundTint="@null">
@@ -287,6 +298,7 @@
             android:layout_weight="1"
             android:background="@drawable/buttonpord"
             android:text="@string/doctor"
+            android:fontFamily="@font/promptbold"
             android:textColor="#000"
             android:transitionName="transition_doctor_btn"
             app:backgroundTint="@null">
