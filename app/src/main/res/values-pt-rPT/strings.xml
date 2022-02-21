@@ -9,7 +9,6 @@
     <string name="national_id_card">carteira de identidade nacional</string>
     <string name="email">o email</string>
     <string name="full_name">nome completo</string>
-    <string name="full_name">nome completo</string>
     <string name="address">Morada</string>
     <string name="choose_gender">escolha o sexo</string>
     <string name="male">macho</string>
@@ -36,7 +35,6 @@
     <string name="confirm_new_password">confirme a nova senha</string>
     <string name="new_password">Nova Senha</string>
     <string name="enter_one_time_password_nsent_on_n_66809703295">Digite uma senha de uso único enviada em</string>
-    <string name="enter_one_time_password_nsent_on_n_66809703295">Digite uma senha de uso único enviada em</string>
     <string name="avatar">avatar</string>
     <string name="history">história</string>
     <string name="temp">temperatura</string>
@@ -56,9 +54,6 @@
     <string name="select_language">selecione o idioma</string>
     <string name="user_empty">O ID do usuário não pode estar vazio</string>
     <string name="password_empty">A senha não pode estar vazia</string>
-    <string name="password_empty">A senha não pode estar vazia</string>
     <string name="verify_code">Código de verificação</string>
-    <string name="verify_code">Código de verificação</string>
-    <string name="this_application">Este aplicativo foi criado a partir do brainstorming de estudantes de Engenharia da Computação Kasetsart University Kamphaeng Saen Campus previu que Atualmente, não há pessoal médico suficiente para cuidar de pacientes com COVID. resultando em cuidados inadequados e trabalho duro, este aplicativo foi projetado para responder a esses problemas e aumentar a eficiência dos profissionais de saúde. agilize o tempo acessível a todos os pacientes E o próprio paciente pode preencher as informações e enviá-las ao médico. confortavelmente Fácil de usar também.</string>
     <string name="this_application">Este aplicativo foi criado a partir do brainstorming de estudantes de Engenharia da Computação Kasetsart University Kamphaeng Saen Campus previu que Atualmente, não há pessoal médico suficiente para cuidar de pacientes com COVID. resultando em cuidados inadequados e trabalho duro, este aplicativo foi projetado para responder a esses problemas e aumentar a eficiência dos profissionais de saúde. agilize o tempo acessível a todos os pacientes E o próprio paciente pode preencher as informações e enviá-las ao médico. confortavelmente Fácil de usar também.</string>
 </resources>

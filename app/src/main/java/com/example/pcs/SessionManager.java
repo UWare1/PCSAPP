@@ -19,6 +19,10 @@ public class SessionManager {
     public static final String KEY_DATE = "age";
     public static final String KEY_GENDER = "gender";
     public static final String KEY_PROFILEID = "profileid";
+    public static final String KEY_NATIONALIDCARD = "nationalidcard";
+    public static final String KEY_ADDRESS = "address";
+    public static final String KEY_ALLERGY = "allergy";
+    public static final String KEY_MEDICAL = "medical";
 
     public SessionManager(Context _context) {
         context = _context;
@@ -26,7 +30,7 @@ public class SessionManager {
         editor = userSession.edit();
     }
 
-    public void createLoginSession(String fullname, String userid, String email, String phoneNo, String password, String age, String gender, String profileid){
+    public void createLoginSession(String fullname, String userid, String email, String phoneNo, String password, String age, String gender, String profileid, String nationalidcard, String address, String allergy, String medical){
         editor.putBoolean(IS_LOGIN,true);
 
         editor.putString(KEY_FULLNAME,fullname);
@@ -37,6 +41,10 @@ public class SessionManager {
         editor.putString(KEY_DATE,age);
         editor.putString(KEY_GENDER,gender);
         editor.putString(KEY_PROFILEID,profileid);
+        editor.putString(KEY_NATIONALIDCARD,nationalidcard);
+        editor.putString(KEY_ADDRESS,address);
+        editor.putString(KEY_ALLERGY,allergy);
+        editor.putString(KEY_MEDICAL,medical);
 
         editor.commit();
     }
@@ -52,6 +60,10 @@ public class SessionManager {
         userData.put(KEY_DATE, userSession.getString(KEY_DATE,null));
         userData.put(KEY_GENDER, userSession.getString(KEY_GENDER,null));
         userData.put(KEY_PROFILEID, userSession.getString(KEY_PROFILEID,null));
+        userData.put(KEY_NATIONALIDCARD, userSession.getString(KEY_NATIONALIDCARD,null));
+        userData.put(KEY_ADDRESS, userSession.getString(KEY_ADDRESS,null));
+        userData.put(KEY_ALLERGY, userSession.getString(KEY_ALLERGY,null));
+        userData.put(KEY_MEDICAL, userSession.getString(KEY_MEDICAL,null));
 
         return  userData;
     }

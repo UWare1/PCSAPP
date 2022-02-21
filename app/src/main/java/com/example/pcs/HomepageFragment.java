@@ -1,16 +1,24 @@
 package com.example.pcs;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
@@ -33,11 +41,17 @@ public class HomepageFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Context mContext;
     View view;
-    Button ToRecentsHistory;
+    //Button ToRecentsHistory;
 
     public HomepageFragment() {
         // Required empty public constructor
+    }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext = context;
     }
 
     /**
@@ -72,7 +86,7 @@ public class HomepageFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_homepage, container, false);
-        ToRecentsHistory = view.findViewById(R.id.ToRecentsHistory);
+        //ToRecentsHistory = view.findViewById(R.id.ToRecentsHistory);
 
         ImageSlider imageSlider = view.findViewById(R.id.slider);
 
@@ -83,14 +97,14 @@ public class HomepageFragment extends Fragment {
         slideModels.add(new SlideModel(R.drawable.show2));
         slideModels.add(new SlideModel(R.drawable.show3));
 
-        imageSlider.setImageList(slideModels,true);
+        imageSlider.setImageList(slideModels,false);
 
-        ToRecentsHistory.setOnClickListener(new View.OnClickListener() {
+        /*ToRecentsHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent intent = new Intent(getActivity(), MainActivity.class);
-                startActivity(intent);*/
-                /*// Create new fragment and transaction
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+                // Create new fragment and transaction
                 Fragment newFragment = new HistoryFragment();
                 // consider using Java coding conventions (upper first char class names!!!)
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -101,9 +115,9 @@ public class HomepageFragment extends Fragment {
                 transaction.addToBackStack(null);
 
                 // Commit the transaction
-                transaction.commit();*/
+                transaction.commit();
             }
-        });
+        });*/
         return view;
     }
 }

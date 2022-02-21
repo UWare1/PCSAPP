@@ -155,9 +155,9 @@ public class MainActivity extends AppCompatActivity {
                         String Email1 = dataSnapshot.child(User).child("email").getValue(String.class);
                         String _phoneNo = dataSnapshot.child(User).child("_phoneNo").getValue(String.class);
                         String _address = dataSnapshot.child(User).child("address").getValue(String.class);
-                        String _alleryg = dataSnapshot.child(User).child("allergy").getValue(String.class);
+                        String _allergy = dataSnapshot.child(User).child("allergy").getValue(String.class);
                         String _medical = dataSnapshot.child(User).child("medical").getValue(String.class);
-                        String _nationallCard = dataSnapshot.child(User).child("nationallCard").getValue(String.class);
+                        String _nationalIDCard = dataSnapshot.child(User).child("nationalIDCard").getValue(String.class);
                         String _password = dataSnapshot.child(User).child("password").getValue(String.class);
                         String _userID = dataSnapshot.child(User).child("userID").getValue(String.class);
                         String _dateOfBirth = dataSnapshot.child(User).child("date").getValue(String.class);
@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                         String ProfileID = dataSnapshot.child(User).child("profileID").getValue(String.class);
 
                         SessionManager sessionManager = new SessionManager(MainActivity.this);
-                        sessionManager.createLoginSession(Fullname1, _userID, Email1, _phoneNo, _password, _dateOfBirth, _gender, ProfileID);
+                        sessionManager.createLoginSession(Fullname1, _userID, Email1, _phoneNo, _password, _dateOfBirth, _gender, ProfileID, _nationalIDCard, _address, _allergy, _medical);
 
                         Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
                         startActivity(intent);
@@ -271,9 +271,7 @@ public class MainActivity extends AppCompatActivity {
         return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
     }
 
 }

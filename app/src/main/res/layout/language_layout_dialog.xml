@@ -42,7 +42,7 @@
                 android:id="@+id/spinner"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="@drawable/yobutton"
+                android:background="@color/pbutton"
                 android:gravity="center"
                 android:layout_gravity="center_horizontal"
                 android:textAlignment="center"

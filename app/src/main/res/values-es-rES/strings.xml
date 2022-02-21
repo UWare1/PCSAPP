@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">PCS</string>
     <string name="user_id">identificación de usuario</string>
-    <string name="user_id">identificación de usuario</string>
     <string name="password">clave</string>
     <string name="forgot_password">Has olvidado tu contraseña</string>
     <string name="register">Registrarse</string>
@@ -49,16 +48,12 @@
     <string name="logout">cerrar sesión</string>
     <string name="understand">comprender</string>
     <string name="have_a_login_page_before_using_patient_checking_system_application_and_safe_to_use_firebase_to_store_critical_parts_of_your_data">Tenga una página de inicio de sesión antes de usar la aplicación del sistema de verificación de pacientes y sea seguro usar Firebase para almacenar partes críticas de sus datos</string>
-    <string name="have_a_login_page_before_using_patient_checking_system_application_and_safe_to_use_firebase_to_store_critical_parts_of_your_data">Tenga una página de inicio de sesión antes de usar la aplicación del sistema de verificación de pacientes y sea seguro usar Firebase para almacenar partes críticas de sus datos</string>
     <string name="bright">brillante</string>
     <string name="music">música</string>
     <string name="on">en</string>
     <string name="select_language">seleccione el idioma</string>
     <string name="user_empty">El ID de usuario no puede estar vacío</string>
-    <string name="user_empty">El ID de usuario no puede estar vacío</string>
     <string name="password_empty">La contraseña no puede estar vacía</string>
     <string name="verify_code">código de verificación</string>
-    <string name="verify_code">código de verificación</string>
-    <string name="this_application">Esta aplicación se creó a partir de la lluvia de ideas de los estudiantes de Ingeniería Informática del campus de Kamphaeng Saen de la Universidad de Kasetsart y previó que actualmente no hay suficiente personal médico para atender a los pacientes con COVID. lo que resulta en una atención inadecuada y trabajo duro, esta aplicación está diseñada para responder a estos problemas y aumentar la eficiencia de los trabajadores de la salud. acelerar el tiempo accesible para todos los pacientes Y el propio paciente puede completar la información y enviarla al médico. cómodamente Fácil de usar también.</string>
     <string name="this_application">Esta aplicación se creó a partir de la lluvia de ideas de los estudiantes de Ingeniería Informática del campus de Kamphaeng Saen de la Universidad de Kasetsart y previó que actualmente no hay suficiente personal médico para atender a los pacientes con COVID. lo que resulta en una atención inadecuada y trabajo duro, esta aplicación está diseñada para responder a estos problemas y aumentar la eficiencia de los trabajadores de la salud. acelerar el tiempo accesible para todos los pacientes Y el propio paciente puede completar la información y enviarla al médico. cómodamente Fácil de usar también.</string>
 </resources>

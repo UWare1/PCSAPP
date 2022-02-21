@@ -27,16 +27,13 @@
     <string name="doctor">의사</string>
     <string name="phone_number">전화 번호</string>
     <string name="next">다음</string>
-    <string name="password_updated">비밀번호가 업데이트되었습니다!</string>
     <string name="password_updated">비밀번호 업데이트됨</string>
     <string name="your_password_has_been_changed">당신의 비밀번호가 변경되었습니다</string>
-    <string name="medical_condition">건강 상태</string>
     <string name="medical_condition">건강 상태</string>
     <string name="allergy">알레르기</string>
     <string name="update">업데이트</string>
     <string name="confirm_new_password">새 암호를 확인합니다</string>
     <string name="new_password">새 비밀번호</string>
-    <string name="enter_one_time_password_nsent_on_n_66809703295">1회용 비밀번호를 입력하세요.</string>
     <string name="enter_one_time_password_nsent_on_n_66809703295">1회용 비밀번호를 입력하세요.</string>
     <string name="avatar">화신</string>
     <string name="history">역사</string>
@@ -50,18 +47,13 @@
     <string name="about">~에 대한</string>
     <string name="logout">로그 아웃</string>
     <string name="understand">이해하다</string>
-    <string name="understand">이해하다</string>
     <string name="have_a_login_page_before_using_patient_checking_system_application_and_safe_to_use_firebase_to_store_critical_parts_of_your_data">환자 확인 시스템 애플리케이션을 사용하기 전에 로그인 페이지가 있어야 하며 Firebase를 사용하여 데이터의 중요한 부분을 안전하게 저장하십시오.</string>
     <string name="bright">밝은</string>
     <string name="music">음악</string>
     <string name="on">켜짐</string>
     <string name="select_language">언어 선택</string>
     <string name="user_empty">사용자 ID는 비워둘 수 없습니다.</string>
-    <string name="user_empty">사용자 ID는 비워둘 수 없습니다.</string>
-    <string name="password_empty">비밀번호는 비워둘 수 없습니다.</string>
     <string name="password_empty">비밀번호는 비워둘 수 없습니다.</string>
     <string name="verify_code">코드 확인</string>
-    <string name="verify_code">코드 확인</string>
-    <string name="this_application">이 응용 프로그램은 현재 COVID 환자를 돌볼 의료 인력이 충분하지 않다고 예측한 컴퓨터 공학과 Kasetsart University Kamphaeng Saen 캠퍼스 학생들의 브레인 스토밍에서 만들었습니다. 부적합한 치료와 노력으로 인해이 앱은 이러한 문제에 대응하고 의료 종사자의 효율성을 높이기 위해 설계되었습니다. 모든 환자가 접근할 수 있는 시간을 단축하고 환자가 직접 정보를 작성하여 의사에게 보낼 수 있습니다. 편안하게 사용하기도 간편합니다.</string>
     <string name="this_application">이 응용 프로그램은 현재 COVID 환자를 돌볼 의료 인력이 충분하지 않다고 예측한 컴퓨터 공학과 Kasetsart University Kamphaeng Saen 캠퍼스 학생들의 브레인 스토밍에서 만들었습니다. 부적합한 치료와 노력으로 인해이 앱은 이러한 문제에 대응하고 의료 종사자의 효율성을 높이기 위해 설계되었습니다. 모든 환자가 접근할 수 있는 시간을 단축하고 환자가 직접 정보를 작성하여 의사에게 보낼 수 있습니다. 편안하게 사용하기도 간편합니다.</string>
 </resources>

@@ -18,7 +18,8 @@ import java.util.Locale;
 public class LanguagePage extends AppCompatActivity {
 
     Spinner spinner;
-    public static final String[] languages ={"Language", "English", "Thai", "Chinese", "Japanese", "Korean"};
+    View decorView;
+    public static final String[] languages ={"Language", "English", "Thai", "Chinese", "Japanese", "Korean", "Arabic", "French", "German", "Portuguese", "Spanish"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class LanguagePage extends AppCompatActivity {
         setContentView(R.layout.activity_language_page);
 
         spinner = findViewById(R.id.spinner);
+        decorView = getWindow().getDecorView();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,languages);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -60,6 +62,31 @@ public class LanguagePage extends AppCompatActivity {
                     Intent intent = new Intent(LanguagePage.this, MainActivity.class);
                     startActivity(intent);
                 }
+                else if(selectedLang.equals("Arabic")){
+                    setLocal(LanguagePage.this,"ar");
+                    Intent intent = new Intent(LanguagePage.this, MainActivity.class);
+                    startActivity(intent);
+                }
+                else if(selectedLang.equals("French")){
+                    setLocal(LanguagePage.this,"fr");
+                    Intent intent = new Intent(LanguagePage.this, MainActivity.class);
+                    startActivity(intent);
+                }
+                else if(selectedLang.equals("German")){
+                    setLocal(LanguagePage.this,"de");
+                    Intent intent = new Intent(LanguagePage.this, MainActivity.class);
+                    startActivity(intent);
+                }
+                else if(selectedLang.equals("Portuguese")){
+                    setLocal(LanguagePage.this,"pt");
+                    Intent intent = new Intent(LanguagePage.this, MainActivity.class);
+                    startActivity(intent);
+                }
+                else if(selectedLang.equals("Spanish")){
+                    setLocal(LanguagePage.this,"es");
+                    Intent intent = new Intent(LanguagePage.this, MainActivity.class);
+                    startActivity(intent);
+                }
                 else {
                     Toast.makeText(LanguagePage.this, "Please select a Language", Toast.LENGTH_SHORT).show();
 
@@ -82,5 +109,21 @@ public class LanguagePage extends AppCompatActivity {
         Configuration config = resources.getConfiguration();
         config.setLocale(locale);
         resources.updateConfiguration(config,resources.getDisplayMetrics());
+    }
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            decorView.setSystemUiVisibility(hideSystemBars());
+        }
+    }
+
+    private int hideSystemBars() {
+        return View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
 }

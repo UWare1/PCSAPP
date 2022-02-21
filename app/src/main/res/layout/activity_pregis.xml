@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PRegisActivity"
-    android:background="#C8F4EB">
+    android:background="@drawable/appbg2">
 
     <ImageView
         android:id="@+id/Back"

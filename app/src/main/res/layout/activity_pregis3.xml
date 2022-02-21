@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PRegis3Activity"
-    android:background="@drawable/backgradient"
+    android:background="@drawable/appbg2"
     android:transitionName="transition_OTP_screen"
     android:id="@+id/S3SSV">
 

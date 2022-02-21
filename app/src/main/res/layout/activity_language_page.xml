@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/night3"
+    android:background="@drawable/appbg2"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".LanguagePage">
@@ -31,8 +31,8 @@
         android:layout_width="326dp"
         android:layout_height="2dp"
         android:layout_gravity="center"
-        android:background="#FFFFFF"
-        android:layout_marginBottom="160dp"></View>
+        android:background="@color/white"
+        android:layout_marginBottom="16dp"></View>
 
 
     <TextView
@@ -43,16 +43,16 @@
         android:text="@string/select_language"
         android:textSize="18dp"
         android:textStyle="bold"
-        android:textColor="#fff"/>
+        android:textColor="@color/pbutton"/>
 
     <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:background="@drawable/spinner_background"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:spinnerMode="dialog"
-        android:layout_marginBottom="250dp"/>
+    android:id="@+id/spinner"
+    android:layout_width="300dp"
+    android:layout_height="60dp"
+    android:background="@drawable/spinner_background"
+    android:gravity="center"
+    android:textAlignment="center"
+    android:spinnerMode="dialog"
+    android:layout_marginBottom="125dp"/>
 
 </LinearLayout>

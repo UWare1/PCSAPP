@@ -4,11 +4,14 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -25,11 +28,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +50,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.sql.Struct;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
@@ -63,19 +70,22 @@ public class UserFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private Context mContext;
+    public static final String[] languages = {"Language", "English", "Thai", "Chinese", "Japanese", "Korean", "Arabic", "French", "German", "Portuguese", "Spanish"};
+    Spinner spinner;
     View view;
     ConstraintLayout C1;
     TextView FullnameProfile, EmailProfile;
     ImageView ProfileImage;
     Button EditProfile, SecurityProfile, LanguageProfile, SettingProfile, AboutProfile, Logout;
     Dialog dialog;
-    boolean IFCHOOSE = false, PLAY = false;
+    boolean IFCHOOSE = false, PLAY = false, On = true;
     int Brightness;
-    String ProfileID = "iconprofile1", UserID, Fullname, Email, ProfileIDImage;
+    String ProfileID = "iconprofile1", UserID, Fullname, BornDB, NationalIDCard, PhoneNumber, AddressDB, Email, ProfileIDImage;
 
     public UserFragment() {
         // Required empty public constructor
     }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -124,6 +134,10 @@ public class UserFragment extends Fragment {
         HashMap<String, String> UserDetails = sessionManager.getUserDatailFromSession();
         UserID = UserDetails.get(SessionManager.KEY_USERID);
         Fullname = UserDetails.get(SessionManager.KEY_FULLNAME);
+        BornDB = UserDetails.get(SessionManager.KEY_DATE);
+        NationalIDCard = UserDetails.get(SessionManager.KEY_NATIONALIDCARD);
+        PhoneNumber = UserDetails.get(SessionManager.KEY_PHONENUMBER);
+        AddressDB = UserDetails.get(SessionManager.KEY_ADDRESS);
         Email = UserDetails.get(SessionManager.KEY_EMAIL);
         ProfileIDImage = UserDetails.get(SessionManager.KEY_PROFILEID);
         int resID = getResources().getIdentifier(ProfileIDImage, "drawable", getActivity().getPackageName());
@@ -356,8 +370,21 @@ public class UserFragment extends Fragment {
                                 R.layout.activity_bottom_sheet2,
                                 (LinearLayout) view.findViewById(R.id.BottomSheetContainer2)
                         );
-                final TextView Date = bottomSheetView.findViewById(R.id.Date);
-                final TextView Time = bottomSheetView.findViewById(R.id.Time);
+                final TextView Name = bottomSheetView.findViewById(R.id.Name);
+                final TextView Born = bottomSheetView.findViewById(R.id.Born);
+                final TextView IDCard = bottomSheetView.findViewById(R.id.IDCard);
+                final TextView Phone = bottomSheetView.findViewById(R.id.Phone);
+                final TextView EmailShow = bottomSheetView.findViewById(R.id.Email);
+                final TextView Address = bottomSheetView.findViewById(R.id.Address);
+                final ImageView ProfileImageDialog = bottomSheetView.findViewById(R.id.ProfileImageDialog);
+
+                Name.setText(Fullname);
+                Born.setText(BornDB);
+                IDCard.setText(NationalIDCard);
+                Phone.setText(PhoneNumber);
+                EmailShow.setText(Email);
+                Address.setText(AddressDB);
+                ProfileImageDialog.setImageDrawable(image);
 
                 bottomSheetView.findViewById(R.id.SAVE).setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -400,8 +427,36 @@ public class UserFragment extends Fragment {
                 dialog.setContentView(R.layout.language_layout_dialog);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
+                spinner = dialog.findViewById(R.id.spinner);
                 Button exit = dialog.findViewById(R.id.exit);
                 Button Understand = dialog.findViewById(R.id.LanguageButton);
+
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, languages);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(adapter);
+                spinner.setSelection(0);
+                spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        String selectedLang = adapterView.getItemAtPosition(i).toString();
+                        if (selectedLang.equals("Chinese")) {
+                        } else if (selectedLang.equals("Thai")) {
+                        } else if (selectedLang.equals("English")) {
+                        } else if (selectedLang.equals("Japanese")) {
+                        } else if (selectedLang.equals("Korean")) {
+                        } else if (selectedLang.equals("Arabic")) {
+                        } else if (selectedLang.equals("French")) {
+                        } else if (selectedLang.equals("German")) {
+                        } else if (selectedLang.equals("Portuguese")) {
+                        } else if (selectedLang.equals("Spanish")) {
+                        } else {
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+                    }
+                });
 
                 Understand.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -482,6 +537,19 @@ public class UserFragment extends Fragment {
                     public void onStopTrackingTouch(SeekBar seekBar) { }
                 });*/
 
+                MusicButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (On == true) {
+                            MusicButton.setText(mContext.getString(R.string.off));
+                            On = false;
+                        } else {
+                            MusicButton.setText(mContext.getString(R.string.on));
+                            On = true;
+                        }
+
+                    }
+                });
 
                 exit.bringToFront();
                 exit.setOnClickListener(new View.OnClickListener() {

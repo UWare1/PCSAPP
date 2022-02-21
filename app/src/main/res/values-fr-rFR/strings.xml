@@ -29,14 +29,11 @@
     <string name="next">suivant</string>
     <string name="password_updated">Mot de passe mis à jour</string>
     <string name="your_password_has_been_changed">votre mot de passe a été changé</string>
-    <string name="your_password_has_been_changed">votre mot de passe a été changé</string>
     <string name="medical_condition">condition médicale</string>
     <string name="allergy">allergie</string>
     <string name="update">mettre à jour</string>
     <string name="confirm_new_password">confirmer le nouveau mot de passe</string>
-    <string name="confirm_new_password">confirmer le nouveau mot de passe</string>
     <string name="new_password">nouveau mot de passe</string>
-    <string name="enter_one_time_password_nsent_on_n_66809703295">Entrez le mot de passe à usage unique envoyé le</string>
     <string name="enter_one_time_password_nsent_on_n_66809703295">Entrez le mot de passe à usage unique envoyé le</string>
     <string name="avatar">avatar</string>
     <string name="history">l\'histoire</string>
@@ -51,16 +48,12 @@
     <string name="logout">Se déconnecter</string>
     <string name="understand">comprendre</string>
     <string name="have_a_login_page_before_using_patient_checking_system_application_and_safe_to_use_firebase_to_store_critical_parts_of_your_data">Avoir une page de connexion avant d\'utiliser l\'application Patient Checking System et utiliser Firebase en toute sécurité pour stocker des parties critiques de vos données</string>
-    <string name="have_a_login_page_before_using_patient_checking_system_application_and_safe_to_use_firebase_to_store_critical_parts_of_your_data">Avoir une page de connexion avant d\'utiliser l\'application Patient Checking System et utiliser Firebase en toute sécurité pour stocker des parties critiques de vos données</string>
     <string name="bright">brillant</string>
     <string name="music">la musique</string>
     <string name="on">au</string>
     <string name="select_language">Choisir la langue</string>
     <string name="password_empty">Le mot de passe ne peut pas être vide</string>
-    <string name="password_empty">Le mot de passe ne peut pas être vide</string>
-    <string name="user_empty">L\'ID utilisateur ne peut pas être vide</string>
     <string name="user_empty">L\'ID utilisateur ne peut pas être vide</string>
     <string name="verify_code">vérifier le code</string>
-    <string name="this_application">Cette application a été créée à partir du remue-méninges des étudiants en génie informatique de l\'Université Kasetsart du campus Kamphaeng Saen prévu qu\'actuellement, il n\'y a pas assez de personnel médical pour prendre soin des patients COVID. entraînant des soins inadéquats et un travail acharné, cette application est conçue pour répondre à ces problèmes et augmenter l\'efficacité des travailleurs de la santé. accélérer le temps accessible à tous les patients Et le patient lui-même peut remplir les informations et les envoyer au médecin. confortablement Facile à utiliser aussi.</string>
     <string name="this_application">Cette application a été créée à partir du remue-méninges des étudiants en génie informatique de l\'Université Kasetsart du campus Kamphaeng Saen prévu qu\'actuellement, il n\'y a pas assez de personnel médical pour prendre soin des patients COVID. entraînant des soins inadéquats et un travail acharné, cette application est conçue pour répondre à ces problèmes et augmenter l\'efficacité des travailleurs de la santé. accélérer le temps accessible à tous les patients Et le patient lui-même peut remplir les informations et les envoyer au médecin. confortablement Facile à utiliser aussi.</string>
 </resources>
