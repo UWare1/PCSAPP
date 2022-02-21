@@ -10,15 +10,15 @@
     <Button
         android:id="@+id/HistoryRefresh"
         android:layout_width="120dp"
-        android:layout_height="36dp"
+        android:layout_height="48dp"
         android:layout_gravity="end"
         android:layout_marginBottom="20dp"
         android:background="@drawable/yobutton"
+        android:fontFamily="@font/promptbold"
         android:gravity="center"
         android:text="@string/history"
         android:textSize="14sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/promptbold"/>
+        android:textStyle="bold" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -77,7 +77,7 @@
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:layout_margin="5dp"
-                        android:background="@color/white"></View>
+                        android:background="@color/white" />
 
                     <TextView
                         android:layout_width="106dp"
@@ -294,10 +294,11 @@
         <Button
             android:id="@+id/ADDHistory"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="50dp"
+            android:fontFamily="@font/promptbold"
             android:text="@string/add"
             android:textStyle="bold" />
 

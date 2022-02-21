@@ -63,7 +63,7 @@ public class UserFragment extends Fragment {
     ConstraintLayout C1;
     TextView FullnameProfile, EmailProfile;
     ImageView ProfileImage;
-    Button EditProfile, SettingProfile, Logout;
+    Button EditProfile, SecurityProfile, LanguageProfile, SettingProfile, AboutProfile, Logout;
     Dialog dialog;
     boolean IFCHOOSE = false, PLAY = false;
     int Brightness;
@@ -100,13 +100,17 @@ public class UserFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_user, container, false);
         C1 = view.findViewById(R.id.C1);
         FullnameProfile = view.findViewById(R.id.FullnameProfile);
-        EmailProfile    = view.findViewById(R.id.EmailProfile);
-        ProfileImage    = view.findViewById(R.id.ProfileImage);
-        EditProfile     = view.findViewById(R.id.EditProfile);
-        SettingProfile  = view.findViewById(R.id.SettingProfile);
-        Logout          = view.findViewById(R.id.Logout);
-        dialog          = new Dialog(getActivity());
+        EmailProfile = view.findViewById(R.id.EmailProfile);
+        ProfileImage = view.findViewById(R.id.ProfileImage);
+        EditProfile = view.findViewById(R.id.EditProfile);
+        SecurityProfile = view.findViewById(R.id.SecurityProfile);
+        LanguageProfile = view.findViewById(R.id.LanguageProfile);
+        AboutProfile = view.findViewById(R.id.AboutProfile);
+        SettingProfile = view.findViewById(R.id.SettingProfile);
+        Logout = view.findViewById(R.id.Logout);
+        dialog = new Dialog(getActivity());
 
+        //DB Avatar
         SessionManager sessionManager = new SessionManager(getActivity());
         HashMap<String, String> UserDetails = sessionManager.getUserDatailFromSession();
         UserID = UserDetails.get(SessionManager.KEY_USERID);
@@ -332,6 +336,81 @@ public class UserFragment extends Fragment {
                 dialog.show();
             }
         });
+        SecurityProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.setContentView(R.layout.security_layout_dialog);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                Button exit = dialog.findViewById(R.id.exit);
+                Button Understand = dialog.findViewById(R.id.Understand);
+
+                Understand.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                exit.bringToFront();
+                exit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+            }
+        });
+        LanguageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.setContentView(R.layout.language_layout_dialog);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                Button exit = dialog.findViewById(R.id.exit);
+                Button Understand = dialog.findViewById(R.id.LanguageButton);
+
+                Understand.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                exit.bringToFront();
+                exit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+            }
+        });
+        AboutProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.setContentView(R.layout.about_layout_dialog);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                Button exit = dialog.findViewById(R.id.exit);
+                Button Understand = dialog.findViewById(R.id.Understand);
+
+                Understand.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                exit.bringToFront();
+                exit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+            }
+        });
         SettingProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -339,8 +418,8 @@ public class UserFragment extends Fragment {
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
                 Button MusicButton = dialog.findViewById(R.id.MusicButton);
-                Button exit       = dialog.findViewById(R.id.exit);
-                SeekBar LightBar  = dialog.findViewById(R.id.Lightbar);
+                Button exit = dialog.findViewById(R.id.exit);
+                SeekBar LightBar = dialog.findViewById(R.id.Lightbar);
                 final ContentResolver contentResolver = getActivity().getContentResolver();
                 final Window window = getActivity().getWindow();
                 try {

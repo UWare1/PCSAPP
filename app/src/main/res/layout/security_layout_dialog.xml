@@ -29,7 +29,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24.5dp"
+                android:layout_marginStart="24.5dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="5dp"
                 android:text="@string/security"
@@ -45,15 +45,16 @@
                 android:layout_marginTop="6dp"
                 android:text="@string/have_a_login_page_before_using_patient_checking_system_application_and_safe_to_use_firebase_to_store_critical_parts_of_your_data"
                 android:fontFamily="@font/promptlight"/>
+
             <Button
-                android:id="@+id/MusicButton"
+                android:id="@+id/Understand"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="40dp"
+                android:layout_height="48dp"
+                android:layout_margin="30dp"
                 android:background="@drawable/yobutton"
+                android:fontFamily="@font/promptbold"
                 android:text="@string/understand"
-                android:textSize="18sp"
-                android:fontFamily="@font/promptbold"/>
+                android:textSize="18sp" />
 
         </LinearLayout>
 

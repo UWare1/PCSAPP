@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="408dp"
     android:layout_height="wrap_content"
     android:layout_gravity="center">
-
 
 
     <androidx.cardview.widget.CardView
@@ -23,7 +21,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="320dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
@@ -32,32 +30,41 @@
                 android:layout_marginStart="24.5dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="5dp"
-                android:text="@string/language"
                 android:fontFamily="@font/promptbold"
+                android:text="@string/about"
                 android:textAllCaps="true"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@drawable/yobutton"
-                android:gravity="center"
+            <ScrollView
+                android:layout_width="250dp"
+                android:layout_height="120dp"
+                android:scrollbars="vertical"
+                android:layout_marginTop="6dp"
                 android:layout_gravity="center_horizontal"
-                android:textAlignment="center"
-                android:layout_marginTop="30dp"
-                android:spinnerMode="dropdown"/>
+                android:scrollbarThumbVertical="@drawable/thumbscroll"
+                >
 
-            <Button
-                android:id="@+id/LanguageButton"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_margin="40dp"
-                android:background="@drawable/yobutton"
-                android:fontFamily="@font/promptbold"
-                android:text="@string/understand"
-                android:textSize="18sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/promptlight"
+                    android:gravity="center_horizontal"
+                    android:text="@string/this_application" />
+            </ScrollView>
+
+                <Button
+                    android:id="@+id/Understand"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginHorizontal="30dp"
+                    android:background="@drawable/yobutton"
+                    android:fontFamily="@font/promptbold"
+                    android:text="@string/understand"
+                    android:textSize="18sp"></Button>
 
         </LinearLayout>
 

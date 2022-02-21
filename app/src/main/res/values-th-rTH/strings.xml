@@ -36,10 +36,9 @@
     <string name="help">เกี่ยวกับ</string>
     <string name="logout">ลงชื่อออก</string>
     <string name="understand">เข้าใจเเล้ว</string>
-    <string name="have_a_login_page_before_using_patient_checking_system_application_and_safe_to_use_firebase_to_store_critical_parts_of_your_data">มีหน้าลงชื่อเข้าใช้ก่อนการใช้ pcs app และมีการใช้ความปลอดภัยของไฟร์เบส ในการเก็บข้อมูลต่างๆที่สำคัญ</string>
+    <string name="have_a_login_page_before_using_patient_checking_system_application_and_safe_to_use_firebase_to_store_critical_parts_of_your_data">มีหน้าลงชื่อเข้าใช้ก่อนการใช้ PCSAPP และมีการใช้ความปลอดภัยของไฟร์เบส ในการเก็บข้อมูลต่างๆที่สำคัญ</string>
     <string name="bright">ความสว่าง</string>
     <string name="music">เพลง</string>
-    <string name="on">โอเค</string>
     <string name="update">อัพเดต</string>
     <string name="next">ต่อไป</string>
     <string name="phone_number">เบอร์มือถือ</string>
@@ -56,4 +55,6 @@
     <string name="password_empty">รหัสผ่านไม่สามารถเว้นว่างได้</string>
     <string name="verify_code">ตรวจสอบรหัส</string>
     <string name="about">เกี่ยวกับ</string>
+    <string name="on">เปิด</string>
+    <string name="this_application">แอปพลิเคชั่นนี้เกิดมากจากการระดมความคิดของนิสิต วิศวกรรมคอมพิวเตอร์ มหาลัยเกษตร์ศาสตร์ วิทยาเขตกำแพงแสน ได้เล็งเห็นว่า ปัจจุบันนี้บุคคลากรทางการแพทย์มีจำนวนไม่เพียงพอต่อการดูแลผู้ป่วยโควิด ทำให้เกิดการดูแลที่ไม่ทั่วถึงและ ทำงานอย่างหนัก แอปฯนี้จึงออกแบบมาเผื่อตอบสนองต่อปัญหาเหล่านี้และเพิ่มประสิทธิภาพให้แก่การทำงานของบุคลากรทางการแพทย์ กระฉับเวลาให้รวดเร็วยิ่งขึ้น สามารถเข้าถึงผู้ป่วยได้ทุกคน และผู้ป่วยเองก็สามารถกรอกข้อมูลส่งให้แพทย์ได้ อย่างสะดวกสบาย ง่ายต่อการใช้งานอีกด้วย</string>
 </resources>
