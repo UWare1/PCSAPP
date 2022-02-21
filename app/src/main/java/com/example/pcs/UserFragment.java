@@ -6,6 +6,7 @@ import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.app.Dialog;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -32,6 +33,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -59,6 +62,7 @@ public class UserFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Context mContext;
     View view;
     ConstraintLayout C1;
     TextView FullnameProfile, EmailProfile;
@@ -71,6 +75,11 @@ public class UserFragment extends Fragment {
 
     public UserFragment() {
         // Required empty public constructor
+    }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext = context;
     }
 
     // TODO: Rename and change types and number of parameters
@@ -124,7 +133,7 @@ public class UserFragment extends Fragment {
         FullnameProfile.setText(Fullname);
         EmailProfile.setText(Email);
 
-        EditProfile.setOnClickListener(new View.OnClickListener() {
+        ProfileImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.setContentView(R.layout.change_profile_dialog);
@@ -334,6 +343,30 @@ public class UserFragment extends Fragment {
                 });
 
                 dialog.show();
+            }
+        });
+        EditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                        mContext, R.style.BottomSheetDialogTheme
+                );
+                final View bottomSheetView = LayoutInflater.from(getActivity())
+                        .inflate(
+                                R.layout.activity_bottom_sheet2,
+                                (LinearLayout) view.findViewById(R.id.BottomSheetContainer2)
+                        );
+                final TextView Date = bottomSheetView.findViewById(R.id.Date);
+                final TextView Time = bottomSheetView.findViewById(R.id.Time);
+
+                bottomSheetView.findViewById(R.id.SAVE).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+                bottomSheetDialog.setContentView(bottomSheetView);
+                bottomSheetDialog.show();
             }
         });
         SecurityProfile.setOnClickListener(new View.OnClickListener() {
