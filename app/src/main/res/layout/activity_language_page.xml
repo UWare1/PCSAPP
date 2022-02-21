@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFECEC"
+    android:background="@drawable/night3"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".LanguagePage">
@@ -22,7 +22,8 @@
             android:layout_height="110dp"
             android:layout_gravity="center"
             android:background="@drawable/patient"
-            android:contentDescription="Patient"></ImageView>
+            android:contentDescription="Patient"
+            ></ImageView>
 
     </LinearLayout>
 
@@ -31,7 +32,7 @@
         android:layout_height="2dp"
         android:layout_gravity="center"
         android:background="#FFFFFF"
-        android:layout_marginBottom="36dp"></View>
+        android:layout_marginBottom="160dp"></View>
 
 
     <TextView
@@ -52,6 +53,6 @@
         android:gravity="center"
         android:textAlignment="center"
         android:spinnerMode="dialog"
-        android:layout_marginBottom="120dp"/>
+        android:layout_marginBottom="250dp"/>
 
 </LinearLayout>

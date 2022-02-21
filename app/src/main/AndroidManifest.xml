@@ -55,9 +55,14 @@
             android:name=".MainActivity"
             android:configChanges="orientation"
             android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LanguagePage"
+            android:configChanges="orientation"
+            android:exported="false"
             android:screenOrientation="portrait"/>
             <activity
-                android:name=".LanguagePage"
+                android:name=".SplashActivity"
                 android:configChanges="orientation"
                 android:exported="true"
                 android:screenOrientation="portrait">

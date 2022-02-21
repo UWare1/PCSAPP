@@ -6,7 +6,7 @@
     <string name="forgot_password">ลืมรหัสผ่าน?</string>
     <string name="register">ลงทะเบียน?</string>
     <string name="confirm_password">ยืนยันรหัสผ่าน</string>
-    <string name="national_id_card">เลขบัตรปชช</string>
+    <string name="national_id_card">เลขบัตรประชาชน</string>
     <string name="email">อีเมลล์</string>
     <string name="full_name">"ชื่อ-นามสกุล "</string>
     <string name="address">ที่อยู่</string>
