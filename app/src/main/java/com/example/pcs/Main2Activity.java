@@ -32,8 +32,8 @@ public class Main2Activity extends AppCompatActivity {
         mediaPlayer.start();
 
         //Add menu item
-        bottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.ic_chat));
-        bottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.ic_history));
+        bottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.doctor));
+        bottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.healthcare));
         bottomNavigation.add(new MeowBottomNavigation.Model(3,R.drawable.ic_homepage));
         bottomNavigation.add(new MeowBottomNavigation.Model(4,R.drawable.ic_noti));
         bottomNavigation.add(new MeowBottomNavigation.Model(5,R.drawable.ic_user));
