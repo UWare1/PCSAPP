@@ -79,7 +79,8 @@ public class UserFragment extends Fragment {
     Button EditProfile, SecurityProfile, LanguageProfile, SettingProfile, AboutProfile, Logout;
     Dialog dialog;
     boolean IFCHOOSE = false, PLAY = false, On = true;
-    int Brightness;
+    int Brightness, resID, resID1;
+    Drawable image, image1;
     String ProfileID = "iconprofile1", UserID, Fullname, BornDB, NationalIDCard, PhoneNumber, AddressDB, Email, ProfileIDImage;
 
     public UserFragment() {
@@ -140,8 +141,8 @@ public class UserFragment extends Fragment {
         AddressDB = UserDetails.get(SessionManager.KEY_ADDRESS);
         Email = UserDetails.get(SessionManager.KEY_EMAIL);
         ProfileIDImage = UserDetails.get(SessionManager.KEY_PROFILEID);
-        int resID = getResources().getIdentifier(ProfileIDImage, "drawable", getActivity().getPackageName());
-        Drawable image = getResources().getDrawable(resID);
+        resID = getResources().getIdentifier(ProfileIDImage, "drawable", getActivity().getPackageName());
+        image = getResources().getDrawable(resID);
         ProfileImage.setImageDrawable(image);
 
         FullnameProfile.setText(Fullname);
@@ -187,6 +188,9 @@ public class UserFragment extends Fragment {
                             userUpdates.put("profileID", ProfileID);
                             reference.updateChildren(userUpdates);
 
+                            resID1 = getResources().getIdentifier(ProfileID, "drawable", getActivity().getPackageName());
+                            image1 = getResources().getDrawable(resID1);
+                            ProfileImage.setImageDrawable(image1);
                         }
                         dialog.dismiss();
                     }
