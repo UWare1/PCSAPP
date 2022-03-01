@@ -106,14 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-        Doctor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent Doct = new Intent(getApplicationContext(), MainDoctorActivity.class);
-                startActivity(Doct);
-                finish();
-            }
-        });
+
 
     }
 

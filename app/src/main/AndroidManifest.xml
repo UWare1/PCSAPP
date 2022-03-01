@@ -10,6 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".DNewPinChange"
+            android:exported="false" />
+        <activity
+            android:name=".DSetNewPincode"
+            android:exported="false" />
+        <activity
+            android:name=".DFPassActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VerifyOTP2"
+            android:exported="false" />
+        <activity
+            android:name=".DRegis3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".DRegis2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".DRegisActivity"
+            android:exported="false" />
+        <activity
             android:name=".PNewPassChange"
             android:configChanges="orientation"
             android:exported="false"
@@ -60,12 +81,12 @@
             android:name=".LanguagePage"
             android:configChanges="orientation"
             android:exported="false"
-            android:screenOrientation="portrait"/>
-            <activity
-                android:name=".SplashActivity"
-                android:configChanges="orientation"
-                android:exported="true"
-                android:screenOrientation="portrait">
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashActivity"
+            android:configChanges="orientation"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

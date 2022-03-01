@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DRegisActivity"
+    android:background="@drawable/night">
+
+    <ImageView
+        android:id="@+id/Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back2"
+        android:onClick="CallBack"
+        android:layout_marginTop="26dp"
+        android:layout_marginStart="26dp"
+        android:transitionName="transition_back"/>
+
+    <LinearLayout
+        android:id="@+id/lay1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp">
+
+        <ImageView
+            android:id="@+id/titletext"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="@drawable/doctor2"
+            android:transitionName="transition_title"></ImageView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lay2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lay1"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="326dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:background="#FFFFFF"></View>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="366dp"
+            android:scrollbarThumbVertical="@drawable/thumbscroll">
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/DocterID"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/docter_id"
+                    android:textColorHint="@color/background"
+                    app:boxStrokeColor="@color/background"
+                    app:boxStrokeErrorColor="#FF5D5D"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="20"
+                    app:counterTextColor="@color/background"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/background"
+                    app:hintTextColor="@color/background"
+                    app:startIconDrawable="@drawable/user5"
+                    app:startIconTint="@color/background">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="text"
+                        android:fontFamily="@font/promptlight"
+                        android:textColor="@color/background"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Pincode"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/pincode"
+                    android:textColorHint="@color/background"
+                    app:boxStrokeColor="@color/background"
+                    app:boxStrokeErrorColor="#FF5D5D"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="20"
+                    app:counterTextColor="@color/background"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/background"
+                    app:hintTextColor="@color/background"
+                    app:startIconDrawable="@drawable/password"
+                    app:startIconTint="@color/background">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textPassword"
+                        android:fontFamily="@font/promptlight"
+                        android:textColor="@color/background"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ConPass"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/confirm_pincode"
+                    android:textColorHint="@color/background"
+                    app:boxStrokeColor="@color/background"
+                    app:boxStrokeErrorColor="#FF5D5D"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="20"
+                    app:counterTextColor="@color/background"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/background"
+                    app:hintTextColor="@color/background"
+                    app:startIconDrawable="@drawable/password"
+                    app:startIconTint="@color/background">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textPassword"
+                        android:fontFamily="@font/promptlight"
+                        android:textColor="@color/background"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Email"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email"
+                    android:textColorHint="@color/background"
+                    app:boxStrokeColor="@color/background"
+                    app:boxStrokeErrorColor="#FF5D5D"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="40"
+                    app:counterTextColor="@color/background"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/background"
+                    app:hintTextColor="@color/background"
+                    app:startIconDrawable="@drawable/email"
+                    app:startIconTint="@color/background">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="textEmailAddress"
+                        android:fontFamily="@font/promptlight"
+                        android:textColor="@color/background"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/NationalIDCard"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/national_id_card"
+                    android:textColorHint="@color/background"
+                    app:boxStrokeColor="@color/background"
+                    app:boxStrokeErrorColor="#FF5D5D"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="13"
+                    app:counterTextColor="@color/background"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/background"
+                    app:hintTextColor="@color/background"
+                    app:startIconDrawable="@drawable/idcard"
+                    app:startIconTint="@color/background">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="numberDecimal"
+                        android:fontFamily="@font/promptlight"
+                        android:textColor="@color/background"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/Next"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/yobutton"
+            android:onClick="CallNextRegister"
+            android:text="@string/next"
+            android:textColor="#fff"
+            android:fontFamily="@font/promptbold"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"
+            android:transitionName="transition_nextbtn">
+
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Patient"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttondorp"
+            android:fontFamily="@font/promptbold"
+            android:text="@string/patient"
+            android:textColor="#000"
+            android:transitionName="transition_patient_btn"
+            app:backgroundTint="@null">
+
+        </Button>
+
+        <Button
+            android:id="@+id/Doctor"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttonpord"
+            android:fontFamily="@font/promptbold"
+            android:text="@string/doctor"
+            android:textColor="#000"
+            android:transitionName="transition_doctor_btn"
+            app:backgroundTint="@null">
+
+        </Button>
+    </LinearLayout>
+</RelativeLayout>

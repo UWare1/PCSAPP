@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DRegis2Activity"
+    android:background="@drawable/night">
+
+
+    <ImageView
+        android:id="@+id/Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back2"
+        android:onClick="CallBack"
+        android:layout_marginTop="26dp"
+        android:layout_marginStart="26dp"
+        android:transitionName="transition_back"/>
+
+    <LinearLayout
+        android:id="@+id/lay1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="30dp">
+
+        <ImageView
+            android:id="@+id/titletext"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="@drawable/doctor2"
+            android:transitionName="transition_title"></ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lay1"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="326dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:background="#FFFFFF"></View>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:scrollbarThumbVertical="@drawable/thumbscroll">
+
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Fullname"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/full_name"
+                    android:textColorHint="@color/background"
+                    app:boxStrokeColor="@color/background"
+                    app:boxStrokeErrorColor="#FF5D5D"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="50"
+                    app:counterTextColor="@color/background"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/background"
+                    app:hintTextColor="@color/background"
+                    app:startIconDrawable="@drawable/name"
+                    app:startIconTint="@color/background">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="text"
+                        android:fontFamily="@font/promptlight"
+                        android:textColor="@color/background"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Address"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/address"
+                    android:textColorHint="@color/background"
+                    app:boxStrokeColor="@color/background"
+                    app:boxStrokeErrorColor="#FF5D5D"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="100"
+                    app:counterTextColor="@color/background"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/background"
+                    app:hintTextColor="@color/background"
+                    app:startIconDrawable="@drawable/address"
+                    app:startIconTint="@color/background">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="text"
+                        android:fontFamily="@font/promptlight"
+                        android:textColor="@color/background"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/choose_gender"
+                    android:fontFamily="@font/promptlight"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <RadioButton
+                        android:id="@+id/male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/male"
+                        android:fontFamily="@font/promptlight"/>
+
+
+                    <RadioButton
+                        android:id="@+id/female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="@string/female"
+                        android:fontFamily="@font/promptlight"/>
+
+
+                    <RadioButton
+                        android:id="@+id/others"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="@string/other"
+                        android:fontFamily="@font/promptlight"/>
+                </RadioGroup>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/black" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_your_age"
+                    android:fontFamily="@font/promptlight"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <DatePicker
+                    android:id="@+id/age_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner"
+                    android:spinnersShown="true" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/graduated"
+                    app:hintTextColor="@color/background"
+                    app:startIconDrawable="@drawable/graduation"
+                    app:startIconTint="@color/background"
+                    android:textColorHint="@color/background"
+                    app:boxStrokeColor="@color/background"
+                    app:boxStrokeErrorColor="#FF5D5D"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconTint="@color/background"
+                    >
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/University"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:inputType="none"
+                        android:background="#00FFFFFF"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/RegularHospital"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/regular_hospital"
+                    android:textColorHint="@color/background"
+                    app:boxStrokeColor="@color/background"
+                    app:boxStrokeErrorColor="#FF5D5D"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="100"
+                    app:counterTextColor="@color/background"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/background"
+                    app:hintTextColor="@color/background"
+                    app:startIconDrawable="@drawable/hospital"
+                    app:startIconTint="@color/background"
+                    android:layout_marginBottom="20dp">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="text"
+                        android:fontFamily="@font/promptlight"
+                        android:textColor="@color/background"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/Next"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/yobutton"
+            android:onClick="CallNextRegister"
+            android:text="@string/next"
+            android:fontFamily="@font/promptbold"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:transitionName="transition_nextbtn"
+            app:backgroundTint="@null">
+
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Patient"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttondorp"
+            android:fontFamily="@font/promptbold"
+            android:text="@string/patient"
+            android:textColor="#000"
+            android:transitionName="transition_patient_btn"
+            app:backgroundTint="@null">
+
+        </Button>
+
+        <Button
+            android:id="@+id/Doctor"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttonpord"
+            android:fontFamily="@font/promptbold"
+            android:text="@string/doctor"
+            android:textColor="#000"
+            android:transitionName="transition_doctor_btn"
+            app:backgroundTint="@null">
+
+        </Button>
+    </LinearLayout>
+</RelativeLayout>

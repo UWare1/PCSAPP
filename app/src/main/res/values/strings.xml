@@ -59,4 +59,13 @@
     <string name="this_application">This application was createn from the brainstorming of students Computer Engineering Kasetsart University Kamphaeng Saen Campus foreseen that Currently, there are not enough medical personnel to take care of COVID patients. resulting in inadequate care and work hard this app is designed to respond to these problems and increase the efficiency of healthcare workers. speed up time accessible to all patients And the patient himself can fill out the information and send it to the doctor. comfortably Easy to use as well.</string>
     <string name="save" translatable="false">Save</string>
     <string name="off">Off</string>
+    <string name="docter_id">Docter ID</string>
+    <string name="pincode">Pincode</string>
+    <string name="confirm_pincode">Confirm Pincode</string>
+    <string name="regular_hospital">Regular Hospital</string>
+    <string name="graduated">Graduated</string>
+    <string name="new_pincode">New Pincode</string>
+    <string name="confirm_new_pincode">Confirm New Pincode</string>
+    <string name="pincode_updated">Pincode Updated</string>
+    <string name="your_pincode_has_been_changed">your pincode has been changed</string>
 </resources>

@@ -4,18 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainDoctorActivity"
+    tools:context=".DFPassActivity"
     android:background="@drawable/night">
 
     <ImageView
-        android:id="@+id/Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/back2"
         android:onClick="CallBack"
         android:layout_marginTop="26dp"
-        android:layout_marginStart="26dp"
-        android:transitionName="transition_back"/>
+        android:layout_marginStart="26dp" />
 
     <LinearLayout
         android:id="@+id/lay1"
@@ -28,10 +26,10 @@
         <ImageView
             android:id="@+id/titletext"
             android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_height="110dp"
             android:layout_gravity="center"
-            android:background="@drawable/doctor2"
-            android:contentDescription="Patient"></ImageView>
+            android:background="@drawable/patient"
+            android:transitionName="transition_title"></ImageView>
 
     </LinearLayout>
 
@@ -59,7 +57,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="36dp"
                 android:hint="@string/docter_id"
                 android:textColorHint="@color/background"
                 app:boxStrokeColor="@color/background"
@@ -81,137 +79,71 @@
                     android:textCursorDrawable="@null" />
             </com.google.android.material.textfield.TextInputLayout>
 
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/CCP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_showFlag="true"
+                app:ccp_showNameCode="true"
+                app:ccp_showFullName="true"
+                app:ccp_areaCodeDetectedCountry="true"
+                app:ccp_rememberLastSelection="true"
+                android:background="@drawable/black_border"
+                android:layout_marginTop="12dp"/>
+
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Pincode"
+                android:id="@+id/PhoneNumber"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/phone_number"
                 android:layout_marginTop="6dp"
-                android:hint="@string/pincode"
                 android:textColorHint="@color/background"
                 app:boxStrokeColor="@color/background"
                 app:boxStrokeErrorColor="#FF5D5D"
                 app:boxStrokeWidthFocused="2dp"
-                app:endIconMode="password_toggle"
+                app:endIconMode="clear_text"
                 app:endIconTint="@color/background"
                 app:hintTextColor="@color/background"
-                app:startIconDrawable="@drawable/password"
+                app:startIconDrawable="@drawable/phone1"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:counterTextColor="@color/background"
                 app:startIconTint="@color/background">
 
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:inputType="textPassword"
+                    android:inputType="phone"
                     android:fontFamily="@font/promptlight"
                     android:textColor="@color/background"
                     android:textCursorDrawable="@null" />
+
+
             </com.google.android.material.textfield.TextInputLayout>
 
-
-            <TextView
-                android:id="@+id/FPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/promptlight"
-                android:text="@string/forgot_password"
-                android:textColor="#373737"
-                android:textSize="12sp"></TextView>
-
-            <TextView
-                android:id="@+id/Register"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="3dp"
-                android:fontFamily="@font/promptlight"
-                android:text="@string/register"
-                android:textColor="#474747"
-                android:textSize="12sp"></TextView>
         </LinearLayout>
-
         <Button
-            android:id="@+id/Login"
+            android:id="@+id/Recover"
             android:layout_width="350dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            app:backgroundTint="@null"
             android:background="@drawable/yobutton"
-            android:text="@string/login"
+            android:text="@string/next"
             android:fontFamily="@font/promptbold"
+            android:onClick="VerifyPhoneNumber"
             android:textColor="#fff"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:onClick="letTheUserLoggedIn">
+            android:textStyle="bold">
 
         </Button>
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/lay3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/lay2"
-        >
-
-        <View
-            android:layout_width="326dp"
-            android:layout_height="2dp"
-            android:background="#FFFFFF"
-            android:layout_gravity="center"
-            android:layout_marginTop="26dp"
-            >
-        </View>
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:columnCount="4"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="90dp"
-            >
-            <View
-                android:id="@+id/Facebook"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/facebook"
-                android:layout_gravity="center"
-                android:layout_margin="8dp">
-            </View>
-            <View
-                android:id="@+id/Google"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/googleplus"
-                android:layout_gravity="center"
-                android:layout_margin="8dp">
-            </View>
-            <View
-                android:id="@+id/Twitter"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/twitter"
-                android:layout_gravity="center"
-                android:layout_margin="8dp">
-            </View>
-            <View
-                android:id="@+id/Line"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/line"
-                android:layout_gravity="center"
-                android:layout_margin="8dp">
-            </View>
-
-        </GridLayout>
-
-    </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/lay4"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
@@ -225,7 +157,8 @@
             android:background="@drawable/buttondorp"
             android:text="@string/patient"
             android:fontFamily="@font/promptbold"
-            android:textColor="#333333"
+            android:textColor="#000"
+            android:transitionName="transition_patient_btn"
             app:backgroundTint="@null">
 
         </Button>
@@ -236,12 +169,12 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@drawable/buttonpord"
-            android:fontFamily="@font/promptbold"
             android:text="@string/doctor"
-            android:textColor="#333333"
+            android:fontFamily="@font/promptbold"
+            android:textColor="#000"
+            android:transitionName="transition_doctor_btn"
             app:backgroundTint="@null">
 
         </Button>
     </LinearLayout>
-
 </RelativeLayout>

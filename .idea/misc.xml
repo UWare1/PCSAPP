@@ -31,10 +31,16 @@
         <entry key="..\:/PCS/app/src/main/res/layout/about_layout_dialog.xml" value="0.264" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet.xml" value="0.176" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet2.xml" value="0.264" />
+        <entry key="..\:/PCS/app/src/main/res/layout/activity_dfpass.xml" value="0.12708333333333333" />
+        <entry key="..\:/PCS/app/src/main/res/layout/activity_dnew_pin_change.xml" value="0.264" />
+        <entry key="..\:/PCS/app/src/main/res/layout/activity_dregis.xml" value="0.2" />
+        <entry key="..\:/PCS/app/src/main/res/layout/activity_dregis2.xml" value="0.176" />
+        <entry key="..\:/PCS/app/src/main/res/layout/activity_dregis3.xml" value="0.2" />
+        <entry key="..\:/PCS/app/src/main/res/layout/activity_dset_new_pincode.xml" value="0.16" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_language_page.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_main2.xml" value="0.2" />
-        <entry key="..\:/PCS/app/src/main/res/layout/activity_main_doctor.xml" value="0.136" />
+        <entry key="..\:/PCS/app/src/main/res/layout/activity_main_doctor.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_pfpass.xml" value="0.176" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_pnew_pass_change.xml" value="0.176" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_pregis.xml" value="0.2" />
@@ -43,15 +49,17 @@
         <entry key="..\:/PCS/app/src/main/res/layout/activity_pset_new_password.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_splash.xml" value="0.12" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_verify_otp.xml" value="0.16" />
+        <entry key="..\:/PCS/app/src/main/res/layout/activity_verify_otp2.xml" value="0.12708333333333333" />
         <entry key="..\:/PCS/app/src/main/res/layout/change_profile_dialog.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/custom_spinner.xml" value="0.12708333333333333" />
         <entry key="..\:/PCS/app/src/main/res/layout/custom_spinner_dropdown.xml" value="0.12708333333333333" />
-        <entry key="..\:/PCS/app/src/main/res/layout/fragment_chat.xml" value="0.152" />
+        <entry key="..\:/PCS/app/src/main/res/layout/fragment_chat.xml" value="0.16" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_history.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_homepage.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_noti.xml" value="0.12" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_user.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/language_layout_dialog.xml" value="0.12" />
+        <entry key="..\:/PCS/app/src/main/res/layout/list_university.xml" value="0.12708333333333333" />
         <entry key="..\:/PCS/app/src/main/res/layout/security_layout_dialog.xml" value="0.264" />
         <entry key="..\:/PCS/app/src/main/res/layout/setting_layout_dialog.xml" value="0.136" />
         <entry key="..\:/PCS/app/src/main/res/mipmap-anydpi-v26/PCSPD.xml" value="0.1045" />

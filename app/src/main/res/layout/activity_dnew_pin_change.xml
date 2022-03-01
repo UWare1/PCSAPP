@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/appbg2"
+    android:background="@drawable/night"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="30dp"
-    tools:context=".Common.LoginSignup.ForgetPasswordSuccessMessage">
+    tools:context=".DNewPinChange">
 
 
     <LinearLayout
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/promptbold"
             android:gravity="center"
-            android:text="@string/password_updated"
+            android:text="@string/pincode_updated"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@color/black"
@@ -40,9 +40,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/promptlight"
             android:gravity="center"
-            android:text="@string/your_password_has_been_changed"
+            android:text="@string/your_pincode_has_been_changed"
             android:textAlignment="center"
-            android:textColor="#787878"
+            android:textColor="#FFFFFF"
             android:textSize="16sp" />
 
 
