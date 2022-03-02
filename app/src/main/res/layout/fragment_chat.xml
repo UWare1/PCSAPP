@@ -70,7 +70,7 @@
             android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:hint="UID"
+            android:hint="@string/uid"
             android:textColorHint="@color/background"
             app:boxStrokeColor="@color/background"
             app:boxStrokeErrorColor="#FF5D5D"
