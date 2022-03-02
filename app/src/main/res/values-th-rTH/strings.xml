@@ -66,4 +66,5 @@
     <string name="new_pincode">รหัสพินใหม่</string>
     <string name="confirm_new_pincode">ยืนยันรหัสพินใหม่</string>
     <string name="pincode_updated">อัพเดทรหัสพินแล้ว</string>
+    <string name="your_pincode_has_been_changed">รหัสพินของคุณมีการเปลี่ยนแปลง</string>
 </resources>
