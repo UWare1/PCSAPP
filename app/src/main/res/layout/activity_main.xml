@@ -223,8 +223,8 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@drawable/buttondorp"
-            android:text="@string/patient"
             android:fontFamily="@font/promptbold"
+            android:text="@string/patient"
             android:textColor="#333333"
             app:backgroundTint="@null">
 
