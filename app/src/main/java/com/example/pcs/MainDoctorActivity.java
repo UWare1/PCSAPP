@@ -140,7 +140,7 @@ public class MainDoctorActivity extends AppCompatActivity {
                         SessionManagerDoctor sessionManager = new SessionManagerDoctor(MainDoctorActivity.this);
                         sessionManager.createLoginSession(Fullname1, _doctorID, Email1, _phoneNo, _pincode, _dateOfBirth, _gender, ProfileID, _nationalIDCard, _address, _regularhospital, _university, uid);
 
-                        Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
+                        Intent intent = new Intent(getApplicationContext(), Main2DoctorActivity.class);
                         startActivity(intent);
                         finish();
                     } else {
