@@ -56,4 +56,13 @@
     <string name="password_empty">비밀번호는 비워둘 수 없습니다.</string>
     <string name="verify_code">코드 확인</string>
     <string name="this_application">이 응용 프로그램은 현재 COVID 환자를 돌볼 의료 인력이 충분하지 않다고 예측한 컴퓨터 공학과 Kasetsart University Kamphaeng Saen 캠퍼스 학생들의 브레인 스토밍에서 만들었습니다. 부적합한 치료와 노력으로 인해이 앱은 이러한 문제에 대응하고 의료 종사자의 효율성을 높이기 위해 설계되었습니다. 모든 환자가 접근할 수 있는 시간을 단축하고 환자가 직접 정보를 작성하여 의사에게 보낼 수 있습니다. 편안하게 사용하기도 간편합니다.</string>
+    <string name="graduated">졸업</string>
+    <string name="docter_id">의사 ID</string>
+    <string name="pincode">핀 코드</string>
+    <string name="confirm_pincode">비밀번호 확인</string>
+    <string name="regular_hospital">일반병원</string>
+    <string name="new_pincode">새 비밀번호</string>
+    <string name="confirm_new_pincode">새 비밀번호 확인</string>
+    <string name="pincode_updated">핀코드 업데이트됨</string>
+    <string name="your_pincode_has_been_changed">귀하의 비밀번호가 변경되었습니다</string>
 </resources>

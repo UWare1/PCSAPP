@@ -56,4 +56,13 @@
     <string name="password_empty">لا يمكن أن تكون كلمة المرور فارغة</string>
     <string name="verify_code">التحقق من كود</string>
     <string name="this_application">تم إنشاء هذا التطبيق من خلال العصف الذهني لطلاب هندسة الكمبيوتر في جامعة كاسيتسارت ، حرم جامعة كامفاينج ساين الجامعي ، الذي توقع أنه لا يوجد حاليًا عدد كافٍ من العاملين الطبيين لرعاية مرضى COVID. مما أدى إلى عدم كفاية الرعاية والعمل الجاد ، تم تصميم هذا التطبيق للاستجابة لهذه المشاكل وزيادة كفاءة العاملين في مجال الرعاية الصحية. تسريع الوقت المتاح لجميع المرضى ويمكن للمريض نفسه ملء المعلومات وإرسالها إلى الطبيب. مريح وسهل الاستخدام كذلك.</string>
+    <string name="graduated">تخرج</string>
+    <string name="docter_id">معرف الطبيب</string>
+    <string name="pincode">الرمز السري</string>
+    <string name="confirm_pincode">قم بتأكيد الرمز السري</string>
+    <string name="regular_hospital">مستشفى عادي</string>
+    <string name="new_pincode">الرمز السري الجديد</string>
+    <string name="confirm_new_pincode">قم بتأكيد الرمز السري الجديد</string>
+    <string name="pincode_updated">تم تحديث الرمز السري</string>
+    <string name="your_pincode_has_been_changed">تم تغيير الرمز السري الخاص بك</string>
 </resources>

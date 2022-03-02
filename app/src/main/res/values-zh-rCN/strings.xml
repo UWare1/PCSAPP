@@ -56,4 +56,13 @@
     <string name="forgot_password">忘记密码？</string>
     <string name="password">密码</string>
     <string name="this_application">这个应用程序诞生于学生的头脑风暴。计算机工程农业大学甘烹盛校区 预见到目前，没有足够的医务人员来照顾 COVID 患者。导致护理不足和 努力工作该应用程序旨在应对这些问题并提高医护人员的工作效率。加快时间所有患者均可使用并且患者自己可以填写信息并发送给医生。 舒适地易于使用。</string>
+    <string name="graduated">毕业</string>
+    <string name="docter_id">医生编号</string>
+    <string name="pincode">PIN码</string>
+    <string name="confirm_pincode">确认密码</string>
+    <string name="regular_hospital">正规医院</string>
+    <string name="new_pincode">新密码</string>
+    <string name="confirm_new_pincode">确认新密码</string>
+    <string name="pincode_updated">密码更新</string>
+    <string name="your_pincode_has_been_changed">您的密码已更改</string>
 </resources>

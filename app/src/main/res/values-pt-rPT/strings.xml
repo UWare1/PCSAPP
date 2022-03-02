@@ -56,4 +56,13 @@
     <string name="password_empty">A senha não pode estar vazia</string>
     <string name="verify_code">Código de verificação</string>
     <string name="this_application">Este aplicativo foi criado a partir do brainstorming de estudantes de Engenharia da Computação Kasetsart University Kamphaeng Saen Campus previu que Atualmente, não há pessoal médico suficiente para cuidar de pacientes com COVID. resultando em cuidados inadequados e trabalho duro, este aplicativo foi projetado para responder a esses problemas e aumentar a eficiência dos profissionais de saúde. agilize o tempo acessível a todos os pacientes E o próprio paciente pode preencher as informações e enviá-las ao médico. confortavelmente Fácil de usar também.</string>
+    <string name="graduated">graduada</string>
+    <string name="docter_id">ID do médico</string>
+    <string name="pincode">Código PIN</string>
+    <string name="confirm_pincode">Confirmar código PIN</string>
+    <string name="regular_hospital">Hospital comum</string>
+    <string name="new_pincode">Novo código PIN</string>
+    <string name="confirm_new_pincode">Confirmar novo código PIN</string>
+    <string name="pincode_updated">Código PIN atualizado</string>
+    <string name="your_pincode_has_been_changed">seu código PIN foi alterado</string>
 </resources>

@@ -56,4 +56,13 @@
     <string name="password_empty">パスワードを空にすることはできません</string>
     <string name="verify_code">コードを確認する</string>
     <string name="this_application">このアプリケーションは、現在、COVID患者の世話をするのに十分な医療関係者がいないと予測された学生のコンピュータエンジニアリングカセサート大学カンペーンセーンキャンパスのブレインストーミングから作成されました。 不十分なケアと一生懸命働く結果となるこのアプリは、これらの問題に対応し、医療従事者の効率を高めるように設計されています。 すべての患者がアクセスできる時間を短縮し、患者自身が情報を記入して医師に送信することができます。 快適に使用することもできます。</string>
+    <string name="graduated">卒業</string>
+    <string name="docter_id">ドクターID</string>
+    <string name="pincode">ピンコード</string>
+    <string name="confirm_pincode">PINコードを確認する</string>
+    <string name="regular_hospital">通常病院</string>
+    <string name="new_pincode">新しいピンコード</string>
+    <string name="confirm_new_pincode">新しいピンコードを確認する</string>
+    <string name="pincode_updated">ピンコードが更新されました</string>
+    <string name="your_pincode_has_been_changed">PINコードが変更されました</string>
 </resources>
