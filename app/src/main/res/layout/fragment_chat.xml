@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,112 @@
     android:orientation="vertical"
     tools:context=".ChatFragment">
 
+    <LinearLayout
+        android:id="@+id/Before"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You are not connected to a"
+        android:fontFamily="@font/promptlight"
+        android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor"
+            android:fontFamily="@font/promptbold"
+            android:textSize="80sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please provide Doctor ID and UID"
+            android:fontFamily="@font/promptbold"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/CheckDocterID"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/docter_id"
+            android:textColorHint="@color/background"
+            app:boxStrokeColor="@color/background"
+            app:boxStrokeErrorColor="#FF5D5D"
+            app:boxStrokeWidthFocused="2dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/background"
+            app:hintTextColor="@color/background"
+            app:startIconDrawable="@drawable/user1"
+            app:startIconTint="@color/background">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:fontFamily="@font/promptlight"
+                android:textColor="@color/background"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/CheckUID"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:hint="UID"
+            android:textColorHint="@color/background"
+            app:boxStrokeColor="@color/background"
+            app:boxStrokeErrorColor="#FF5D5D"
+            app:boxStrokeWidthFocused="2dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/background"
+            app:hintTextColor="@color/background"
+            app:startIconDrawable="@drawable/identification"
+            app:startIconTint="@color/background">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword"
+                android:fontFamily="@font/promptlight"
+                android:textColor="@color/background"
+                android:textCursorDrawable="@null" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/ConnectionRequest"
+            android:layout_width="350dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            app:backgroundTint="@null"
+            android:background="@drawable/yobutton"
+            android:text="Connection Request"
+            android:fontFamily="@font/promptbold"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:textStyle="bold">
+
+        </Button>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/After"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
     <Button
         android:id="@+id/HistoryRefresh"
         android:layout_width="wrap_content"
@@ -369,5 +475,5 @@
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>
-
-</LinearLayout>
+    </LinearLayout>
+</FrameLayout>

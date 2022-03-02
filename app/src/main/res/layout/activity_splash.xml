@@ -4,9 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splashscreen10"
     tools:context=".SplashActivity"
+    android:background="@drawable/noon"
     android:id="@+id/Splash"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pcst2"
+        android:layout_marginStart="30dp" />
 
 </LinearLayout>

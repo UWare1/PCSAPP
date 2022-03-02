@@ -3,20 +3,33 @@ package com.example.pcs;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,14 +47,24 @@ public class ChatFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private Context mContext;
+    boolean x, y;
     View view;
-    LinearLayout Func1, Func2, Func3, ShowObject1, ShowObject2, ShowObject3;
+    LinearLayout Func1, Func2, Func3, ShowObject1, ShowObject2, ShowObject3,
+                 Before, After;
+    TextInputLayout CheckDoctorID, CheckUID;
     TextView Func1Text, Func2Text, Func3Text;
     ImageView Func1Image, Func2Image, Func3Image;
     Drawable image, image2, buttonDrawable1, buttonDrawable2, buttonDrawable3;
     AnimatorSet animSet1, animSet2;
+    String DoctorIDString, username, username1;
+    Button ConnectionRequest;
     public ChatFragment() {
         // Required empty public constructor
+    }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext = context;
     }
 
     /**
@@ -88,12 +111,52 @@ public class ChatFragment extends Fragment {
         ShowObject1 = view.findViewById(R.id.ShowObject1);
         ShowObject2 = view.findViewById(R.id.ShowObject2);
         ShowObject3 = view.findViewById(R.id.ShowObject3);
+        Before = view.findViewById(R.id.Before);
+        After = view.findViewById(R.id.After);
+        CheckDoctorID = view.findViewById(R.id.CheckDocterID);
+        CheckUID = view.findViewById(R.id.CheckUID);
+        ConnectionRequest = view.findViewById(R.id.ConnectionRequest);
+        Query CheckHas = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").child("Yutthana");
+        CheckHas.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //if (dataSnapshot.exists()) {
+                    Map map = (Map)dataSnapshot.getValue();
+                    username = String.valueOf(map.get("address"));
+                    username1 = String.valueOf(map.get("uid"));
+                    //Toast.makeText(mContext, "Has" + username + " | " + username1, Toast.LENGTH_SHORT).show();
+                    /*} else {
+                    Toast.makeText(mContext, "Not Has", Toast.LENGTH_SHORT).show();
+                }*/
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                //Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        ConnectionRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!CheckDoctorinDB()) {
+                    return;
+                }
+                if (!validateFields()){
+                    return;
+                }
+                Before.setVisibility(View.INVISIBLE);
+                After.setVisibility(View.VISIBLE);
+                animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
+                animSet1.setTarget(After);
+                animSet1.start();
+            }
+        });
 
         int resID = getResources().getIdentifier("personaldoctorbuttononclick", "drawable", getActivity().getPackageName());
         image = getResources().getDrawable(resID);
         int resID1 = getResources().getIdentifier("personaldoctorbutton", "drawable", getActivity().getPackageName());
         image2 = getResources().getDrawable(resID1);
-
         Func1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -209,5 +272,50 @@ public class ChatFragment extends Fragment {
             }
         });
         return view;
+    }
+    private boolean CheckDoctorinDB() {
+        DoctorIDString = CheckDoctorID.getEditText().getText().toString().trim();
+        Query checkUser = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctor").orderByChild("doctorID").equalTo(DoctorIDString);
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    CheckDoctorID.setError("DoctorID has been use!");
+                    CheckDoctorID.setErrorEnabled(true);
+                    x = false;
+                } else {
+                    CheckDoctorID.setError(null);
+                    CheckDoctorID.setErrorEnabled(false);
+                    x = true;
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+            }
+        });
+        return x;
+    }
+    private boolean validateFields() {
+
+        String user = CheckDoctorID.getEditText().getText().toString().trim();
+        String pass = CheckUID.getEditText().getText().toString().trim();
+
+        if (user.isEmpty()) {
+            CheckDoctorID.setError(getString(R.string.user_empty));
+            CheckDoctorID.requestFocus();
+            return false;
+        } else if (pass.isEmpty()) {
+            CheckUID.setError(getString(R.string.password_empty));
+            CheckUID.requestFocus();
+            return false;
+        } else {
+            CheckDoctorID.setError(null);
+            CheckDoctorID.setErrorEnabled(false);
+            CheckUID.setError(null);
+            CheckUID.setErrorEnabled(false);
+            return true;
+        }
     }
 }
