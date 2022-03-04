@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".NotiFragment">
 
     <TextView
@@ -13,5 +14,26 @@
         android:textSize="48sp"
         android:textStyle="bold"
         android:gravity="center"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Test"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:hint="@string/docter_id"
+        android:textColorHint="@color/background"
+        android:layout_gravity="center"
+        >
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:fontFamily="@font/promptlight"
+            android:textColor="@color/background"
+            android:gravity="center"
+            android:textCursorDrawable="@null" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </FrameLayout>

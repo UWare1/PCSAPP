@@ -141,6 +141,7 @@ public class UserFragment extends Fragment {
         AddressDB = UserDetails.get(SessionManager.KEY_ADDRESS);
         Email = UserDetails.get(SessionManager.KEY_EMAIL);
         ProfileIDImage = UserDetails.get(SessionManager.KEY_PROFILEID);
+        ProfileIDImage = ProfileID;
         resID = getResources().getIdentifier(ProfileIDImage, "drawable", getActivity().getPackageName());
         image = getResources().getDrawable(resID);
         ProfileImage.setImageDrawable(image);
@@ -188,9 +189,9 @@ public class UserFragment extends Fragment {
                             userUpdates.put("profileID", ProfileID);
                             reference.updateChildren(userUpdates);
 
-                            resID1 = getResources().getIdentifier(ProfileID, "drawable", getActivity().getPackageName());
+                            /*resID1 = getResources().getIdentifier(ProfileID, "drawable", getActivity().getPackageName());
                             image1 = getResources().getDrawable(resID1);
-                            ProfileImage.setImageDrawable(image1);
+                            ProfileImage.setImageDrawable(image1);*/
                         }
                         dialog.dismiss();
                     }

@@ -2,14 +2,15 @@ package com.example.pcs;
 
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 
@@ -17,18 +18,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -47,20 +53,25 @@ public class ChatFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private Context mContext;
-    boolean x, y;
     View view;
-    LinearLayout Func1, Func2, Func3, ShowObject1, ShowObject2, ShowObject3,
-                 Before, After;
+    LinearLayout Func1, Func2, Func3, //ShowObject1, ShowObject2, ShowObject3,
+            Before, After;
+    ScrollView ShowObject1, ShowObject2, ShowObject3;
     TextInputLayout CheckDoctorID, CheckUID;
     TextView Func1Text, Func2Text, Func3Text;
     ImageView Func1Image, Func2Image, Func3Image;
     Drawable image, image2, buttonDrawable1, buttonDrawable2, buttonDrawable3;
     AnimatorSet animSet1, animSet2;
-    String DoctorIDString, username, username1;
+    String UserID, MyDoctor, doctored, uid,
+            NameDBDoctor, FullnameDBDoctor, EmailDBDoctor, PhoneDBDoctor, UniversityDBDoctor, AddressDBDoctor;
+    TextView NameDoctor, EmailDoctor, PhoneDoctor, UniversityDoctor, AddressDoctor;
     Button ConnectionRequest;
+    CardView AddCommentChat;
+
     public ChatFragment() {
         // Required empty public constructor
     }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -108,30 +119,71 @@ public class ChatFragment extends Fragment {
         Func1Image = view.findViewById(R.id.Func1Image);
         Func2Image = view.findViewById(R.id.Func2Image);
         Func3Image = view.findViewById(R.id.Func3Image);
+        AddCommentChat = view.findViewById(R.id.AddCommentChat);
         ShowObject1 = view.findViewById(R.id.ShowObject1);
         ShowObject2 = view.findViewById(R.id.ShowObject2);
         ShowObject3 = view.findViewById(R.id.ShowObject3);
+        NameDoctor = view.findViewById(R.id.NameDoctor);
+        EmailDoctor = view.findViewById(R.id.EmailDoctor);
+        PhoneDoctor = view.findViewById(R.id.PhoneDoctor);
+        UniversityDoctor = view.findViewById(R.id.UniversityDoctor);
+        AddressDoctor = view.findViewById(R.id.AddressDoctor);
         Before = view.findViewById(R.id.Before);
         After = view.findViewById(R.id.After);
         CheckDoctorID = view.findViewById(R.id.CheckDocterID);
         CheckUID = view.findViewById(R.id.CheckUID);
         ConnectionRequest = view.findViewById(R.id.ConnectionRequest);
-        Query CheckHas = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").child("Yutthana");
+
+        SessionManager sessionManager = new SessionManager(getActivity());
+        HashMap<String, String> UserDetails = sessionManager.getUserDatailFromSession();
+        UserID = UserDetails.get(SessionManager.KEY_USERID);
+
+        Query CheckHas = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").child(UserID);
         CheckHas.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //if (dataSnapshot.exists()) {
-                    Map map = (Map)dataSnapshot.getValue();
-                    username = String.valueOf(map.get("address"));
-                    username1 = String.valueOf(map.get("uid"));
-                    //Toast.makeText(mContext, "Has" + username + " | " + username1, Toast.LENGTH_SHORT).show();
-                    /*} else {
-                    Toast.makeText(mContext, "Not Has", Toast.LENGTH_SHORT).show();
-                }*/
+                animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
+                Map map = (Map) dataSnapshot.getValue();
+                MyDoctor = String.valueOf(map.get("myDoctor"));
+                if (MyDoctor.equals("0")) {
+                    Before.setVisibility(View.VISIBLE);
+                    After.setVisibility(View.INVISIBLE);
+                    animSet1.setTarget(Before);
+                } else {
+                    Before.setVisibility(View.INVISIBLE);
+                    After.setVisibility(View.VISIBLE);
+                    animSet1.setTarget(After);
+                }
+                animSet1.start();
+                NameDBDoctor = String.valueOf(map.get("nameDoctor"));
+                Query CheckDoctor = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctor").child(NameDBDoctor);
+                CheckDoctor.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Map mapDoctor = (Map) snapshot.getValue();
+                        FullnameDBDoctor = String.valueOf(mapDoctor.get("fullname"));
+                        EmailDBDoctor = String.valueOf(mapDoctor.get("email"));
+                        PhoneDBDoctor = String.valueOf(mapDoctor.get("_phoneNo"));
+                        UniversityDBDoctor = String.valueOf(mapDoctor.get("university"));
+                        AddressDBDoctor = String.valueOf(mapDoctor.get("address"));
+
+                        NameDoctor.setText(FullnameDBDoctor);
+                        EmailDoctor.setText(EmailDBDoctor);
+                        PhoneDoctor.setText(PhoneDBDoctor);
+                        UniversityDoctor.setText(UniversityDBDoctor);
+                        AddressDoctor.setText(AddressDBDoctor);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                //Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -139,17 +191,43 @@ public class ChatFragment extends Fragment {
         ConnectionRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!CheckDoctorinDB()) {
+                if (!validateFields()) {
                     return;
                 }
-                if (!validateFields()){
-                    return;
-                }
-                Before.setVisibility(View.INVISIBLE);
-                After.setVisibility(View.VISIBLE);
-                animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
-                animSet1.setTarget(After);
-                animSet1.start();
+                doctored = CheckDoctorID.getEditText().getText().toString().trim();
+                uid = CheckUID.getEditText().getText().toString().trim();
+                Query CheckDTHas = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctor").orderByChild("doctorID").equalTo(doctored);
+                CheckDTHas.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            CheckDoctorID.setError(null);
+                            CheckDoctorID.setErrorEnabled(false);
+                            animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
+                            String uidDB = dataSnapshot.child(doctored).child("uid").getValue(String.class);
+                            if (uidDB.equals(uid)) {
+                                CheckHas.getRef().child("myDoctor").setValue(uid);
+                                CheckHas.getRef().child("nameDoctor").setValue(doctored);
+                                CheckDTHas.getRef().child("PatientInCare").child(UserID).child("name").setValue(UserID);
+                                Before.setVisibility(View.INVISIBLE);
+                                After.setVisibility(View.VISIBLE);
+                                animSet1.setTarget(After);
+                                animSet1.start();
+                            } else {
+                                CheckUID.setError("UID not match!");
+                                CheckUID.setErrorEnabled(true);
+                            }
+                        } else {
+                            CheckDoctorID.setError("DoctorID not has!");
+                            CheckDoctorID.setErrorEnabled(true);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 
@@ -169,7 +247,6 @@ public class ChatFragment extends Fragment {
                 Func1Image.setBackground(buttonDrawable1);
                 animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
                 animSet1.setTarget(Func1);
-                animSet1.start();
 
                 //Set Another Func
                 Func2.setBackground(image2);
@@ -193,6 +270,15 @@ public class ChatFragment extends Fragment {
                 ShowObject1.setVisibility(View.VISIBLE);
                 ShowObject2.setVisibility(View.INVISIBLE);
                 ShowObject3.setVisibility(View.INVISIBLE);
+
+                //------------------------------------------------------------
+                if (AddCommentChat.getVisibility() == View.VISIBLE){
+                    AddCommentChat.animate().alpha(0).setDuration(600);
+                    //AddCommentChat.setVisibility(View.INVISIBLE);
+                    Func3Text.animate().translationY(8).setDuration(600);
+                    Func3Image.animate().translationY(8).setDuration(600);
+                }
+                animSet1.start();
             }
         });
         Func2.setOnClickListener(new View.OnClickListener() {
@@ -207,7 +293,6 @@ public class ChatFragment extends Fragment {
                 Func2Image.setBackground(buttonDrawable1);
                 animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
                 animSet1.setTarget(Func2);
-                animSet1.start();
 
                 //Set Another Func
                 Func1.setBackground(image2);
@@ -231,6 +316,15 @@ public class ChatFragment extends Fragment {
                 ShowObject2.setVisibility(View.VISIBLE);
                 ShowObject1.setVisibility(View.INVISIBLE);
                 ShowObject3.setVisibility(View.INVISIBLE);
+
+                //------------------------------------------------------------
+                if (AddCommentChat.getVisibility() == View.VISIBLE){
+                    AddCommentChat.animate().alpha(0).setDuration(600);
+                    //AddCommentChat.setVisibility(View.INVISIBLE);
+                    Func3Text.animate().translationY(8).setDuration(600);
+                    Func3Image.animate().translationY(8).setDuration(600);
+                }
+                animSet1.start();
             }
         });
         Func3.setOnClickListener(new View.OnClickListener() {
@@ -245,7 +339,6 @@ public class ChatFragment extends Fragment {
                 Func3Image.setBackground(buttonDrawable1);
                 animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
                 animSet1.setTarget(Func3);
-                animSet1.start();
 
                 //Set Another Func
                 Func1.setBackground(image2);
@@ -269,34 +362,39 @@ public class ChatFragment extends Fragment {
                 ShowObject3.setVisibility(View.VISIBLE);
                 ShowObject1.setVisibility(View.INVISIBLE);
                 ShowObject2.setVisibility(View.INVISIBLE);
+
+                //------------------------------------------------------------
+                AddCommentChat.setVisibility(View.VISIBLE);
+                animSet1.setTarget(AddCommentChat);
+                animSet1.start();
+                Func3Text.animate().translationY(-20).setDuration(600);
+                Func3Image.animate().translationY(-20).setDuration(600);
+            }
+        });
+        AddCommentChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                        mContext, R.style.BottomSheetDialogTheme
+                );
+                final View bottomSheetView = LayoutInflater.from(getActivity())
+                        .inflate(
+                                R.layout.activity_bottom_sheet3,
+                                (LinearLayout) view.findViewById(R.id.BottomSheetContainer)
+                        );
+                bottomSheetView.findViewById(R.id.Understand).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+                bottomSheetDialog.setContentView(bottomSheetView);
+                bottomSheetDialog.show();
             }
         });
         return view;
     }
-    private boolean CheckDoctorinDB() {
-        DoctorIDString = CheckDoctorID.getEditText().getText().toString().trim();
-        Query checkUser = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctor").orderByChild("doctorID").equalTo(DoctorIDString);
-        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    CheckDoctorID.setError("DoctorID has been use!");
-                    CheckDoctorID.setErrorEnabled(true);
-                    x = false;
-                } else {
-                    CheckDoctorID.setError(null);
-                    CheckDoctorID.setErrorEnabled(false);
-                    x = true;
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
-            }
-        });
-        return x;
-    }
     private boolean validateFields() {
 
         String user = CheckDoctorID.getEditText().getText().toString().trim();

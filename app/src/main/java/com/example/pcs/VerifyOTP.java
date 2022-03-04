@@ -34,7 +34,7 @@ public class VerifyOTP extends AppCompatActivity {
     String codeBySystem;
     String UserID, Password, Email, NationalIDCard,
             Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo, whatToDO,
-            ProfileID = "iconprofile1";
+            ProfileID = "iconprofile1", uid = "0";
     TextView otpDescriptionText;
     ImageView Exit;
     View decorView;
@@ -156,6 +156,7 @@ public class VerifyOTP extends AppCompatActivity {
         UserHelperClass addNewUser = new UserHelperClass(UserID, Password, Email, NationalIDCard,
                 Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo, ProfileID);
         reference.child(UserID).setValue(addNewUser);
+        reference.child(UserID).child("myDoctor").setValue(uid);
 
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);

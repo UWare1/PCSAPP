@@ -11,31 +11,32 @@
         android:id="@+id/Before"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:gravity="center"
-        android:visibility="visible">
-
-        <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="You are not connected to a"
-        android:fontFamily="@font/promptlight"
-        android:textSize="20sp"/>
+        android:orientation="vertical"
+        android:visibility="invisible">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/promptlight"
+            android:text="You are not connected to a"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/promptbold"
             android:text="Doctor"
-            android:fontFamily="@font/promptbold"
             android:textSize="80sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Please provide Doctor ID and UID"
             android:fontFamily="@font/promptbold"
+            android:text="Please provide Doctor ID and UID"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/CheckDocterID"
@@ -58,8 +59,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="text"
                 android:fontFamily="@font/promptlight"
+                android:inputType="text"
                 android:textColor="@color/background"
                 android:textCursorDrawable="@null" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -85,8 +86,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textPassword"
                 android:fontFamily="@font/promptlight"
+                android:inputType="number"
                 android:textColor="@color/background"
                 android:textCursorDrawable="@null" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -97,383 +98,653 @@
             android:layout_height="48dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            app:backgroundTint="@null"
             android:background="@drawable/yobutton"
-            android:text="Connection Request"
             android:fontFamily="@font/promptbold"
+            android:text="Connection Request"
             android:textColor="#fff"
             android:textSize="16sp"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            app:backgroundTint="@null">
 
         </Button>
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/After"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:visibility="invisible">
-    <Button
-        android:id="@+id/HistoryRefresh"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_gravity="start"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/personaldoctorbutton"
-        android:fontFamily="@font/promptbold"
-        android:gravity="center"
-        android:text="Personal Doctor"
-        android:textColor="@color/pbutton"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+        android:visibility="visible">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5">
-
-        <View
-            android:layout_width="417dp"
-            android:layout_height="400dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="30dp"
-            android:background="@drawable/backdoctor" />
-
-        <ImageView
-            android:layout_width="477dp"
-            android:layout_height="460dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/doctorpeople" />
-
-    </FrameLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="7dp"
-        android:layout_margin="20dp"
-        android:layout_gravity="center_horizontal"
-        android:background="#3A3838" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="60dp">
-
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="160dp"
-                android:layout_marginEnd="20dp"
-                android:layout_weight="0.25">
-
-                <LinearLayout
-                    android:id="@+id/Func1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/personaldoctorbutton"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/Func1Text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:fontFamily="@font/promptbold"
-                        android:gravity="center"
-                        android:text="Info"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:id="@+id/Func1Image"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/informationn"
-                        android:backgroundTint="#777777" />
-                </LinearLayout>
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="160dp"
-                android:layout_marginEnd="20dp"
-                android:layout_weight="0.25">
-
-                <LinearLayout
-                    android:id="@+id/Func2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/personaldoctorbutton"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/Func2Text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:fontFamily="@font/promptbold"
-                        android:gravity="center"
-                        android:text="History"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:id="@+id/Func2Image"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/counterclockwise"
-                        android:backgroundTint="#777777" />
-                </LinearLayout>
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="160dp"
-                android:layout_marginEnd="20dp"
-                android:layout_weight="0.25">
-
-                <LinearLayout
-                    android:id="@+id/Func3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/personaldoctorbutton"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/Func3Text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:fontFamily="@font/promptbold"
-                        android:gravity="center"
-                        android:text="Chat"
-                        android:textSize="20sp" />
-
-                    <ImageView
-                        android:id="@+id/Func3Image"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/chat"
-                        android:backgroundTint="#777777" />
-                </LinearLayout>
-            </FrameLayout>
-        </LinearLayout>
+        <Button
+            android:id="@+id/HistoryRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/personaldoctorbutton"
+            android:fontFamily="@font/promptbold"
+            android:gravity="center"
+            android:text="Personal Doctor"
+            android:textColor="@color/pbutton"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <LinearLayout
-                android:id="@+id/ShowObject1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                android:orientation="vertical"
-                android:visibility="invisible">
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/personaldoctorbutton"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="20dp"
-                    android:layout_marginBottom="17dp">
+            <View
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="30dp"
+                android:background="@drawable/backdoctor" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center_horizontal">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/user5"
-                            android:layout_marginEnd="20dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Yutthana Piyawongwatthana"
-                            android:textSize="20sp" />
-                    </LinearLayout>
+            <ImageView
+                android:layout_width="360dp"
+                android:layout_height="360dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/doctorpeople" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center_horizontal">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/email"
-                            android:layout_marginEnd="20dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="yutthana.pi@ku.th"
-                            android:textSize="20sp" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center_horizontal">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/phone1"
-                            android:layout_marginEnd="20dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="080-970-3295"
-                            android:textSize="20sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center_horizontal">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/graduation"
-                            android:layout_marginEnd="20dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Kasetsart University"
-                            android:textSize="20sp" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_horizontal">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/address"
-                            android:layout_marginEnd="20dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="111 Ratchaburi"
-                            android:textSize="20sp" />
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/ShowObject2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                android:orientation="vertical"
-                android:visibility="invisible">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/personaldoctorbutton"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="20dp"
-                    android:layout_marginBottom="17dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="10dp"
-                        android:gravity="center_horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="This is History!!!"
-                            android:textSize="32sp"
-                            android:fontFamily="@font/promptbold"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/ShowObject3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                android:orientation="vertical"
-                android:visibility="invisible">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:background="@drawable/personaldoctorbutton"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:padding="20dp"
-                    android:layout_marginBottom="17dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Comments"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:background="#3A3838" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                        android:textSize="20sp" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:background="@drawable/personaldoctorbutton"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:padding="20dp"
-                    android:layout_marginBottom="17dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Comments"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:background="#3A3838" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                        android:textSize="20sp" />
-                </LinearLayout>
-            </LinearLayout>
         </FrameLayout>
-    </LinearLayout>
+
+        <View
+            android:layout_width="360dp"
+            android:layout_height="7dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:background="#FFACAC" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:layout_marginEnd="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/Func1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/personaldoctorbutton"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/Func1Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/promptbold"
+                            android:gravity="center"
+                            android:text="@string/info"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/Func1Image"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/informationn"
+                            android:backgroundTint="#777777" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="160dp"
+                    android:layout_marginEnd="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/Func2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/personaldoctorbutton"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/Func2Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/promptbold"
+                            android:gravity="center"
+                            android:text="@string/history"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/Func2Image"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/counterclockwise"
+                            android:backgroundTint="#777777" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="160dp">
+
+                    <LinearLayout
+                        android:id="@+id/Func3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/personaldoctorbutton"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/Func3Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/promptbold"
+                            android:gravity="center"
+                            android:text="@string/chat"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/Func3Image"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/chat"
+                            android:backgroundTint="#777777" />
+
+                    </LinearLayout>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/AddCommentChat"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_gravity="bottom"
+                        app:cardBackgroundColor="@color/white"
+                        android:visibility="invisible">
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/add"
+                            android:backgroundTint="@color/pbutton"/>
+                    </androidx.cardview.widget.CardView>
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ScrollView
+                    android:id="@+id/ShowObject1"
+                    android:layout_width="380dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    android:paddingVertical="4dp"
+                    android:scrollbarSize="1dp"
+                    android:scrollbarThumbVertical="@drawable/thumbscroll"
+                    android:background="@drawable/personaldoctorbutton"
+                    android:scrollbars="vertical"
+                    android:visibility="invisible">
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:columnCount="1"
+                        android:rowCount="5">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:background="@drawable/user5" />
+
+                            <TextView
+                                android:id="@+id/NameDoctor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Yutthana Piyawongwatthana"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:background="@drawable/email" />
+
+                            <TextView
+                                android:id="@+id/EmailDoctor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="yutthana.pi@ku.th"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:background="@drawable/phone1" />
+
+                            <TextView
+                                android:id="@+id/PhoneDoctor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="080-970-3295"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:background="@drawable/graduation" />
+
+                            <TextView
+                                android:id="@+id/UniversityDoctor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Kasetsart University"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:background="@drawable/address" />
+
+                            <TextView
+                                android:id="@+id/AddressDoctor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="111 Ratchaburi"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                    </GridLayout>
+                </ScrollView>
+
+                <ScrollView
+                    android:id="@+id/ShowObject2"
+                    android:layout_width="380dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    android:scrollbarSize="1dp"
+                    android:scrollbarThumbVertical="@drawable/thumbscroll"
+                    android:scrollbars="vertical"
+                    android:visibility="invisible">
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/personaldoctorbutton"
+                        android:columnCount="1"
+                        android:rowCount="5">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/promptbold"
+                                android:gravity="center_horizontal"
+                                android:text="Welcome\nThis is History!!!\nYou are In."
+                                android:textSize="32sp" />
+                        </LinearLayout>
+
+
+                    </GridLayout>
+                </ScrollView>
+
+                <ScrollView
+                    android:id="@+id/ShowObject3"
+                    android:layout_width="380dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    android:scrollbarSize="1dp"
+                    android:scrollbarThumbVertical="@drawable/thumbscroll"
+                    android:scrollbars="vertical"
+                    android:visibility="invisible">
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:columnCount="1"
+                        android:rowCount="5">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginBottom="17dp"
+                            android:background="@drawable/personaldoctorbutton"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Comments"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="12dp"
+                                android:background="#3A3838" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                android:textSize="20sp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginBottom="17dp"
+                            android:background="@drawable/personaldoctorbutton"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Comments"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="12dp"
+                                android:background="#3A3838" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+
+                    </GridLayout>
+                </ScrollView>
+
+                <!--<LinearLayout
+                    android:id="@+id/ShowObject1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/personaldoctorbutton"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:layout_marginBottom="17dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center_horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/user5"
+                                android:layout_marginEnd="20dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Yutthana Piyawongwatthana"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center_horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/email"
+                                android:layout_marginEnd="20dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="yutthana.pi@ku.th"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center_horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/phone1"
+                                android:layout_marginEnd="20dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="080-970-3295"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center_horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/graduation"
+                                android:layout_marginEnd="20dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Kasetsart University"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/address"
+                                android:layout_marginEnd="20dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="111 Ratchaburi"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ShowObject2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/personaldoctorbutton"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:layout_marginBottom="17dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center_horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="This is History!!!"
+                                android:textSize="32sp"
+                                android:fontFamily="@font/promptbold"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ShowObject3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/personaldoctorbutton"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="20dp"
+                        android:layout_marginBottom="17dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Comments"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="12dp"
+                            android:background="#3A3838" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/personaldoctorbutton"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="20dp"
+                        android:layout_marginBottom="17dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Comments"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="12dp"
+                            android:background="#3A3838" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </LinearLayout>-->
+            </FrameLayout>
+        </LinearLayout>
     </LinearLayout>
 </FrameLayout>

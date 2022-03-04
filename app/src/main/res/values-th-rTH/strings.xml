@@ -33,7 +33,6 @@
     <string name="language">เปลี่ยนภาษา</string>
     <string name="setting">"การตั้งค่า "</string>
     <string name="function">ฟังก์ชั่น</string>
-    <string name="help">เกี่ยวกับ</string>
     <string name="logout">ลงชื่อออก</string>
     <string name="understand">เข้าใจเเล้ว</string>
     <string name="have_a_login_page_before_using_patient_checking_system_application_and_safe_to_use_firebase_to_store_critical_parts_of_your_data">มีหน้าลงชื่อเข้าใช้ก่อนการใช้ PCSAPP และมีการใช้ความปลอดภัยของไฟร์เบส ในการเก็บข้อมูลต่างๆที่สำคัญ</string>
@@ -61,7 +60,7 @@
     <string name="graduated">จบการศึกษา</string>
     <string name="pincode">รหัสพิน</string>
     <string name="confirm_pincode">ยืนยันรหัสพิน</string>
-    <string name="docter_id">ชื้อหมอผู้ใช้</string>
+    <string name="docter_id">ชือหมอผู้ใช้</string>
     <string name="regular_hospital">โรงพยาบาลที่ประจำการ</string>
     <string name="new_pincode">รหัสพินใหม่</string>
     <string name="confirm_new_pincode">ยืนยันรหัสพินใหม่</string>
