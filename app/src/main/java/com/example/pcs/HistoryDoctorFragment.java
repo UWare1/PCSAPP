@@ -21,10 +21,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -204,10 +207,50 @@ public class HistoryDoctorFragment extends Fragment {
                                 R.layout.activity_bottom_sheet5,
                                 (LinearLayout) view.findViewById(R.id.BottomSheetContainer2)
                         );
+                final RadioGroup radioGroup = bottomSheetView.findViewById(R.id.Radio_Comment);
+                final RadioButton selectedComment = bottomSheetView.findViewById(radioGroup.getCheckedRadioButtonId());
+                //final String TypeComment = selectedComment.getText().toString().trim();
+                final TextInputLayout Comments = bottomSheetView.findViewById(R.id.AllComments);
+                final String NameComment = Comments.getEditText().getText().toString().trim();
 
+                //------------------------------ Save data to Database (TypeComment and NameComment)
+
+
+
+
+
+
+
+
+                //----------------------------------------------------------------------------------
                 bottomSheetView.findViewById(R.id.Understand).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+                bottomSheetDialog.setContentView(bottomSheetView);
+                bottomSheetDialog.show();
+            }
+        });
+        ColorPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                        mContext, R.style.BottomSheetDialogTheme
+                );
+                final View bottomSheetView = LayoutInflater.from(getActivity())
+                        .inflate(
+                                R.layout.activity_bottom_sheet6,
+                                (LinearLayout) view.findViewById(R.id.BottomSheetContainer2)
+                        );
+                final RadioGroup radioGroup = bottomSheetView.findViewById(R.id.Radio_Color);
+                final RadioButton selectedColor = bottomSheetView.findViewById(radioGroup.getCheckedRadioButtonId());
+                //final String NameColor = selectedColor.getText().toString().trim();
+                bottomSheetView.findViewById(R.id.Understand).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //ColorPatient.setText("Color : " + NameColor);
                         bottomSheetDialog.dismiss();
                     }
                 });

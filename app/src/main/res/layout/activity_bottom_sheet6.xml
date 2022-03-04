@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="15dp"
-        android:text="@string/comments"
+        android:text="@string/colors"
         android:fontFamily="@font/promptbold"
         android:textAllCaps="true"
         android:textStyle="bold"
@@ -23,81 +23,43 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginBottom="10dp"
         android:layout_marginHorizontal="30dp"
         android:background="#DCDCDC" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="7dp"
-        android:text="Type of Comments"
-        android:fontFamily="@font/promptlight"
-        android:textAllCaps="true"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        />
     <RadioGroup
-        android:id="@+id/Radio_Comment"
+        android:id="@+id/Radio_Color"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_marginVertical="10dp"
         android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/Comments"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Comments"
-            android:fontFamily="@font/promptlight"/>
 
         <RadioButton
-            android:id="@+id/Warning"
+            android:id="@+id/Green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/green"
+            android:fontFamily="@font/promptlight"/>
+
+
+        <RadioButton
+            android:id="@+id/Yellow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Warning"
+            android:text="@string/yellow"
             android:fontFamily="@font/promptlight"/>
 
+
         <RadioButton
-            android:id="@+id/Appointment"
+            android:id="@+id/Red"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Appointment"
+            android:text="@string/red"
             android:fontFamily="@font/promptlight"/>
     </RadioGroup>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/AllComments"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/comments"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="20dp"
-        android:textColorHint="@color/background"
-        app:boxStrokeColor="@color/background"
-        app:boxStrokeErrorColor="#FF5D5D"
-        app:boxStrokeWidthFocused="2dp"
-        app:endIconMode="clear_text"
-        app:endIconTint="@color/background"
-        app:hintTextColor="@color/background"
-        app:startIconDrawable="@drawable/comments"
-        app:startIconTint="@color/background">
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textPassword"
-            android:fontFamily="@font/promptlight"
-            android:textColor="@color/background"
-            android:textCursorDrawable="@null" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/Understand"
