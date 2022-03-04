@@ -169,26 +169,234 @@
                     android:rowCount="5"
                     android:columnCount="1">
 
-                    <View
-                        android:layout_width="370dp"
-                        android:layout_height="80dp"
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="420dp"
+                        android:layout_height="120dp"
                         android:layout_margin="6dp"
-                        android:background="@drawable/appbg5"/>
-                    <View
-                        android:layout_width="370dp"
-                        android:layout_height="80dp"
+                        app:cardCornerRadius="6dp"
+                        app:cardBackgroundColor="@color/pbutton">
+                        <LinearLayout
+                            android:id="@+id/Assessment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="20dp"
+                                android:background="@drawable/feedback"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center_horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Assessment Form"
+                                    android:textColor="@color/white"
+                                    android:textSize="24sp"
+                                    android:fontFamily="@font/promptbold"
+                                    android:layout_marginTop="16dp"/>
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/white"
+                                    android:layout_marginHorizontal="56dp"
+                                    android:layout_marginBottom="6dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="for application"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:textColor="@color/white"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="@font/promptlight" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="development guidelines"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:textColor="@color/white"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="@font/promptlight" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="420dp"
+                        android:layout_height="120dp"
                         android:layout_margin="6dp"
-                        android:background="@drawable/appbg6"/>
-                    <View
-                        android:layout_width="370dp"
-                        android:layout_height="80dp"
+                        app:cardCornerRadius="6dp"
+                        app:cardBackgroundColor="#FBDB96">
+                        <LinearLayout
+                            android:id="@+id/Assessment2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="20dp"
+                                android:background="@drawable/packages"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center_horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Packages Form"
+                                    android:textColor="@color/white"
+                                    android:textSize="24sp"
+                                    android:fontFamily="@font/promptbold"
+                                    android:layout_marginTop="16dp"/>
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/white"
+                                    android:layout_marginHorizontal="56dp"
+                                    android:layout_marginBottom="6dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="for application"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:textColor="@color/white"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="@font/promptlight" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="config guidelines"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:textColor="@color/white"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="@font/promptlight" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="420dp"
+                        android:layout_height="120dp"
                         android:layout_margin="6dp"
-                        android:background="@drawable/appbg5"/>
-                    <View
-                        android:layout_width="370dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="6dp"
-                        android:background="@drawable/appbg6"/>
+                        app:cardCornerRadius="6dp"
+                        app:cardBackgroundColor="#AFF6FF">
+                        <LinearLayout
+                            android:id="@+id/Assessment3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="20dp"
+                                android:background="@drawable/ambulance"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center_horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Hospital Form"
+                                    android:textColor="@color/grey"
+                                    android:textSize="24sp"
+                                    android:fontFamily="@font/promptbold"
+                                    android:layout_marginTop="16dp"/>
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/grey"
+                                    android:layout_marginHorizontal="56dp"
+                                    android:layout_marginBottom="6dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="for application increase"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:textColor="@color/grey"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="@font/promptlight" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="hospital guidelines"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:textColor="@color/grey"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:fontFamily="@font/promptlight" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                    android:layout_width="420dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardBackgroundColor="#F4B4FF">
+                    <LinearLayout
+                        android:id="@+id/Assessment4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/vaccination"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Vaccine Form"
+                                android:textColor="@color/grey"
+                                android:textSize="24sp"
+                                android:fontFamily="@font/promptbold"
+                                android:layout_marginTop="16dp"/>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/grey"
+                                android:layout_marginHorizontal="56dp"
+                                android:layout_marginBottom="6dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="for application help"
+                                android:layout_marginHorizontal="10dp"
+                                android:textColor="@color/grey"
+                                android:gravity="center"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/promptlight" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="vaccine guidelines"
+                                android:layout_marginHorizontal="10dp"
+                                android:textColor="@color/grey"
+                                android:gravity="center"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/promptlight" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
                 </GridLayout>
             </ScrollView>

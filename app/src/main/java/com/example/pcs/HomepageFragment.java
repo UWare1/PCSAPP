@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.denzcoskun.imageslider.ImageSlider;
@@ -43,6 +45,7 @@ public class HomepageFragment extends Fragment {
     private String mParam2;
     private Context mContext;
     View view;
+    LinearLayout Assessment, Assessment2, Assessment3, Assessment4;
     //Button ToRecentsHistory;
 
     public HomepageFragment() {
@@ -88,8 +91,13 @@ public class HomepageFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_homepage, container, false);
         //ToRecentsHistory = view.findViewById(R.id.ToRecentsHistory);
 
+        Assessment = view.findViewById(R.id.Assessment);
+        Assessment2 = view.findViewById(R.id.Assessment2);
+        Assessment3 = view.findViewById(R.id.Assessment3);
+        Assessment4 = view.findViewById(R.id.Assessment4);
         ImageSlider imageSlider = view.findViewById(R.id.slider);
 
+        //-----------------------------------------------------
         List<SlideModel> slideModels = new ArrayList<>();
 
         slideModels.add(new SlideModel(R.drawable.show));
@@ -99,6 +107,35 @@ public class HomepageFragment extends Fragment {
 
         imageSlider.setImageList(slideModels,false);
 
+        //-------------------------------------------------------
+        Assessment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ToBrowser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/GeJCoAj1EtDPrsM86"));
+                startActivity(ToBrowser);
+            }
+        });
+        Assessment2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ToBrowser2 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/GeJCoAj1EtDPrsM86"));
+                startActivity(ToBrowser2);
+            }
+        });
+        Assessment3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ToBrowser3 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/GeJCoAj1EtDPrsM86"));
+                startActivity(ToBrowser3);
+            }
+        });
+        Assessment4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ToBrowser4 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/GeJCoAj1EtDPrsM86"));
+                startActivity(ToBrowser4);
+            }
+        });
         /*ToRecentsHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
