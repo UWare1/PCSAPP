@@ -111,7 +111,7 @@ public class HomepageFragment extends Fragment {
         Assessment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ToBrowser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/GeJCoAj1EtDPrsM86"));
+                Intent ToBrowser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/YW2f6sd2nMysSLrSA"));
                 startActivity(ToBrowser);
             }
         });
