@@ -169,9 +169,9 @@ public class HistoryDoctorFragment extends Fragment {
 
                                 NamePatient.setText(FullnameDBPatient);
                                 EmailPatient.setText(EmailDBPatient);
-                                /*int resID = getResources().getIdentifier(ProfileIDDBPatient, "drawable", getActivity().getPackageName());
+                                int resID = getResources().getIdentifier(ProfileIDDBPatient, "drawable", getActivity().getPackageName());
                                 Drawable image = getResources().getDrawable(resID);
-                                ImagePatient.setImageDrawable(image);*/
+                                ImagePatient.setImageDrawable(image);
                             }
 
                             @Override
