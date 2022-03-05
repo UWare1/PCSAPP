@@ -1,12 +1,17 @@
 package com.example.pcs;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.IdRes;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,9 +28,17 @@ public class NotiDoctorFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Context mContext;
+    View view;
+    String team;
 
     public NotiDoctorFragment() {
         // Required empty public constructor
+    }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext = context;
     }
 
     /**
@@ -59,6 +72,26 @@ public class NotiDoctorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_noti_doctor, container, false);
+        view = inflater.inflate(R.layout.fragment_noti_doctor, container, false);
+        RadioGroup radioGroup = view.findViewById(R.id.Radio_Color);
+
+        // get selected radio button from radioGroup
+        int selectedId = radioGroup.getCheckedRadioButtonId();
+        // find the radiobutton by returned id
+        RadioButton radioButton = (RadioButton) view.findViewById(selectedId);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                RadioButton rb= (RadioButton) view.findViewById(checkedId);
+                team = rb.getText().toString();
+                Toast.makeText(mContext, "Select: " + team, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+        //final String NameColor = selectedColor.getText().toString().trim();
+        //Toast.makeText(mContext, "NameColor: ", Toast.LENGTH_SHORT).show();
+        return view;
     }
 }

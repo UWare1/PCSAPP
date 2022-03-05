@@ -208,6 +208,7 @@ public class ChatFragment extends Fragment {
                             if (uidDB.equals(uid)) {
                                 CheckHas.getRef().child("myDoctor").setValue(uid);
                                 CheckHas.getRef().child("nameDoctor").setValue(doctored);
+                                CheckHas.getRef().child("numberOfMents").setValue(0);
                                 CheckDTHas.getRef().child("PatientInCare").child(UserID).child("name").setValue(UserID);
                                 Before.setVisibility(View.INVISIBLE);
                                 After.setVisibility(View.VISIBLE);

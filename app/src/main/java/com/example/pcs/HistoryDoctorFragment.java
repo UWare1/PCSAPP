@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
@@ -30,6 +31,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
@@ -55,17 +57,22 @@ public class HistoryDoctorFragment extends Fragment {
     private String mParam2;
     private Context mContext;
     LinearLayout LayH01;
+    TextInputLayout Comments;
     View view;
     TextView SelectPatient, NamePatient, EmailPatient;
     ImageView ImagePatient;
     Button CommentsPatient, ColorPatient;
 
+    int NumberOfMents;
+
     String DoctorID, PatientID,
-           FullnameDBPatient, EmailDBPatient, ProfileIDDBPatient;
+            FullnameDBPatient, EmailDBPatient, ProfileIDDBPatient,
+            TypeComment, NameComments, NameColor;
 
     public HistoryDoctorFragment() {
         // Required empty public constructor
     }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -127,7 +134,7 @@ public class HistoryDoctorFragment extends Fragment {
         CheckPatient.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
                     String parent = childSnapshot.getKey();
                     arrayList.add(parent);
                     //Log.i("TAG", parent);
@@ -169,12 +176,17 @@ public class HistoryDoctorFragment extends Fragment {
                                 FullnameDBPatient = String.valueOf(map.get("fullname"));
                                 EmailDBPatient = String.valueOf(map.get("email"));
                                 ProfileIDDBPatient = String.valueOf(map.get("profileID"));
+                                NumberOfMents = Integer.parseInt(String.valueOf(map.get("numberOfMents")));
 
+                                Toast.makeText(mContext, "Number: " + NumberOfMents, Toast.LENGTH_SHORT).show();
                                 NamePatient.setText(FullnameDBPatient);
                                 EmailPatient.setText(EmailDBPatient);
                                 int resID = getResources().getIdentifier(ProfileIDDBPatient, "drawable", getActivity().getPackageName());
                                 Drawable image = getResources().getDrawable(resID);
                                 ImagePatient.setImageDrawable(image);
+
+                                CommentsPatient.setVisibility(View.VISIBLE);
+                                CommentsPatient.animate().alpha(1).setDuration(300);
                             }
 
                             @Override
@@ -196,6 +208,7 @@ public class HistoryDoctorFragment extends Fragment {
                 bottomSheetDialog.show();
             }
         });
+
         CommentsPatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -208,24 +221,28 @@ public class HistoryDoctorFragment extends Fragment {
                                 (LinearLayout) view.findViewById(R.id.BottomSheetContainer2)
                         );
                 final RadioGroup radioGroup = bottomSheetView.findViewById(R.id.Radio_Comment);
-                final RadioButton selectedComment = bottomSheetView.findViewById(radioGroup.getCheckedRadioButtonId());
-                //final String TypeComment = selectedComment.getText().toString().trim();
-                final TextInputLayout Comments = bottomSheetView.findViewById(R.id.AllComments);
-                final String NameComment = Comments.getEditText().getText().toString().trim();
-
-                //------------------------------ Save data to Database (TypeComment and NameComment)
-
-
-
-
-
-
-
-
-                //----------------------------------------------------------------------------------
-                bottomSheetView.findViewById(R.id.Understand).setOnClickListener(new View.OnClickListener() {
+                Comments = (TextInputLayout) bottomSheetView.findViewById(R.id.AllComments);
+                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                        RadioButton rb = (RadioButton) bottomSheetView.findViewById(checkedId);
+                        TypeComment = rb.getText().toString();
+                    }
+                });
+                bottomSheetView.findViewById(R.id.SendComments).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        NameComments = Comments.getEditText().getText().toString().trim();
+                        NumberOfMents++;
+                        String AboutMent = "AboutMents " + NumberOfMents;
+                        FirebaseDatabase rootNode = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/");
+                        DatabaseReference reference = rootNode.getReference("Doctor");
+                        DatabaseReference referencePatient = rootNode.getReference("Teacher");
+
+                        referencePatient.child(PatientID).child("numberOfMents").setValue(NumberOfMents);
+                        reference.child(DoctorID).child("PatientInCare").child(PatientID).child(AboutMent).child("typeComment").setValue(TypeComment);
+                        reference.child(DoctorID).child("PatientInCare").child(PatientID).child(AboutMent).child("nameComment").setValue(NameComments);
+
                         bottomSheetDialog.dismiss();
                     }
                 });
@@ -233,6 +250,7 @@ public class HistoryDoctorFragment extends Fragment {
                 bottomSheetDialog.show();
             }
         });
+
         ColorPatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -245,12 +263,17 @@ public class HistoryDoctorFragment extends Fragment {
                                 (LinearLayout) view.findViewById(R.id.BottomSheetContainer2)
                         );
                 final RadioGroup radioGroup = bottomSheetView.findViewById(R.id.Radio_Color);
-                final RadioButton selectedColor = bottomSheetView.findViewById(radioGroup.getCheckedRadioButtonId());
-                //final String NameColor = selectedColor.getText().toString().trim();
+                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                        RadioButton rb = (RadioButton) bottomSheetView.findViewById(checkedId);
+                        NameColor = rb.getText().toString();
+                    }
+                });
                 bottomSheetView.findViewById(R.id.Understand).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //ColorPatient.setText("Color : " + NameColor);
+                        ColorPatient.setText("Color : " + NameColor);
                         bottomSheetDialog.dismiss();
                     }
                 });
