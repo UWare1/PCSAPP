@@ -36,8 +36,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -65,7 +68,8 @@ public class HistoryDoctorFragment extends Fragment {
 
     int NumberOfMents;
 
-    String DoctorID, PatientID,
+    String  currentDate, currentTime,
+            DoctorID, PatientID,
             FullnameDBPatient, EmailDBPatient, ProfileIDDBPatient,
             TypeComment, NameComments, NameColor;
 
@@ -121,6 +125,9 @@ public class HistoryDoctorFragment extends Fragment {
         ColorPatient = view.findViewById(R.id.ColorPatient);
 
         LayH01 = view.findViewById(R.id.LayH01);
+
+        currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
 
         //---------------------------------------------------------
         ArrayList<String> arrayList = new ArrayList<>();
@@ -247,6 +254,8 @@ public class HistoryDoctorFragment extends Fragment {
                         referencePatient.child(PatientID).child("numberOfMents").setValue(NumberOfMents);
                         reference.child(DoctorID).child("PatientInCare").child(PatientID).child(AboutMent).child("typeComment").setValue(TypeComment);
                         reference.child(DoctorID).child("PatientInCare").child(PatientID).child(AboutMent).child("nameComment").setValue(NameComments);
+                        reference.child(DoctorID).child("PatientInCare").child(PatientID).child(AboutMent).child("currentDate").setValue(currentDate);
+                        reference.child(DoctorID).child("PatientInCare").child(PatientID).child(AboutMent).child("currentTime").setValue(currentTime);
 
                         bottomSheetDialog.dismiss();
                     }
