@@ -83,7 +83,8 @@
                 android:text="Color : None"
                 android:background="@drawable/pgbutton"
                 android:fontFamily="@font/promptbold"
-                android:layout_gravity="center_horizontal |bottom"/>
+                android:layout_gravity="center_horizontal |bottom"
+                android:visibility="invisible"/>
         </FrameLayout>
     </LinearLayout>
 

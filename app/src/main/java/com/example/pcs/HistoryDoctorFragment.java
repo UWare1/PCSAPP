@@ -176,6 +176,7 @@ public class HistoryDoctorFragment extends Fragment {
                                 FullnameDBPatient = String.valueOf(map.get("fullname"));
                                 EmailDBPatient = String.valueOf(map.get("email"));
                                 ProfileIDDBPatient = String.valueOf(map.get("profileID"));
+                                NameColor = String.valueOf(map.get("color"));
                                 NumberOfMents = Integer.parseInt(String.valueOf(map.get("numberOfMents")));
 
                                 Toast.makeText(mContext, "Number: " + NumberOfMents, Toast.LENGTH_SHORT).show();
@@ -187,6 +188,10 @@ public class HistoryDoctorFragment extends Fragment {
 
                                 CommentsPatient.setVisibility(View.VISIBLE);
                                 CommentsPatient.animate().alpha(1).setDuration(300);
+
+                                ColorPatient.setText("Color : " + NameColor);
+                                ColorPatient.setVisibility(View.VISIBLE);
+                                ColorPatient.animate().alpha(1).setDuration(300);
                             }
 
                             @Override
@@ -274,6 +279,11 @@ public class HistoryDoctorFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         ColorPatient.setText("Color : " + NameColor);
+
+                        FirebaseDatabase rootNode = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/");
+                        DatabaseReference referencePatient = rootNode.getReference("Teacher");
+
+                        referencePatient.child(PatientID).child("color").setValue(NameColor);
                         bottomSheetDialog.dismiss();
                     }
                 });
