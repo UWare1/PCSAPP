@@ -186,7 +186,6 @@ public class HistoryDoctorFragment extends Fragment {
                                 NameColor = String.valueOf(map.get("color"));
                                 NumberOfMents = Integer.parseInt(String.valueOf(map.get("numberOfMents")));
 
-                                Toast.makeText(mContext, "Number: " + NumberOfMents, Toast.LENGTH_SHORT).show();
                                 NamePatient.setText(FullnameDBPatient);
                                 EmailPatient.setText(EmailDBPatient);
                                 int resID = getResources().getIdentifier(ProfileIDDBPatient, "drawable", getActivity().getPackageName());

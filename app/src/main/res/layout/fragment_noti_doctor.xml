@@ -14,39 +14,5 @@
         android:textSize="60sp"
         android:fontFamily="@font/promptbold" />
 
-    <RadioGroup
-        android:id="@+id/Radio_Color"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginVertical="10dp"
-        android:orientation="horizontal">
-
-
-        <RadioButton
-            android:id="@+id/Green"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/green"
-            android:fontFamily="@font/promptlight"/>
-
-
-        <RadioButton
-            android:id="@+id/Yellow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/yellow"
-            android:fontFamily="@font/promptlight"/>
-
-
-        <RadioButton
-            android:id="@+id/Red"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/red"
-            android:fontFamily="@font/promptlight"/>
-    </RadioGroup>
 
 </LinearLayout>

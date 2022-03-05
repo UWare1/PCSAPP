@@ -30,7 +30,6 @@ public class NotiDoctorFragment extends Fragment {
     private String mParam2;
     private Context mContext;
     View view;
-    String team;
 
     public NotiDoctorFragment() {
         // Required empty public constructor
@@ -73,25 +72,6 @@ public class NotiDoctorFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_noti_doctor, container, false);
-        RadioGroup radioGroup = view.findViewById(R.id.Radio_Color);
-
-        // get selected radio button from radioGroup
-        int selectedId = radioGroup.getCheckedRadioButtonId();
-        // find the radiobutton by returned id
-        RadioButton radioButton = (RadioButton) view.findViewById(selectedId);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
-                RadioButton rb= (RadioButton) view.findViewById(checkedId);
-                team = rb.getText().toString();
-                Toast.makeText(mContext, "Select: " + team, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
-        //final String NameColor = selectedColor.getText().toString().trim();
-        //Toast.makeText(mContext, "NameColor: ", Toast.LENGTH_SHORT).show();
         return view;
     }
 }
