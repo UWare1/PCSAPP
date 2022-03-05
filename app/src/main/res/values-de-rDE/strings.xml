@@ -65,4 +65,14 @@
     <string name="confirm_new_pincode">Bestätigen Sie den neuen PIN-Code</string>
     <string name="pincode_updated">PIN-Code aktualisiert</string>
     <string name="your_pincode_has_been_changed">Ihr PIN-Code wurde geändert</string>
+    <string name="uid">Code Name</string>
+    <string name="chat">Plaudern</string>
+    <string name="info">Information</string>
+    <string name="coming_soon">in Kürze</string>
+    <string name="assessment_form">Bewertungsformular</string>
+    <string name="comments">Bemerkungen</string>
+    <string name="colors">Farben</string>
+    <string name="green">Grün</string>
+    <string name="yellow">Gelb</string>
+    <string name="red">rot</string>
 </resources>

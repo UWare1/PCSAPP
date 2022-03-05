@@ -68,4 +68,13 @@
     <string name="your_pincode_has_been_changed">รหัสพินของคุณมีการเปลี่ยนแปลง</string>
     <string name="save">เซฟ</string>
     <string name="uid">โค้ดเนม</string>
+    <string name="chat">แชท</string>
+    <string name="info">ข้อมูล</string>
+    <string name="coming_soon">เร็ว ๆ นี้</string>
+    <string name="assessment_form">แบบประเมินผล</string>
+    <string name="comments">ความคิดเห็น</string>
+    <string name="colors">สี</string>
+    <string name="green">สีเขียว</string>
+    <string name="yellow">สีเหลือง</string>
+    <string name="red">สีแดง</string>
 </resources>

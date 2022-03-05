@@ -65,4 +65,14 @@
     <string name="confirm_new_pincode">قم بتأكيد الرمز السري الجديد</string>
     <string name="pincode_updated">تم تحديث الرمز السري</string>
     <string name="your_pincode_has_been_changed">تم تغيير الرمز السري الخاص بك</string>
+    <string name="uid">اسم الرمز</string>
+    <string name="chat">دردشة</string>
+    <string name="info">معلومة</string>
+    <string name="coming_soon">سآتي قريبا</string>
+    <string name="assessment_form">استمارة التقييم</string>
+    <string name="comments">تعليقات</string>
+    <string name="colors">الألوان</string>
+    <string name="green">لون أخضر</string>
+    <string name="yellow">الأصفر</string>
+    <string name="red">أحمر</string>
 </resources>

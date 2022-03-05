@@ -65,4 +65,14 @@
     <string name="confirm_new_pincode">새 비밀번호 확인</string>
     <string name="pincode_updated">핀코드 업데이트됨</string>
     <string name="your_pincode_has_been_changed">귀하의 비밀번호가 변경되었습니다</string>
+    <string name="uid">코드 네임</string>
+    <string name="chat">채팅</string>
+    <string name="info">정보</string>
+    <string name="coming_soon">빨리오고</string>
+    <string name="assessment_form">평가 양식</string>
+    <string name="comments">코멘트</string>
+    <string name="colors">그림 물감</string>
+    <string name="green">초록</string>
+    <string name="yellow">노란색</string>
+    <string name="red">빨간색</string>
 </resources>

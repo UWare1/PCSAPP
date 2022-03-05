@@ -65,4 +65,14 @@
     <string name="confirm_new_pincode">确认新密码</string>
     <string name="pincode_updated">密码更新</string>
     <string name="your_pincode_has_been_changed">您的密码已更改</string>
+    <string name="uid">代码名称</string>
+    <string name="chat">聊天</string>
+    <string name="info">信息</string>
+    <string name="coming_soon">即将推出</string>
+    <string name="assessment_form">评估表</string>
+    <string name="comments">注释</string>
+    <string name="colors">颜色</string>
+    <string name="green">绿色</string>
+    <string name="yellow">黄色的</string>
+    <string name="red">红色的</string>
 </resources>

@@ -65,4 +65,14 @@
     <string name="confirm_new_pincode">新しいピンコードを確認する</string>
     <string name="pincode_updated">ピンコードが更新されました</string>
     <string name="your_pincode_has_been_changed">PINコードが変更されました</string>
+    <string name="uid">コード名</string>
+    <string name="chat">チャット</string>
+    <string name="info">情報</string>
+    <string name="coming_soon">すぐに来る</string>
+    <string name="assessment_form">評価フォーム</string>
+    <string name="comments">コメントコメント</string>
+    <string name="colors">色</string>
+    <string name="green">緑</string>
+    <string name="yellow">黄</string>
+    <string name="red">赤</string>
 </resources>
