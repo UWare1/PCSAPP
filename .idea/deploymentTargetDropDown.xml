@@ -6,23 +6,12 @@
         <type value="RUNNING_DEVICE_TARGET" />
         <deviceKey>
           <Key>
-            <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\Perka\.android\avd\Galaxy_Note20_Ultra_API_R.avd" />
+            <type value="SERIAL_NUMBER" />
+            <value value="adb-RZ8R210DLLN-WokBwG._adb-tls-connect._tcp" />
           </Key>
         </deviceKey>
       </Target>
     </runningDeviceTargetSelectedWithDropDown>
-    <targetSelectedWithDropDown>
-      <Target>
-        <type value="QUICK_BOOT_TARGET" />
-        <deviceKey>
-          <Key>
-            <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\Perka\.android\avd\Galaxy_Note20_Ultra_API_R.avd" />
-          </Key>
-        </deviceKey>
-      </Target>
-    </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-03-04T18:47:08.110900200Z" />
+    <timeTargetWasSelectedWithDropDown value="2022-03-05T19:07:43.221154400Z" />
   </component>
 </project>

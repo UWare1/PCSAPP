@@ -78,7 +78,7 @@ public class Main2Activity extends AppCompatActivity {
         });
 
         //Set notification count
-        bottomNavigation.setCount(1,"10");
+        //bottomNavigation.setCount(1,"10");
         //Set home fragment initially selected
         bottomNavigation.show(3,true);
 

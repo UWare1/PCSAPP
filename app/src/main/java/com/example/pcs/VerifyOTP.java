@@ -157,6 +157,7 @@ public class VerifyOTP extends AppCompatActivity {
                 Fullname, Address, Medical, Allergy, Gender, Date, _phoneNo, ProfileID);
         reference.child(UserID).setValue(addNewUser);
         reference.child(UserID).child("myDoctor").setValue(uid);
+        reference.child(UserID).child("numberOfMents").setValue(0);
 
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
