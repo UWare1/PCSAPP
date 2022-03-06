@@ -37,7 +37,12 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.Year;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
@@ -62,7 +67,8 @@ public class HistoryDoctorFragment extends Fragment {
     LinearLayout LayH01;
     TextInputLayout Comments;
     View view;
-    TextView SelectPatient, NamePatient, EmailPatient;
+    TextView    SelectPatient, NamePatient, EmailPatient, MoreDetails,
+                NameSelect, EmailSelect, PhoneSelect, BirthSelect, NationalIDCardSelect, AddressSelect, AllergySelect, MedicalSelect;
     ImageView ImagePatient;
     Button CommentsPatient, ColorPatient;
 
@@ -71,6 +77,7 @@ public class HistoryDoctorFragment extends Fragment {
     String  currentDate, currentTime,
             DoctorID, PatientID,
             FullnameDBPatient, EmailDBPatient, ProfileIDDBPatient,
+            PhoneDBPatient, DateDBPatient, NationalIDCardDBPatient, AddressDBPatient, AllergyDBPatient, MedicalDBPatient,
             TypeComment, NameComments, NameColor;
 
     public HistoryDoctorFragment() {
@@ -121,6 +128,7 @@ public class HistoryDoctorFragment extends Fragment {
         NamePatient = view.findViewById(R.id.NamePatient);
         EmailPatient = view.findViewById(R.id.EmailPatient);
         ImagePatient = view.findViewById(R.id.ImagePatient);
+        MoreDetails = view.findViewById(R.id.MoreDetails);
         CommentsPatient = view.findViewById(R.id.CommentsPatient);
         ColorPatient = view.findViewById(R.id.ColorPatient);
 
@@ -183,6 +191,13 @@ public class HistoryDoctorFragment extends Fragment {
                                 FullnameDBPatient = String.valueOf(map.get("fullname"));
                                 EmailDBPatient = String.valueOf(map.get("email"));
                                 ProfileIDDBPatient = String.valueOf(map.get("profileID"));
+                                PhoneDBPatient = String.valueOf(map.get("_phoneNo"));
+                                DateDBPatient = String.valueOf(map.get("date"));
+                                NationalIDCardDBPatient = String.valueOf(map.get("nationalIDCard"));
+                                AddressDBPatient = String.valueOf(map.get("address"));
+                                AllergyDBPatient = String.valueOf(map.get("allergy"));
+                                MedicalDBPatient = String.valueOf(map.get("medical"));
+
                                 NameColor = String.valueOf(map.get("color"));
                                 NumberOfMents = Integer.parseInt(String.valueOf(map.get("numberOfMents")));
 
@@ -194,6 +209,9 @@ public class HistoryDoctorFragment extends Fragment {
 
                                 CommentsPatient.setVisibility(View.VISIBLE);
                                 CommentsPatient.animate().alpha(1).setDuration(300);
+
+                                MoreDetails.setVisibility(View.VISIBLE);
+                                MoreDetails.animate().alpha(1).setDuration(300);
 
                                 ColorPatient.setText("Color : " + NameColor);
                                 ColorPatient.setVisibility(View.VISIBLE);
@@ -259,6 +277,55 @@ public class HistoryDoctorFragment extends Fragment {
                         reference.child(DoctorID).child("PatientInCare").child(PatientID).child(AboutMent).child("currentDate").setValue(currentDate);
                         reference.child(DoctorID).child("PatientInCare").child(PatientID).child(AboutMent).child("currentTime").setValue(currentTime);
 
+                        bottomSheetDialog.dismiss();
+                    }
+                });
+                bottomSheetDialog.setContentView(bottomSheetView);
+                bottomSheetDialog.show();
+            }
+        });
+
+        MoreDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                        mContext, R.style.BottomSheetDialogTheme
+                );
+                final View bottomSheetView = LayoutInflater.from(getActivity())
+                        .inflate(
+                                R.layout.activity_bottom_sheet7,
+                                (LinearLayout) view.findViewById(R.id.BottomSheetContainer)
+                        );
+                NameSelect = bottomSheetView.findViewById(R.id.NameSelect);
+                EmailSelect = bottomSheetView.findViewById(R.id.EmailSelect);
+                PhoneSelect = bottomSheetView.findViewById(R.id.PhoneSelect);
+                BirthSelect = bottomSheetView.findViewById(R.id.BirthSelect);
+                NationalIDCardSelect = bottomSheetView.findViewById(R.id.NationalIDCardSelect);
+                AddressSelect = bottomSheetView.findViewById(R.id.AddressSelect);
+                AllergySelect = bottomSheetView.findViewById(R.id.AllergySelect);
+                MedicalSelect = bottomSheetView.findViewById(R.id.MedicalSelect);
+
+                String LastName = "";
+                String FirstName= "";
+                if(FullnameDBPatient.split("\\w+").length>1){
+
+                    LastName = FullnameDBPatient.substring(FullnameDBPatient.lastIndexOf(" ")+1);
+                    FirstName = FullnameDBPatient.substring(0, FullnameDBPatient.lastIndexOf(' '));
+                }
+                else{
+                    FirstName = FullnameDBPatient;
+                }
+                NameSelect.setText(FirstName + "\n" + LastName);
+                EmailSelect.setText(EmailDBPatient);
+                PhoneSelect.setText(PhoneDBPatient);
+                BirthSelect.setText(DateDBPatient);
+                NationalIDCardSelect.setText(NationalIDCardDBPatient);
+                AddressSelect.setText(AddressDBPatient);
+                AllergySelect.setText(AllergyDBPatient);
+                MedicalSelect.setText(MedicalDBPatient);
+                bottomSheetView.findViewById(R.id.Understand).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
                         bottomSheetDialog.dismiss();
                     }
                 });
