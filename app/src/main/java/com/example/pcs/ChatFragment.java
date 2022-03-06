@@ -54,8 +54,9 @@ public class ChatFragment extends Fragment {
     private String mParam2;
     private Context mContext;
     View view;
-    LinearLayout Func1, Func2, Func3, //ShowObject1, ShowObject2, ShowObject3,
-            Before, After;
+    LinearLayout    Func1, Func2, Func3, //ShowObject1, ShowObject2, ShowObject3,
+                    Before, After,
+                    Ments1, Ments2, Ments3, Ments4;
     ScrollView ShowObject1, ShowObject2, ShowObject3;
     TextInputLayout CheckDoctorID, CheckUID;
     TextView    Func1Text, Func2Text, Func3Text,
@@ -122,6 +123,10 @@ public class ChatFragment extends Fragment {
         Func1Image = view.findViewById(R.id.Func1Image);
         Func2Image = view.findViewById(R.id.Func2Image);
         Func3Image = view.findViewById(R.id.Func3Image);
+        Ments1 = view.findViewById(R.id.Ments1);
+        Ments2 = view.findViewById(R.id.Ments2);
+        Ments3 = view.findViewById(R.id.Ments3);
+        Ments4 = view.findViewById(R.id.Ments4);
         TypeMents1 = view.findViewById(R.id.TypeMents1);
         TypeMents2 = view.findViewById(R.id.TypeMents2);
         TypeMents3 = view.findViewById(R.id.TypeMents3);
@@ -286,6 +291,7 @@ public class ChatFragment extends Fragment {
                 ShowObject1.setVisibility(View.VISIBLE);
                 ShowObject2.setVisibility(View.INVISIBLE);
                 ShowObject3.setVisibility(View.INVISIBLE);
+                Ments4.setVisibility(View.INVISIBLE);
 
                 //------------------------------------------------------------
                 if (AddCommentChat.getVisibility() == View.VISIBLE){
@@ -332,6 +338,7 @@ public class ChatFragment extends Fragment {
                 ShowObject2.setVisibility(View.VISIBLE);
                 ShowObject1.setVisibility(View.INVISIBLE);
                 ShowObject3.setVisibility(View.INVISIBLE);
+                Ments4.setVisibility(View.INVISIBLE);
 
                 //------------------------------------------------------------
                 if (AddCommentChat.getVisibility() == View.VISIBLE){
@@ -391,53 +398,86 @@ public class ChatFragment extends Fragment {
                 AboutMents2 = "AboutMents " + (NumberOfMents - 1);
                 AboutMents3 = "AboutMents " + (NumberOfMents - 2);
 
-                Query CheckPatient1 = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctor").child(NameDBDoctor).child("PatientInCare").child(UserID).child(AboutMents1).getRef();
-                CheckPatient1.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Map mapMents = (Map) dataSnapshot.getValue();
-                        TypeMents1.setText(String.valueOf(mapMents.get("typeComment")));
-                        DateMents1.setText(String.valueOf(mapMents.get("currentDate")));
-                        NameMents1.setText(String.valueOf(mapMents.get("nameComment")));
+                if (NumberOfMents == 0) {
+                    animSet2.setTarget(Ments4);
+                    animSet2.start();
+                    Ments1.setVisibility(View.INVISIBLE);
+                    Ments2.setVisibility(View.INVISIBLE);
+                    Ments3.setVisibility(View.INVISIBLE);
+                    Ments4.setVisibility(View.VISIBLE);
+                }
+                if (NumberOfMents >= 1) {
+                    if (NumberOfMents == 1){
+                        Ments1.setVisibility(View.VISIBLE);
+                        Ments2.setVisibility(View.INVISIBLE);
+                        Ments3.setVisibility(View.INVISIBLE);
+                        Ments4.setVisibility(View.INVISIBLE);
                     }
+                    Query CheckPatient1 = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctor").child(NameDBDoctor).child("PatientInCare").child(UserID).child(AboutMents1).getRef();
+                    CheckPatient1.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            Map mapMents = (Map) dataSnapshot.getValue();
+                            TypeMents1.setText(String.valueOf(mapMents.get("typeComment")));
+                            DateMents1.setText(String.valueOf(mapMents.get("currentDate")));
+                            NameMents1.setText(String.valueOf(mapMents.get("nameComment")));
+                        }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+                if (NumberOfMents >= 2) {
+                    if (NumberOfMents == 2){
+                        Ments1.setVisibility(View.VISIBLE);
+                        Ments2.setVisibility(View.VISIBLE);
+                        Ments3.setVisibility(View.INVISIBLE);
+                        Ments4.setVisibility(View.INVISIBLE);
                     }
-                });
-                Query CheckPatient2 = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctor").child(NameDBDoctor).child("PatientInCare").child(UserID).child(AboutMents2).getRef();
-                CheckPatient2.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Map mapMents = (Map) dataSnapshot.getValue();
-                        TypeMents2.setText(String.valueOf(mapMents.get("typeComment")));
-                        DateMents2.setText(String.valueOf(mapMents.get("currentDate")));
-                        NameMents2.setText(String.valueOf(mapMents.get("nameComment")));
-                    }
+                    Query CheckPatient2 = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctor").child(NameDBDoctor).child("PatientInCare").child(UserID).child(AboutMents2).getRef();
+                    CheckPatient2.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            Map mapMents = (Map) dataSnapshot.getValue();
+                            TypeMents2.setText(String.valueOf(mapMents.get("typeComment")));
+                            DateMents2.setText(String.valueOf(mapMents.get("currentDate")));
+                            NameMents2.setText(String.valueOf(mapMents.get("nameComment")));
+                        }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+                if (NumberOfMents >= 3) {
+                    if (NumberOfMents == 3){
+                        Ments1.setVisibility(View.VISIBLE);
+                        Ments2.setVisibility(View.VISIBLE);
+                        Ments3.setVisibility(View.VISIBLE);
+                        Ments4.setVisibility(View.INVISIBLE);
                     }
-                });
-                Query CheckPatient3 = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctor").child(NameDBDoctor).child("PatientInCare").child(UserID).child(AboutMents3).getRef();
-                CheckPatient3.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Map mapMents = (Map) dataSnapshot.getValue();
-                        TypeMents3.setText(String.valueOf(mapMents.get("typeComment")));
-                        DateMents3.setText(String.valueOf(mapMents.get("currentDate")));
-                        NameMents3.setText(String.valueOf(mapMents.get("nameComment")));
-                    }
+                    Query CheckPatient3 = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctor").child(NameDBDoctor).child("PatientInCare").child(UserID).child(AboutMents3).getRef();
+                    CheckPatient3.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            Map mapMents = (Map) dataSnapshot.getValue();
+                            TypeMents3.setText(String.valueOf(mapMents.get("typeComment")));
+                            DateMents3.setText(String.valueOf(mapMents.get("currentDate")));
+                            NameMents3.setText(String.valueOf(mapMents.get("nameComment")));
+                        }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
         });
+
         AddCommentChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

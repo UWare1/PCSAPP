@@ -81,7 +81,7 @@ public class UserFragment extends Fragment {
     boolean IFCHOOSE = false, PLAY = false, On = true;
     int Brightness, resID, resID1;
     Drawable image, image1;
-    String ProfileID = "iconprofile1", UserID, Fullname, BornDB, NationalIDCard, PhoneNumber, AddressDB, Email, ProfileIDImage;
+    String ProfileID, UserID, Fullname, BornDB, NationalIDCard, PhoneNumber, AddressDB, Email, ProfileIDImage;
 
     public UserFragment() {
         // Required empty public constructor
@@ -140,11 +140,25 @@ public class UserFragment extends Fragment {
         PhoneNumber = UserDetails.get(SessionManager.KEY_PHONENUMBER);
         AddressDB = UserDetails.get(SessionManager.KEY_ADDRESS);
         Email = UserDetails.get(SessionManager.KEY_EMAIL);
-        ProfileIDImage = UserDetails.get(SessionManager.KEY_PROFILEID);
-        ProfileIDImage = ProfileID;
-        resID = getResources().getIdentifier(ProfileIDImage, "drawable", getActivity().getPackageName());
-        image = getResources().getDrawable(resID);
-        ProfileImage.setImageDrawable(image);
+
+        Query CheckHas = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").child(UserID);
+        CheckHas.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Map map = (Map) snapshot.getValue();
+                ProfileID = String.valueOf(map.get("profileID"));
+                ProfileIDImage = ProfileID;
+
+                resID = getResources().getIdentifier(ProfileIDImage, "drawable", getActivity().getPackageName());
+                image = getResources().getDrawable(resID);
+                ProfileImage.setImageDrawable(image);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         FullnameProfile.setText(Fullname);
         EmailProfile.setText(Email);
@@ -189,9 +203,9 @@ public class UserFragment extends Fragment {
                             userUpdates.put("profileID", ProfileID);
                             reference.updateChildren(userUpdates);
 
-                            /*resID1 = getResources().getIdentifier(ProfileID, "drawable", getActivity().getPackageName());
+                            resID1 = getResources().getIdentifier(ProfileID, "drawable", getActivity().getPackageName());
                             image1 = getResources().getDrawable(resID1);
-                            ProfileImage.setImageDrawable(image1);*/
+                            ProfileImage.setImageDrawable(image1);
                         }
                         dialog.dismiss();
                     }
