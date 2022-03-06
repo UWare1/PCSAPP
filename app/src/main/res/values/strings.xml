@@ -81,4 +81,6 @@
     <string name="green">Green</string>
     <string name="yellow">Yellow</string>
     <string name="red">Red</string>
+    <string name="field_cannot_empty">Field can not be empty</string>
+    <string name="nationalidcard_toolarge">National ID Card is too large!</string>
 </resources>

@@ -243,6 +243,9 @@ public class HistoryDoctorFragment extends Fragment {
                 bottomSheetView.findViewById(R.id.SendComments).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (!validateComments()) {
+                            return;
+                        }
                         NameComments = Comments.getEditText().getText().toString().trim();
                         NumberOfMents++;
                         String AboutMent = "AboutMents " + NumberOfMents;
@@ -304,5 +307,15 @@ public class HistoryDoctorFragment extends Fragment {
         //---------------------------------------------------------
         return view;
     }
-
+    private boolean validateComments() {
+        String val = Comments.getEditText().getText().toString().trim();
+        if (val.isEmpty()) {
+            Comments.setError("Field can not be empty");
+            return false;
+        } else {
+            Comments.setError(null);
+            Comments.setErrorEnabled(false);
+            return true;
+        }
+    }
 }

@@ -296,10 +296,10 @@ public class PRegisActivity extends AppCompatActivity {
     private boolean validateNationalIDCard() {
         String val = NationalIDCard.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
-            NationalIDCard.setError("Field can not be empty");
+            NationalIDCard.setError(getString(R.string.field_cannot_empty));
             return false;
         } else if (val.length() > 13) {
-            NationalIDCard.setError("National ID Card is too large!");
+            NationalIDCard.setError(getString(R.string.nationalidcard_toolarge));
             return false;
         } else if (val.length() < 13) {
             NationalIDCard.setError("National ID Card is too short!");

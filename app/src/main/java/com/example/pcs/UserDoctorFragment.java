@@ -11,6 +11,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
@@ -31,8 +32,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -64,7 +69,7 @@ public class UserDoctorFragment extends Fragment {
     boolean IFCHOOSE = false, PLAY = false, On = true;
     int Brightness, resID, resID1;
     Drawable image, image1;
-    String ProfileID = "iconprofile1", DoctorID, Fullname, BornDB, NationalIDCard, PhoneNumber, AddressDB, Email, ProfileIDImage;
+    String ProfileID, DoctorID, Fullname, BornDB, NationalIDCard, PhoneNumber, AddressDB, Email, ProfileIDImage;
 
     public UserDoctorFragment() {
         // Required empty public constructor
@@ -129,11 +134,25 @@ public class UserDoctorFragment extends Fragment {
         PhoneNumber = UserDetails.get(SessionManagerDoctor.KEY_PHONENUMBER);
         AddressDB = UserDetails.get(SessionManagerDoctor.KEY_ADDRESS);
         Email = UserDetails.get(SessionManagerDoctor.KEY_EMAIL);
-        ProfileIDImage = UserDetails.get(SessionManagerDoctor.KEY_PROFILEID);
-        ProfileIDImage = ProfileID;
-        resID = getResources().getIdentifier(ProfileIDImage, "drawable", getActivity().getPackageName());
-        image = getResources().getDrawable(resID);
-        ProfileImage.setImageDrawable(image);
+
+        Query CheckHas = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctor").child(DoctorID);
+        CheckHas.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Map map = (Map) snapshot.getValue();
+                ProfileID = String.valueOf(map.get("profileID"));
+                ProfileIDImage = ProfileID;
+
+                resID = getResources().getIdentifier(ProfileIDImage, "drawable", getActivity().getPackageName());
+                image = getResources().getDrawable(resID);
+                ProfileImage.setImageDrawable(image);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         FullnameProfile.setText(Fullname);
         EmailProfile.setText(Email);
@@ -178,9 +197,9 @@ public class UserDoctorFragment extends Fragment {
                             userUpdates.put("profileID", ProfileID);
                             reference.updateChildren(userUpdates);
 
-                            /*resID1 = getResources().getIdentifier(ProfileID, "drawable", getActivity().getPackageName());
+                            resID1 = getResources().getIdentifier(ProfileID, "drawable", getActivity().getPackageName());
                             image1 = getResources().getDrawable(resID1);
-                            ProfileImage.setImageDrawable(image1);*/
+                            ProfileImage.setImageDrawable(image1);
                         }
                         dialog.dismiss();
                     }
