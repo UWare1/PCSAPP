@@ -24,6 +24,7 @@
         <entry key="..\:/PCS/app/src/main/res/drawable/homeslide.xml" value="0.151" />
         <entry key="..\:/PCS/app/src/main/res/drawable/ic_chat.xml" value="0.1665" />
         <entry key="..\:/PCS/app/src/main/res/drawable/ic_history.xml" value="0.1255" />
+        <entry key="..\:/PCS/app/src/main/res/drawable/morebutton.xml" value="0.1335" />
         <entry key="..\:/PCS/app/src/main/res/drawable/personaldoctorbutton.xml" value="0.1915" />
         <entry key="..\:/PCS/app/src/main/res/drawable/personaldoctorbuttononclick.xml" value="0.1915" />
         <entry key="..\:/PCS/app/src/main/res/drawable/pgbutton2.xml" value="0.114" />
@@ -35,6 +36,7 @@
         <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet4.xml" value="0.20863616930312098" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet5.xml" value="0.20863616930312098" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet6.xml" value="0.264" />
+        <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet7.xml" value="0.264" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_dfpass.xml" value="0.12708333333333333" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_dnew_pin_change.xml" value="0.264" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_dregis.xml" value="0.2" />
