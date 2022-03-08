@@ -34,7 +34,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -54,20 +57,20 @@ public class ChatFragment extends Fragment {
     private String mParam2;
     private Context mContext;
     View view;
-    LinearLayout    Func1, Func2, Func3, //ShowObject1, ShowObject2, ShowObject3,
-                    Before, After,
-                    Ments1, Ments2, Ments3, Ments4;
+    LinearLayout Func1, Func2, Func3, //ShowObject1, ShowObject2, ShowObject3,
+            Before, After,
+            Ments1, Ments2, Ments3, Ments4;
     ScrollView ShowObject1, ShowObject2, ShowObject3;
     TextInputLayout CheckDoctorID, CheckUID;
-    TextView    Func1Text, Func2Text, Func3Text,
-                TypeMents1, TypeMents2, TypeMents3, DateMents1, DateMents2, DateMents3, NameMents1, NameMents2, NameMents3;
+    TextView Func1Text, Func2Text, Func3Text,
+            TypeMents1, TypeMents2, TypeMents3, DateMents1, DateMents2, DateMents3, NameMents1, NameMents2, NameMents3;
     ImageView Func1Image, Func2Image, Func3Image;
     Drawable image, image2, buttonDrawable1, buttonDrawable2, buttonDrawable3;
     AnimatorSet animSet1, animSet2;
     int NumberOfMents;
-    String  UserID, MyDoctor, doctored, uid,
+    String UserID, MyDoctor, doctored, uid,
             NameDBDoctor, FullnameDBDoctor, EmailDBDoctor, PhoneDBDoctor, UniversityDBDoctor, AddressDBDoctor,
-            AboutMents1, AboutMents2, AboutMents3;
+            AboutMents1, AboutMents2, AboutMents3, DateDBMents1, DateDBMents2, DateDBMents3, TimeDBMents1, TimeDBMents2, TimeDBMents3;
     TextView NameDoctor, EmailDoctor, PhoneDoctor, UniversityDoctor, AddressDoctor;
     Button ConnectionRequest;
     CardView AddCommentChat;
@@ -150,6 +153,8 @@ public class ChatFragment extends Fragment {
         CheckDoctorID = view.findViewById(R.id.CheckDocterID);
         CheckUID = view.findViewById(R.id.CheckUID);
         ConnectionRequest = view.findViewById(R.id.ConnectionRequest);
+
+        String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
         SessionManager sessionManager = new SessionManager(getActivity());
         HashMap<String, String> UserDetails = sessionManager.getUserDatailFromSession();
@@ -294,7 +299,7 @@ public class ChatFragment extends Fragment {
                 Ments4.setVisibility(View.INVISIBLE);
 
                 //------------------------------------------------------------
-                if (AddCommentChat.getVisibility() == View.VISIBLE){
+                if (AddCommentChat.getVisibility() == View.VISIBLE) {
                     AddCommentChat.animate().alpha(0).setDuration(600);
                     //AddCommentChat.setVisibility(View.INVISIBLE);
                     Func3Text.animate().translationY(8).setDuration(600);
@@ -341,7 +346,7 @@ public class ChatFragment extends Fragment {
                 Ments4.setVisibility(View.INVISIBLE);
 
                 //------------------------------------------------------------
-                if (AddCommentChat.getVisibility() == View.VISIBLE){
+                if (AddCommentChat.getVisibility() == View.VISIBLE) {
                     AddCommentChat.animate().alpha(0).setDuration(600);
                     //AddCommentChat.setVisibility(View.INVISIBLE);
                     Func3Text.animate().translationY(8).setDuration(600);
@@ -407,7 +412,7 @@ public class ChatFragment extends Fragment {
                     Ments4.setVisibility(View.VISIBLE);
                 }
                 if (NumberOfMents >= 1) {
-                    if (NumberOfMents == 1){
+                    if (NumberOfMents == 1) {
                         Ments1.setVisibility(View.VISIBLE);
                         Ments2.setVisibility(View.INVISIBLE);
                         Ments3.setVisibility(View.INVISIBLE);
@@ -419,8 +424,30 @@ public class ChatFragment extends Fragment {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             Map mapMents = (Map) dataSnapshot.getValue();
                             TypeMents1.setText(String.valueOf(mapMents.get("typeComment")));
-                            DateMents1.setText(String.valueOf(mapMents.get("currentDate")));
                             NameMents1.setText(String.valueOf(mapMents.get("nameComment")));
+                            DateDBMents1 = String.valueOf(mapMents.get("currentDate"));
+                            TimeDBMents1 = String.valueOf(mapMents.get("currentTime"));
+                            int IntTimeDB = Integer.parseInt(TimeDBMents1.substring(0, 2));
+                            String Ans;
+                            if (currentDate.equals(DateDBMents1)) {
+                                if (IntTimeDB >= 00 && IntTimeDB < 12) {
+                                    if (IntTimeDB < 10) {
+                                        Ans = "0" + IntTimeDB + ":" + TimeDBMents1.substring(3, 5) + " AM";
+                                    } else {
+                                        Ans = IntTimeDB + ":" + TimeDBMents1.substring(3, 5) + " AM";
+                                    }
+                                } else {
+                                    if ((IntTimeDB - 12) < 10) {
+                                        Ans = "0" + (IntTimeDB - 12) + ":" + TimeDBMents1.substring(3, 5) + " PM";
+                                    } else {
+                                        Ans = (IntTimeDB - 12) + ":" + TimeDBMents1.substring(3, 5) + " PM";
+                                    }
+                                }
+                            } else {
+                                Ans = DateDBMents1.substring(0, 5);
+                            }
+
+                            DateMents1.setText(Ans);
                         }
 
                         @Override
@@ -430,7 +457,7 @@ public class ChatFragment extends Fragment {
                     });
                 }
                 if (NumberOfMents >= 2) {
-                    if (NumberOfMents == 2){
+                    if (NumberOfMents == 2) {
                         Ments1.setVisibility(View.VISIBLE);
                         Ments2.setVisibility(View.VISIBLE);
                         Ments3.setVisibility(View.INVISIBLE);
@@ -442,8 +469,30 @@ public class ChatFragment extends Fragment {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             Map mapMents = (Map) dataSnapshot.getValue();
                             TypeMents2.setText(String.valueOf(mapMents.get("typeComment")));
-                            DateMents2.setText(String.valueOf(mapMents.get("currentDate")));
                             NameMents2.setText(String.valueOf(mapMents.get("nameComment")));
+                            DateDBMents2 = String.valueOf(mapMents.get("currentDate"));
+                            TimeDBMents2 = String.valueOf(mapMents.get("currentTime"));
+                            int IntTimeDB = Integer.parseInt(TimeDBMents2.substring(0, 2));
+                            String Ans;
+                            if (currentDate.equals(DateDBMents2)) {
+                                if (IntTimeDB >= 00 && IntTimeDB < 12) {
+                                    if (IntTimeDB < 10) {
+                                        Ans = "0" + IntTimeDB + ":" + TimeDBMents2.substring(3, 5) + " AM";
+                                    } else {
+                                        Ans = IntTimeDB + ":" + TimeDBMents2.substring(3, 5) + " AM";
+                                    }
+                                } else {
+                                    if ((IntTimeDB - 12) < 10) {
+                                        Ans = "0" + (IntTimeDB - 12) + ":" + TimeDBMents2.substring(3, 5) + " PM";
+                                    } else {
+                                        Ans = (IntTimeDB - 12) + ":" + TimeDBMents2.substring(3, 5) + " PM";
+                                    }
+                                }
+                            } else {
+                                Ans = DateDBMents2.substring(0, 5);
+                            }
+
+                            DateMents2.setText(Ans);
                         }
 
                         @Override
@@ -453,7 +502,7 @@ public class ChatFragment extends Fragment {
                     });
                 }
                 if (NumberOfMents >= 3) {
-                    if (NumberOfMents == 3){
+                    if (NumberOfMents >= 3) {
                         Ments1.setVisibility(View.VISIBLE);
                         Ments2.setVisibility(View.VISIBLE);
                         Ments3.setVisibility(View.VISIBLE);
@@ -465,8 +514,30 @@ public class ChatFragment extends Fragment {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             Map mapMents = (Map) dataSnapshot.getValue();
                             TypeMents3.setText(String.valueOf(mapMents.get("typeComment")));
-                            DateMents3.setText(String.valueOf(mapMents.get("currentDate")));
                             NameMents3.setText(String.valueOf(mapMents.get("nameComment")));
+                            DateDBMents3 = String.valueOf(mapMents.get("currentDate"));
+                            TimeDBMents3 = String.valueOf(mapMents.get("currentTime"));
+                            int IntTimeDB = Integer.parseInt(TimeDBMents1.substring(0, 2));
+                            String Ans;
+                            if (currentDate.equals(DateDBMents3)) {
+                                if (IntTimeDB >= 00 && IntTimeDB < 12) {
+                                    if (IntTimeDB < 10) {
+                                        Ans = "0" + IntTimeDB + ":" + TimeDBMents3.substring(3, 5) + " AM";
+                                    } else {
+                                        Ans = IntTimeDB + ":" + TimeDBMents3.substring(3, 5) + " AM";
+                                    }
+                                } else {
+                                    if ((IntTimeDB - 12) < 10) {
+                                        Ans = "0" + (IntTimeDB - 12) + ":" + TimeDBMents3.substring(3, 5) + " PM";
+                                    } else {
+                                        Ans = (IntTimeDB - 12) + ":" + TimeDBMents3.substring(3, 5) + " PM";
+                                    }
+                                }
+                            } else {
+                                Ans = DateDBMents3.substring(0, 5);
+                            }
+
+                            DateMents3.setText(Ans);
                         }
 
                         @Override

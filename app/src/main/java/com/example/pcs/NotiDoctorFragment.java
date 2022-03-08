@@ -1,5 +1,7 @@
 package com.example.pcs;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -9,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -30,6 +33,8 @@ public class NotiDoctorFragment extends Fragment {
     private String mParam2;
     private Context mContext;
     View view;
+    LinearLayout FragmentNotiDoctor;
+    AnimatorSet animSet1;
 
     public NotiDoctorFragment() {
         // Required empty public constructor
@@ -72,6 +77,11 @@ public class NotiDoctorFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_noti_doctor, container, false);
+        FragmentNotiDoctor = view.findViewById(R.id.FragmentNotiDoctor);
+
+        animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
+        animSet1.setTarget(FragmentNotiDoctor);
+        animSet1.start();
         return view;
     }
 }

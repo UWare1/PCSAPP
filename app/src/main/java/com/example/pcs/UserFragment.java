@@ -31,6 +31,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -74,6 +75,7 @@ public class UserFragment extends Fragment {
     Spinner spinner;
     View view;
     ConstraintLayout C1;
+    FrameLayout FragmentUser;
     TextView FullnameProfile, EmailProfile;
     ImageView ProfileImage;
     Button EditProfile, SecurityProfile, LanguageProfile, SettingProfile, AboutProfile, Logout;
@@ -82,6 +84,8 @@ public class UserFragment extends Fragment {
     int Brightness, resID, resID1;
     Drawable image, image1;
     String ProfileID, UserID, Fullname, BornDB, NationalIDCard, PhoneNumber, AddressDB, Email, ProfileIDImage;
+
+    AnimatorSet animSet1, animSet2, animSet3;
 
     public UserFragment() {
         // Required empty public constructor
@@ -119,6 +123,7 @@ public class UserFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_user, container, false);
         C1 = view.findViewById(R.id.C1);
+        FragmentUser = view.findViewById(R.id.FragmentUser);
         FullnameProfile = view.findViewById(R.id.FullnameProfile);
         EmailProfile = view.findViewById(R.id.EmailProfile);
         ProfileImage = view.findViewById(R.id.ProfileImage);
@@ -129,6 +134,10 @@ public class UserFragment extends Fragment {
         SettingProfile = view.findViewById(R.id.SettingProfile);
         Logout = view.findViewById(R.id.Logout);
         dialog = new Dialog(getActivity());
+
+        animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
+        animSet1.setTarget(FragmentUser);
+        animSet1.start();
 
         //DB Avatar
         SessionManager sessionManager = new SessionManager(getActivity());
@@ -181,9 +190,9 @@ public class UserFragment extends Fragment {
 
                 View ViewAn = dialog.findViewById(R.id.ViewAnim);
                 GridLayout GridAn = dialog.findViewById(R.id.GridAnim);
-                AnimatorSet animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
-                AnimatorSet animSet2 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fadeinto);
-                AnimatorSet animSet3 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fadeinto);
+                animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
+                animSet2 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fadeinto);
+                animSet3 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fadeinto);
                 animSet1.setTarget(Avatar);
                 animSet2.setTarget(GridAn);
                 animSet3.setTarget(ViewAn);
@@ -204,8 +213,8 @@ public class UserFragment extends Fragment {
                             reference.updateChildren(userUpdates);
 
                             resID1 = getResources().getIdentifier(ProfileID, "drawable", getActivity().getPackageName());
-                            image1 = getResources().getDrawable(resID1);
-                            ProfileImage.setImageDrawable(image1);
+                            image = getResources().getDrawable(resID1);
+                            ProfileImage.setImageDrawable(image);
                         }
                         dialog.dismiss();
                     }

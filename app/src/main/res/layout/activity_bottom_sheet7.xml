@@ -18,10 +18,14 @@
             android:id="@+id/NameSelect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:autoSizeMaxTextSize="18sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeTextType="uniform"
             android:fontFamily="@font/promptbold"
             android:gravity="start"
+            android:maxLines="2"
             android:padding="20dp"
-            android:layout_marginStart="10dp"
             android:text="Yutthana\nPiyawongwatthana"
             android:textAllCaps="true"
             android:textColor="#000000"
@@ -33,7 +37,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:background="@drawable/man" />
+            android:src="@drawable/man" />
     </LinearLayout>
 
     <View
@@ -45,8 +49,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
         android:padding="20dp">
 
         <LinearLayout
@@ -74,8 +78,8 @@
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@color/grey"
-            android:layout_marginHorizontal="20dp"/>
+            android:layout_marginHorizontal="20dp"
+            android:background="@color/grey" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -102,8 +106,8 @@
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@color/grey"
-            android:layout_marginHorizontal="20dp"/>
+            android:layout_marginHorizontal="20dp"
+            android:background="@color/grey" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -133,28 +137,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        app:cardCornerRadius="12dp"
-        android:elevation="8dp">
+        android:elevation="8dp"
+        app:cardCornerRadius="12dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_gravity="start"
                 android:layout_marginHorizontal="20dp"
-                android:layout_gravity="start">
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/promptbold"
+                    android:text="National ID   "
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptbold"
-                    android:text="National ID   : "
+                    android:text=":  "
                     android:textColor="@color/black"
                     android:textSize="16sp" />
-
                 <TextView
                     android:id="@+id/NationalIDCardSelect"
                     android:layout_width="wrap_content"
@@ -164,27 +176,38 @@
                     android:textColor="@color/grey"
                     android:textSize="16sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="12dp"
+                android:layout_gravity="start"
                 android:layout_marginHorizontal="20dp"
-                android:layout_gravity="start">
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/promptbold"
+                    android:text="Address       "
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptbold"
-                    android:text="Address       : "
+                    android:text=":  "
                     android:textColor="@color/black"
                     android:textSize="16sp" />
-
                 <TextView
                     android:id="@+id/AddressSelect"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:autoSizeMaxTextSize="18sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/promptbold"
+                    android:maxLines="2"
                     android:text="111 Ratchaburi"
                     android:textColor="@color/grey"
                     android:textSize="16sp" />
@@ -193,48 +216,72 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="12dp">
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/promptbold"
+                    android:text="Allergy         "
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptbold"
-                    android:text="Allergy         : "
+                    android:text=":  "
                     android:textColor="@color/black"
                     android:textSize="16sp" />
                 <TextView
                     android:id="@+id/AllergySelect"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="None"
+                    android:autoSizeMaxTextSize="18sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/promptbold"
+                    android:maxLines="2"
+                    android:text="None"
                     android:textColor="@color/grey"
-                    android:textSize="16sp"/>
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="12dp"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/promptbold"
+                    android:text="Medical        "
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Medical        : "
                     android:fontFamily="@font/promptbold"
+                    android:text=":  "
                     android:textColor="@color/black"
                     android:textSize="16sp" />
                 <TextView
                     android:id="@+id/MedicalSelect"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="None"
+                    android:autoSizeMaxTextSize="18sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/promptbold"
+                    android:maxLines="2"
+                    android:text="None"
                     android:textColor="@color/grey"
-                    android:textSize="16sp"/>
+                    android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
 
