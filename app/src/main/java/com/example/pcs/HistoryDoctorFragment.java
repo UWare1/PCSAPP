@@ -280,7 +280,7 @@ public class HistoryDoctorFragment extends Fragment {
                         FirebaseDatabase rootNode = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/");
                         DatabaseReference reference = rootNode.getReference("Doctor");
                         DatabaseReference referencePatient = rootNode.getReference("Teacher");
-
+                        
                         referencePatient.child(PatientID).child("numberOfMents").setValue(NumberOfMents);
                         reference.child(DoctorID).child("PatientInCare").child(PatientID).child(AboutMent).child("typeComment").setValue(TypeComment);
                         reference.child(DoctorID).child("PatientInCare").child(PatientID).child(AboutMent).child("nameComment").setValue(NameComments);
