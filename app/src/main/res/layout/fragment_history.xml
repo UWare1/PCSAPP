@@ -5,18 +5,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".HistoryFragment">
+    tools:context=".HistoryFragment"
+    android:id="@+id/HistoryLay">
 
     <Button
-        android:id="@+id/HistoryRefresh"
-        android:layout_width="120dp"
+        android:id="@+id/ColorShow"
+        android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_gravity="end"
         android:layout_marginBottom="20dp"
         android:background="@drawable/yobutton"
         android:fontFamily="@font/promptbold"
         android:gravity="center"
-        android:text="@string/history"
+        android:text="@string/colors"
         android:textSize="14sp"
         android:textStyle="bold" />
 

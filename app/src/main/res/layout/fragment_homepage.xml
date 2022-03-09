@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/HomePage"
+    android:id="@+id/FragmentHomePage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomepageFragment">
@@ -160,22 +160,24 @@
         </LinearLayout>
 
         <ScrollView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbarSize="1dp"
             android:scrollbarThumbVertical="@drawable/thumbscroll"
             android:scrollbars="vertical">
 
             <GridLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnCount="1"
                 android:rowCount="5">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="420dp"
+                    android:layout_width="380dp"
                     android:layout_height="120dp"
-                    android:layout_margin="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_gravity="center"
                     app:cardBackgroundColor="@color/pbutton"
                     app:cardCornerRadius="6dp">
 
@@ -222,7 +224,7 @@
                                 android:gravity="center"
                                 android:text="for application"
                                 android:textColor="@color/white"
-                                android:textSize="18sp" />
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -232,15 +234,17 @@
                                 android:gravity="center"
                                 android:text="development guidelines"
                                 android:textColor="@color/white"
-                                android:textSize="18sp" />
+                                android:textSize="14sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="420dp"
+                    android:layout_width="380dp"
                     android:layout_height="120dp"
-                    android:layout_margin="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_gravity="center"
                     app:cardBackgroundColor="#FBDB96"
                     app:cardCornerRadius="6dp">
 
@@ -287,7 +291,7 @@
                                 android:gravity="center"
                                 android:text="for application"
                                 android:textColor="@color/white"
-                                android:textSize="18sp" />
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -297,15 +301,17 @@
                                 android:gravity="center"
                                 android:text="config guidelines"
                                 android:textColor="@color/white"
-                                android:textSize="18sp" />
+                                android:textSize="14sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="420dp"
+                    android:layout_width="380dp"
                     android:layout_height="120dp"
-                    android:layout_margin="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_gravity="center"
                     app:cardBackgroundColor="#AFF6FF"
                     app:cardCornerRadius="6dp">
 
@@ -352,7 +358,7 @@
                                 android:gravity="center"
                                 android:text="for application increase"
                                 android:textColor="@color/grey"
-                                android:textSize="18sp" />
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -362,15 +368,17 @@
                                 android:gravity="center"
                                 android:text="hospital guidelines"
                                 android:textColor="@color/grey"
-                                android:textSize="18sp" />
+                                android:textSize="14sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="420dp"
+                    android:layout_width="380dp"
                     android:layout_height="120dp"
-                    android:layout_margin="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_gravity="center"
                     app:cardBackgroundColor="#F4B4FF"
                     app:cardCornerRadius="6dp">
 
@@ -417,7 +425,7 @@
                                 android:gravity="center"
                                 android:text="for application help"
                                 android:textColor="@color/grey"
-                                android:textSize="18sp" />
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -427,7 +435,7 @@
                                 android:gravity="center"
                                 android:text="vaccine guidelines"
                                 android:textColor="@color/grey"
-                                android:textSize="18sp" />
+                                android:textSize="14sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

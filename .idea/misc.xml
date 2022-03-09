@@ -60,12 +60,12 @@
         <entry key="..\:/PCS/app/src/main/res/layout/change_profile_dialog.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/custom_spinner.xml" value="0.12708333333333333" />
         <entry key="..\:/PCS/app/src/main/res/layout/custom_spinner_dropdown.xml" value="0.12708333333333333" />
-        <entry key="..\:/PCS/app/src/main/res/layout/fragment_chat.xml" value="0.2" />
+        <entry key="..\:/PCS/app/src/main/res/layout/fragment_chat.xml" value="0.264" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_chat_doctor.xml" value="0.144" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_history.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_history_doctor.xml" value="0.264" />
-        <entry key="..\:/PCS/app/src/main/res/layout/fragment_homepage.xml" value="0.176" />
-        <entry key="..\:/PCS/app/src/main/res/layout/fragment_homepage_doctor.xml" value="0.136" />
+        <entry key="..\:/PCS/app/src/main/res/layout/fragment_homepage.xml" value="0.2" />
+        <entry key="..\:/PCS/app/src/main/res/layout/fragment_homepage_doctor.xml" value="0.264" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_noti.xml" value="0.176" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_noti_doctor.xml" value="0.18899755501222493" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_user.xml" value="0.2" />

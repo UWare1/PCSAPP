@@ -64,21 +64,24 @@ public class HistoryDoctorFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private Context mContext;
-    LinearLayout LayH01;
+    LinearLayout LayH01, HistoryDoctorLay;
     TextInputLayout Comments;
     View view;
-    TextView    SelectPatient, NamePatient, EmailPatient, MoreDetails,
-                NameSelect, EmailSelect, PhoneSelect, BirthSelect, NationalIDCardSelect, AddressSelect, AllergySelect, MedicalSelect;
-    ImageView ImagePatient;
+    TextView SelectPatient, NamePatient, EmailPatient, MoreDetails,
+            NameSelect, EmailSelect, PhoneSelect, BirthSelect, NationalIDCardSelect, AddressSelect, AllergySelect, MedicalSelect;
+    ImageView ImagePatient, GenderImage;
     Button CommentsPatient, ColorPatient;
 
-    int NumberOfMents;
+    int NumberOfMents, resID;
+    Drawable image;
 
-    String  currentDate, currentTime,
+    String currentDate, currentTime,
             DoctorID, PatientID,
             FullnameDBPatient, EmailDBPatient, ProfileIDDBPatient,
-            PhoneDBPatient, DateDBPatient, NationalIDCardDBPatient, AddressDBPatient, AllergyDBPatient, MedicalDBPatient,
+            PhoneDBPatient, DateDBPatient, NationalIDCardDBPatient,
+            AddressDBPatient, AllergyDBPatient, MedicalDBPatient, GenderDBPatient,
             TypeComment, NameComments, NameColor;
+    AnimatorSet animSet1;
 
     public HistoryDoctorFragment() {
         // Required empty public constructor
@@ -132,7 +135,13 @@ public class HistoryDoctorFragment extends Fragment {
         CommentsPatient = view.findViewById(R.id.CommentsPatient);
         ColorPatient = view.findViewById(R.id.ColorPatient);
 
+        HistoryDoctorLay = view.findViewById(R.id.HistoryDoctorLay);
         LayH01 = view.findViewById(R.id.LayH01);
+
+        //-----------------------------------------------------
+        animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
+        animSet1.setTarget(HistoryDoctorLay);
+        animSet1.start();
 
         currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
@@ -197,6 +206,7 @@ public class HistoryDoctorFragment extends Fragment {
                                 AddressDBPatient = String.valueOf(map.get("address"));
                                 AllergyDBPatient = String.valueOf(map.get("allergy"));
                                 MedicalDBPatient = String.valueOf(map.get("medical"));
+                                GenderDBPatient = String.valueOf(map.get("gender"));
 
                                 NameColor = String.valueOf(map.get("color"));
                                 NumberOfMents = Integer.parseInt(String.valueOf(map.get("numberOfMents")));
@@ -304,15 +314,15 @@ public class HistoryDoctorFragment extends Fragment {
                 AddressSelect = bottomSheetView.findViewById(R.id.AddressSelect);
                 AllergySelect = bottomSheetView.findViewById(R.id.AllergySelect);
                 MedicalSelect = bottomSheetView.findViewById(R.id.MedicalSelect);
+                GenderImage = bottomSheetView.findViewById(R.id.GenderImage);
 
                 String LastName = "";
-                String FirstName= "";
-                if(FullnameDBPatient.split("\\w+").length>1){
+                String FirstName = "";
+                if (FullnameDBPatient.split("\\w+").length > 1) {
 
-                    LastName = FullnameDBPatient.substring(FullnameDBPatient.lastIndexOf(" ")+1);
+                    LastName = FullnameDBPatient.substring(FullnameDBPatient.lastIndexOf(" ") + 1);
                     FirstName = FullnameDBPatient.substring(0, FullnameDBPatient.lastIndexOf(' '));
-                }
-                else{
+                } else {
                     FirstName = FullnameDBPatient;
                 }
                 NameSelect.setText(FirstName + "\n" + LastName);
@@ -323,6 +333,21 @@ public class HistoryDoctorFragment extends Fragment {
                 AddressSelect.setText(AddressDBPatient);
                 AllergySelect.setText(AllergyDBPatient);
                 MedicalSelect.setText(MedicalDBPatient);
+
+                if (GenderDBPatient.equals("ผู้ชาย") | GenderDBPatient.equals("Male")) {
+                    resID = getResources().getIdentifier("man", "drawable", getActivity().getPackageName());
+                    image = getResources().getDrawable(resID);
+                    GenderImage.setImageDrawable(image);
+                } else if (GenderDBPatient.equals("ผู้หญิง") | GenderDBPatient.equals("Female")) {
+                    resID = getResources().getIdentifier("woman", "drawable", getActivity().getPackageName());
+                    image = getResources().getDrawable(resID);
+                    GenderImage.setImageDrawable(image);
+                } else {
+                    resID = getResources().getIdentifier("bigender", "drawable", getActivity().getPackageName());
+                    image = getResources().getDrawable(resID);
+                    GenderImage.setImageDrawable(image);
+                }
+
                 bottomSheetView.findViewById(R.id.Understand).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -374,6 +399,7 @@ public class HistoryDoctorFragment extends Fragment {
         //---------------------------------------------------------
         return view;
     }
+
     private boolean validateComments() {
         String val = Comments.getEditText().getText().toString().trim();
         if (val.isEmpty()) {

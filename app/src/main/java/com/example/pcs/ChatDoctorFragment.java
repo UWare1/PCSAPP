@@ -1,5 +1,7 @@
 package com.example.pcs;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +26,9 @@ public class ChatDoctorFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    View view;
+    LinearLayout FragmentChatDoctor;
+    AnimatorSet animSet1;
 
     public ChatDoctorFragment() {
         // Required empty public constructor
@@ -59,6 +65,13 @@ public class ChatDoctorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chat_doctor, container, false);
+        view = inflater.inflate(R.layout.fragment_chat_doctor, container, false);
+        FragmentChatDoctor = view.findViewById(R.id.FragmentChatDoctor);
+
+        animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
+        animSet1.setTarget(FragmentChatDoctor);
+        animSet1.start();
+
+        return view;
     }
 }

@@ -1,5 +1,7 @@
 package com.example.pcs;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -18,6 +20,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -45,8 +48,10 @@ public class HomepageFragment extends Fragment {
     private String mParam2;
     private Context mContext;
     View view;
+    FrameLayout FragmentHomePage;
     LinearLayout Assessment, Assessment2, Assessment3, Assessment4;
-    //Button ToRecentsHistory;
+
+    AnimatorSet animSet1;
 
     public HomepageFragment() {
         // Required empty public constructor
@@ -91,11 +96,17 @@ public class HomepageFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_homepage, container, false);
         //ToRecentsHistory = view.findViewById(R.id.ToRecentsHistory);
 
+        FragmentHomePage = view.findViewById(R.id.FragmentHomePage);
         Assessment = view.findViewById(R.id.Assessment);
         Assessment2 = view.findViewById(R.id.Assessment2);
         Assessment3 = view.findViewById(R.id.Assessment3);
         Assessment4 = view.findViewById(R.id.Assessment4);
         ImageSlider imageSlider = view.findViewById(R.id.slider);
+
+        //-----------------------------------------------------
+        animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
+        animSet1.setTarget(FragmentHomePage);
+        animSet1.start();
 
         //-----------------------------------------------------
         List<SlideModel> slideModels = new ArrayList<>();
@@ -136,25 +147,6 @@ public class HomepageFragment extends Fragment {
                 startActivity(ToBrowser4);
             }
         });
-        /*ToRecentsHistory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                startActivity(intent);
-                // Create new fragment and transaction
-                Fragment newFragment = new HistoryFragment();
-                // consider using Java coding conventions (upper first char class names!!!)
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-
-                // Replace whatever is in the fragment_container view with this fragment,
-                // and add the transaction to the back stack
-                transaction.replace(R.id.HomePage, newFragment);
-                transaction.addToBackStack(null);
-
-                // Commit the transaction
-                transaction.commit();
-            }
-        });*/
         return view;
     }
 }

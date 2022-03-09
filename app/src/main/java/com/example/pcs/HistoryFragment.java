@@ -1,5 +1,7 @@
 package com.example.pcs;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,6 +19,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -57,11 +61,15 @@ public class HistoryFragment extends Fragment {
     private String mParam2;
     private Context mContext;
     View view;
-    Button HistoryRefresh, ADDHistory;
+    LinearLayout HistoryLay;
+    Button ColorShow, ADDHistory;
     String currentDate, currentTime,
             Dated, Timed, Press, Temp, Desc, UserID;
     TextInputLayout Pressure, Temperature, Description;
     TextView DaTe1;
+
+    AnimatorSet animSet1;
+    int numberOfinfo;
 
     public HistoryFragment() {
         // Required empty public constructor
@@ -105,9 +113,15 @@ public class HistoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_history, container, false);
-        HistoryRefresh = view.findViewById(R.id.HistoryRefresh);
+        HistoryLay = view.findViewById(R.id.HistoryLay);
+        ColorShow = view.findViewById(R.id.ColorShow);
         ADDHistory = view.findViewById(R.id.ADDHistory);
         DaTe1 = view.findViewById(R.id.DaTe1);
+
+        animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
+        animSet1.setTarget(HistoryLay);
+        animSet1.start();
+
         currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
 
@@ -115,6 +129,25 @@ public class HistoryFragment extends Fragment {
         HashMap<String, String> UserDetails = sessionManager.getUserDatailFromSession();
         UserID = UserDetails.get(SessionManager.KEY_USERID);
 
+        Query CheckColorPatient = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").child(UserID);
+        CheckColorPatient.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Map map = (Map) snapshot.getValue();
+                numberOfinfo = Integer.parseInt(String.valueOf(map.get("numberOfinfo")));
+                try {
+                    ColorShow.setText("Color: " + String.valueOf(map.get("color")));
+                } catch (Exception e){
+                    ColorShow.setText("Color: None");
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         ADDHistory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,15 +181,14 @@ public class HistoryFragment extends Fragment {
                         Temp = Temperature.getEditText().getText().toString().trim();
                         Desc = Description.getEditText().getText().toString().trim();
 
-                        /*SessionManager sessionManager = new SessionManager(getActivity());
-                        HashMap<String, String> UserDetails = sessionManager.getUserDatailFromSession();
-                        String UserID = UserDetails.get(SessionManager.KEY_USERID);*/
+                        numberOfinfo++;
 
                         FirebaseDatabase rootNode = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/");
                         DatabaseReference reference = rootNode.getReference("Teacher");
 
                         HistoryHelperClass addNewHistory = new HistoryHelperClass(Dated, Timed, Press, Temp, Desc);
-                        reference.child(UserID).child("PatientInfo").child(Dated).child(Timed).setValue(addNewHistory);
+                        reference.child(UserID).child("PatientInfo").child(numberOfinfo + "").setValue(addNewHistory);
+                        reference.child(UserID).child("numberOfinfo").setValue(numberOfinfo);
                         bottomSheetDialog.dismiss();
                     }
                 });
