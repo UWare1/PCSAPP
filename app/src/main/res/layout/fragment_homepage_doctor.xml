@@ -29,13 +29,13 @@
                 android:layout_marginStart="6dp"
                 android:layout_marginVertical="12dp"
                 android:background="@drawable/doctor2"
-                android:backgroundTint="@color/pbutton2"></ImageView>
+                android:backgroundTint="@color/colorPrimary"></ImageView>
 
             <View
                 android:layout_width="130dp"
                 android:layout_height="1.5dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@color/colorAccent"></View>
+                android:background="@color/pbutton"></View>
         </LinearLayout>
 
         <FrameLayout
@@ -67,7 +67,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.8"
+        android:layout_weight="0.4"
         android:gravity="center"
         android:orientation="vertical"
         android:paddingTop="20dp">

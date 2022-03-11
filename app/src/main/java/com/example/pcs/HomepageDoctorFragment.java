@@ -58,8 +58,7 @@ public class HomepageDoctorFragment extends Fragment {
     private String mParam2;
     private Context mContext;
     View view;
-    FrameLayout FragmentHomePageDoctor;
-    LinearLayout Assessment, Assessment2, Assessment3, Assessment4;
+    LinearLayout FragmentHomePageDoctor, Assessment, Assessment2, Assessment3, Assessment4;
     AnimatorSet animSet1;
     ImageSlider imageSlider;
     List<SlideModel> slideModels;

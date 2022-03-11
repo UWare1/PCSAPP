@@ -18,7 +18,7 @@
             android:layout_width="370dp"
             android:layout_height="0dp"
             android:layout_margin="20dp"
-            android:layout_weight="0.325"
+            android:layout_weight="0.35"
             android:background="@drawable/backhistory">
 
             <TextView
@@ -85,7 +85,7 @@
                     android:layout_marginTop="12dp"
                     android:fontFamily="@font/promptbold"
                     android:text="Comments"
-                    android:visibility="visible" />
+                    android:visibility="invisible" />
             </LinearLayout>
         </FrameLayout>
 
