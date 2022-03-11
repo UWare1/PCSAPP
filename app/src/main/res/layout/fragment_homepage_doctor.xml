@@ -1,146 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/FragmentHomePageDoctor"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
     tools:context=".HomepageDoctorFragment">
-    <!--<View
-        android:layout_width="420dp"
-        android:layout_height="150dp"
-        android:background="@drawable/backgroundhome"
-        android:layout_gravity="center_horizontal">
 
-    </View>-->
-
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/doctor2"
-        android:backgroundTint="@color/pbutton2">
-
-    </ImageView>
-
-    <View
-        android:layout_width="130dp"
-        android:layout_height="1.5dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="70dp"
-        android:background="@color/colorAccent"></View>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="320dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="90dp"
-        android:gravity="center">
-
-
-        <!--<View
-            android:id="@+id/SlideBG1"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:layout_centerInParent="true"
-            android:background="@drawable/homeslide" />
--->
-        <com.denzcoskun.imageslider.ImageSlider
-            android:id="@+id/slider"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:backgroundTintMode="screen"
-            app:auto_cycle="true"
-            app:corner_radius="20"
-            app:delay="0"
-            app:error_image="@color/white"
-            app:period="3000"
-            app:placeholder="@color/black" />
-
-    </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/AddImage"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/add"
-        android:backgroundTint="@color/pbutton"
-        android:layout_gravity="end"
-        android:layout_marginTop="110dp"
-        android:layout_marginEnd="20dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="260dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingTop="20dp">
-
-        <!--<FrameLayout
-            android:layout_width="340dp"
-            android:layout_height="110dp"
-            android:background="@drawable/homehistory">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingTop="13dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="13dp"
-                android:paddingBottom="26dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/recents"
-                    android:fontFamily="@font/promptlight"
-                    android:textColor="@color/pbutton"
-                    android:textSize="16sp"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="10dp"
-                    android:paddingTop="16dp"
-                    android:text="@string/history"
-                    android:fontFamily="@font/promptbold"
-                    android:textStyle="bold"
-                    android:textColor="@color/pbutton"
-                    android:textSize="26sp"></TextView>
-
-                <View
-                    android:layout_width="280dp"
-                    android:layout_height="1dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/pbutton">
-
-                </View>
-                <View
-                    android:id="@+id/ToADD"
-                    android:layout_width="70dp"
-                    android:layout_height="30dp"
-                    android:layout_alignParentEnd="true"
-                    android:background="@drawable/homehistory">
-
-                </View>
-
-                <Button
-                    android:id="@+id/ToRecentsHistory"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#00000000" />
-
-            </RelativeLayout>
-        </FrameLayout>-->
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginVertical="12dp"
+                android:background="@drawable/doctor2"
+                android:backgroundTint="@color/pbutton2"></ImageView>
+
+            <View
+                android:layout_width="130dp"
+                android:layout_height="1.5dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/colorAccent"></View>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="420dp"
+            android:layout_height="match_parent">
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/slider"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTintMode="screen"
+                app:auto_cycle="true"
+                app:corner_radius="20"
+                app:delay="0"
+                app:error_image="@color/white"
+                app:period="10000"
+                app:placeholder="@color/black" />
+            <ImageView
+                android:id="@+id/AddImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"
+                android:layout_margin="12sp"
+                android:background="@drawable/add"
+                android:backgroundTint="@color/pbutton" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="20dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="80dp"
-            android:layout_marginTop="130dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingStart="26dp"
@@ -154,17 +88,13 @@
                 android:text="@string/function"
                 android:textColor="@color/pbutton"
                 android:textSize="30sp"
-                android:textStyle="bold">
-
-            </TextView>
+                android:textStyle="bold"></TextView>
 
             <View
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="1dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/pbutton">
-
-            </View>
+                android:layout_marginTop="3dp"
+                android:background="@color/pbutton"></View>
 
         </LinearLayout>
 
@@ -184,9 +114,9 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="380dp"
                     android:layout_height="120dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
-                    android:layout_gravity="center"
                     app:cardBackgroundColor="@color/pbutton"
                     app:cardCornerRadius="6dp">
 
@@ -251,9 +181,9 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="380dp"
                     android:layout_height="120dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
-                    android:layout_gravity="center"
                     app:cardBackgroundColor="#FBDB96"
                     app:cardCornerRadius="6dp">
 
@@ -318,9 +248,9 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="380dp"
                     android:layout_height="120dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
-                    android:layout_gravity="center"
                     app:cardBackgroundColor="#AFF6FF"
                     app:cardCornerRadius="6dp">
 
@@ -385,9 +315,9 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="380dp"
                     android:layout_height="120dp"
+                    android:layout_gravity="center"
                     android:layout_marginTop="6dp"
                     android:layout_marginBottom="6dp"
-                    android:layout_gravity="center"
                     app:cardBackgroundColor="#F4B4FF"
                     app:cardCornerRadius="6dp">
 
@@ -453,4 +383,4 @@
         </ScrollView>
 
     </LinearLayout>
-</FrameLayout>
+</LinearLayout>

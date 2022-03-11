@@ -77,10 +77,11 @@
             app:itemRadius="5dp"/>
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
             android:text="@string/verify_code"
+            android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/promptbold"
             android:onClick="callNextScreenFromOTP"

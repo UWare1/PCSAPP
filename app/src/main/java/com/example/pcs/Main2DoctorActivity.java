@@ -26,12 +26,12 @@ public class Main2DoctorActivity extends AppCompatActivity {
         bottomNavigation = findViewById(R.id.bottom_navigation_doctor);
         decorView = getWindow().getDecorView();
 
-        mediaPlayer = MediaPlayer.create(Main2DoctorActivity.this, R.raw.gogowasound);
+        mediaPlayer = MediaPlayer.create(Main2DoctorActivity.this, R.raw.bgsound2);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
 
         //Add menu item
-        bottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.doctor));
+        bottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.chat));
         bottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.healthcare));
         bottomNavigation.add(new MeowBottomNavigation.Model(3,R.drawable.ic_homepage));
         bottomNavigation.add(new MeowBottomNavigation.Model(4,R.drawable.ic_noti));
