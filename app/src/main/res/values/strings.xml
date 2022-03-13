@@ -57,9 +57,8 @@
     <string name="password_empty">Password can not be Empty</string>
     <string name="verify_code">Verify Code</string>
     <string name="this_application">This application was createn from the brainstorming of students Computer Engineering Kasetsart University Kamphaeng Saen Campus foreseen that Currently, there are not enough medical personnel to take care of COVID patients. resulting in inadequate care and work hard this app is designed to respond to these problems and increase the efficiency of healthcare workers. speed up time accessible to all patients And the patient himself can fill out the information and send it to the doctor. comfortably Easy to use as well.</string>
-    <string name="save">Save</string>
-    <string name="off">Off</string>
-
+    <string name="save" translatable="false">Save</string>
+    <string name="off" translatable="false">Off</string>
 
 
     <string name="docter_id">Docter ID</string>
@@ -83,4 +82,59 @@
     <string name="red">Red</string>
     <string name="field_cannot_empty">Field can not be empty</string>
     <string name="nationalidcard_toolarge">National ID Card is too large!</string>
+    <string name="select_patient">Select Patient</string>
+    <string name="type_of_comments">Type of Comments</string>
+    <string name="warning">Warning</string>
+    <string name="appointment">Appointment</string>
+    <string name="select">Select...</string>
+    <string name="uid_not_match">UID not match!</string>
+    <string name="docterid_not_has">DoctorID not has!</string>
+    <string name="no_such_user_exist">No such user exist!</string>
+    <string name="field_can_not_be_empty">Field can not be empty</string>
+    <string name="phone_number_is_too_long">Phone Number is too large!</string>
+    <string name="phone_number_has_been_use">Phone Number has been use!</string>
+    <string name="docter_id_has_been_use">DoctorID has been use!</string>
+    <string name="pincode_mismatch">Pincode Mismatch!</string>
+    <string name="error">Error</string>
+    <string name="email_has_been_use">Email has been use!</string>
+    <string name="docter_id_is_too_long">Doctor ID is too large!</string>
+    <string name="no_white_spaces_are_allowed">No White spaces are allowed!</string>
+    <string name="pincode_should_contain_4_character">Pincode should contain 4 characters!</string>
+    <string name="pincode_should_not_space">Pincode should not space</string>
+    <string name="pincode_should_have_alphabet_or_number">Pincode should have Alphabet or Number</string>
+    <string name="invalid_email">Invalid Email!</string>
+    <string name="national_id_card_is_too_short">National ID Card is too short!</string>
+    <string name="docter_id_and_phone_number_does_not_match">Doctor ID and Phone Number does not match!</string>
+    <string name="please_select_gender">Please Select Gender</string>
+    <string name="you_are_not_eligible_to_apply">You are not eligible to apply</string>
+    <string name="passwprd_not_match">Password not match!</string>
+    <string name="password_should_contain_4_characters">Password should contain 4 characters!</string>
+    <string name="password_should_not_space">Password should not space</string>
+    <string name="password_should_have_alphabet_or_number">Password should have Alphabet or Number</string>
+    <string name="please_select_a_language">Please select a Language</string>
+    <string name="pincode_does_not_match">Pincode does not match!</string>
+    <string name="com_user_and_phone_number_does_not_match">com.example.pcs.SplashActivity.User and Phone Number does not match!</string>
+    <string name="username_is_too_large">Username is too large!</string>
+    <string name="choose_success">Choose Success</string>
+    <string name="verification_completed">Verification Completed</string>
+    <string name="verification_not_completed">Verification Not Completed! Try again.</string>
+    <string name="color">"Color : "</string>
+    <string name="enter_one_time_password_sent_on">"Enter One Time Password Sent On "</string>
+    <string name="phone">Phone</string>
+    <string name="birthday">Birthday</string>
+    <string name="you_are_not_connected_to_a">You are not connected to a</string>
+    <string name="please_provide_doctor_id_and_uid">Please provide Doctor ID and UID</string>
+    <string name="connection_request">Connection Request</string>
+    <string name="personal_doctor">Personal Doctor</string>
+    <string name="for_application">for application</string>
+    <string name="development_guidelines">development guidelines</string>
+    <string name="packages_form">Packages Form</string>
+    <string name="config_guidelines">config guidelines</string>
+    <string name="hospital_form">Hospital Form</string>
+    <string name="for_application_increase">for application increase</string>
+    <string name="hospital_guidelines">hospital guidelines</string>
+    <string name="vaccine_form">Vaccine Form</string>
+    <string name="for_application_help">for application help</string>
+    <string name="vaccine_guidelines">vaccine guidelines</string>
+    <string name="welcome_nthis_is_history_nyou_are_in">Welcome\nThis is History!!!\nYou are In.</string>
 </resources>
