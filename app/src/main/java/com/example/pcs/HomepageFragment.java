@@ -48,8 +48,7 @@ public class HomepageFragment extends Fragment {
     private String mParam2;
     private Context mContext;
     View view;
-    FrameLayout FragmentHomePage;
-    LinearLayout Assessment, Assessment2, Assessment3, Assessment4;
+    LinearLayout FragmentHomePage, Assessment, Assessment2, Assessment3, Assessment4;
 
     AnimatorSet animSet1;
 

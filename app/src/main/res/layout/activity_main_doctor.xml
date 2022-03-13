@@ -199,8 +199,8 @@
             </View>
             <View
                 android:id="@+id/Line"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:background="@drawable/line"
                 android:layout_gravity="center"
                 android:layout_margin="8dp">

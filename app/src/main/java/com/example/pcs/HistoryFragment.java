@@ -11,6 +11,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -66,11 +68,14 @@ public class HistoryFragment extends Fragment {
     String currentDate, currentTime,
             Dated, Timed, Press, Temp, Desc, UserID;
     TextInputLayout Pressure, Temperature, Description;
-    TextView DaTe1;
 
     AnimatorSet animSet1;
     int numberOfinfo;
 
+    RecyclerView recyclerView;
+    ArrayList<User> list;
+    DatabaseReference databaseReference;
+    MyAdapter adapter;
     public HistoryFragment() {
         // Required empty public constructor
     }
@@ -116,7 +121,6 @@ public class HistoryFragment extends Fragment {
         HistoryLay = view.findViewById(R.id.HistoryLay);
         ColorShow = view.findViewById(R.id.ColorShow);
         ADDHistory = view.findViewById(R.id.ADDHistory);
-        DaTe1 = view.findViewById(R.id.DaTe1);
 
         animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
         animSet1.setTarget(HistoryLay);
@@ -128,6 +132,30 @@ public class HistoryFragment extends Fragment {
         SessionManager sessionManager = new SessionManager(getActivity());
         HashMap<String, String> UserDetails = sessionManager.getUserDatailFromSession();
         UserID = UserDetails.get(SessionManager.KEY_USERID);
+
+        recyclerView = view.findViewById(R.id.recyclerview);
+        databaseReference = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").child(UserID).child("PatientInfo");
+        list = new ArrayList<>();
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new MyAdapter(getContext(),list);
+        recyclerView.setAdapter(adapter);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                list.clear();
+                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+                    User user = dataSnapshot.getValue(User.class);
+                    list.add(user);
+                }
+                adapter.notifyDataSetChanged();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
 
         Query CheckColorPatient = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").child(UserID);
         CheckColorPatient.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -168,8 +196,8 @@ public class HistoryFragment extends Fragment {
                 Date.setText("Date: " + currentDate);
                 Time.setText("Time: " + currentTime);
 
-                Dated = Date.getText().toString().trim();
-                Timed = Time.getText().toString().trim();
+                Dated = (Date.getText().toString().trim()).substring(6);
+                Timed = (Time.getText().toString().trim()).substring(6);
 
                 bottomSheetView.findViewById(R.id.ADD).setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -186,7 +214,7 @@ public class HistoryFragment extends Fragment {
                         FirebaseDatabase rootNode = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/");
                         DatabaseReference reference = rootNode.getReference("Teacher");
 
-                        HistoryHelperClass addNewHistory = new HistoryHelperClass(Dated, Timed, Press, Temp, Desc);
+                        HistoryHelperClass addNewHistory = new HistoryHelperClass(Dated, Timed, Press + " mmHg", Temp + " C", Desc);
                         reference.child(UserID).child("PatientInfo").child(numberOfinfo + "").setValue(addNewHistory);
                         reference.child(UserID).child("numberOfinfo").setValue(numberOfinfo);
                         bottomSheetDialog.dismiss();

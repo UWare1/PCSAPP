@@ -34,262 +34,29 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/backhistory" />
 
-        <HorizontalScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="348dp"
+            android:layout_height="516dp"
+            android:layout_above="@+id/ADDHistory"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="1dp"
+            android:scrollbarThumbVertical="@drawable/thumb"
+            android:scrollbars="vertical"
+            android:scrollbarSize="3dp"
+            android:scrollIndicators="end"/>
+
+        <!--<HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbarThumbHorizontal="@drawable/thumbscroll">
 
-            <TableLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:collapseColumns=""
-                android:orientation="horizontal"
-                android:padding="16dp">
-
-                <TableRow android:paddingVertical="6dp">
-
-                    <TextView
-                        android:layout_width="106dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/promptlight"
-                        android:gravity="center"
-                        android:text="@string/date"
-                        android:textColor="@color/white"
-                        android:textSize="20sp" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"></View>
-
-                    <TextView
-                        android:layout_width="106dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/promptlight"
-                        android:gravity="center"
-                        android:text="@string/time"
-                        android:textColor="@color/white"
-                        android:textSize="20sp" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:background="@color/white" />
-
-                    <TextView
-                        android:layout_width="106dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/promptlight"
-                        android:gravity="center"
-                        android:text="@string/pressure"
-                        android:textColor="@color/white"
-                        android:textSize="20sp" />
-
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"></View>
-
-                    <TextView
-                        android:layout_width="106dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/promptlight"
-                        android:gravity="center"
-                        android:text="@string/temp"
-                        android:textColor="@color/white"
-                        android:textSize="20sp" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"></View>
-
-                    <TextView
-                        android:id="@+id/TextDescription"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/promptlight"
-                        android:gravity="center"
-                        android:text="@string/description"
-                        android:textColor="@color/white"
-                        android:textSize="20sp" />
-
-                </TableRow>
-
-                <View
-                    android:layout_width="200dp"
-                    android:layout_height="1dp"
-                    android:layout_margin="5dp"
-                    android:background="@color/white"></View>
-
-                <TableRow android:layout_marginTop="6dp">
-
-                    <TextView
-                        android:id="@+id/DaTe1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/promptlight"
-                        android:gravity="center"
-                        android:text="26/01/65"
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"></View>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/promptlight"
-                        android:gravity="center"
-                        android:text="22:53:00"
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"></View>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/promptlight"
-                        android:gravity="center"
-                        android:text="38"
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"></View>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/promptlight"
-                        android:gravity="center"
-                        android:text="34"
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"></View>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/promptlight"
-                        android:gravity="center"
-                        android:text="Cough..."
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-
-                </TableRow>
-
-                <TableRow android:layout_marginTop="3dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/jostvariablefontwght"
-                        android:gravity="center"
-                        android:text="27/01/65"
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"></View>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/jostvariablefontwght"
-                        android:gravity="center"
-                        android:text="22:53:00"
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"></View>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/jostvariablefontwght"
-                        android:gravity="center"
-                        android:text="38"
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"></View>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/jostvariablefontwght"
-                        android:gravity="center"
-                        android:text="34"
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"></View>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/jostvariablefontwght"
-                        android:gravity="center"
-                        android:text="Cough... "
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-
-                </TableRow>
-            </TableLayout>
-        </HorizontalScrollView>
+        </HorizontalScrollView>-->
 
 
         <Button
