@@ -123,11 +123,11 @@
             android:layout_gravity="center"
             android:layout_marginEnd="80dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/personaldoctorbutton"
+            android:background="@drawable/personaldoctorbutton2"
             android:fontFamily="@font/promptbold"
             android:gravity="center"
             android:text="Personal Doctor"
-            android:textColor="@color/pbutton"
+            android:textColor="@color/white"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -154,10 +154,10 @@
 
         <View
             android:layout_width="360dp"
-            android:layout_height="7dp"
+            android:layout_height="1dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="20dp"
-            android:background="#FFACAC" />
+            android:background="@color/pbutton" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -294,6 +294,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
                     android:layout_margin="20dp"
+                    android:paddingStart="30dp"
                     android:background="@drawable/personaldoctorbutton"
                     android:paddingVertical="4dp"
                     android:scrollbarSize="1dp"
@@ -313,13 +314,13 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            android:gravity="center_horizontal"
+                            android:gravity="start"
                             android:orientation="horizontal">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="20dp"
+                                android:layout_marginHorizontal="20dp"
                                 android:background="@drawable/user5" />
 
                             <TextView
@@ -334,13 +335,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
-                            android:gravity="center_horizontal"
+                            android:gravity="start"
                             android:orientation="horizontal">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="20dp"
+                                android:layout_marginHorizontal="20dp"
                                 android:background="@drawable/email" />
 
                             <TextView
@@ -355,13 +356,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
-                            android:gravity="center_horizontal"
+                            android:gravity="start"
                             android:orientation="horizontal">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="20dp"
+                                android:layout_marginHorizontal="20dp"
                                 android:background="@drawable/phone1" />
 
                             <TextView
@@ -376,13 +377,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
-                            android:gravity="center_horizontal"
+                            android:gravity="start"
                             android:orientation="horizontal">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="20dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginEnd="12dp"
                                 android:background="@drawable/graduation" />
 
                             <TextView
@@ -397,13 +399,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
-                            android:gravity="center_horizontal"
+                            android:gravity="start"
                             android:orientation="horizontal">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="20dp"
+                                android:layout_marginHorizontal="20dp"
                                 android:background="@drawable/address" />
 
                             <TextView

@@ -83,7 +83,7 @@ public class UserFragment extends Fragment {
     boolean IFCHOOSE = false, PLAY = false, On = true;
     int Brightness, resID, resID1;
     Drawable image, image1;
-    String ProfileID, UserID, Fullname, BornDB, NationalIDCard, PhoneNumber, AddressDB, Email, ProfileIDImage;
+    String ProfileID, UserID, Fullname, BornDB, NationalIDCard, PhoneNumber, AddressDB, GenderDB, Email, ProfileIDImage;
 
     AnimatorSet animSet1, animSet2, animSet3;
 
@@ -148,6 +148,7 @@ public class UserFragment extends Fragment {
         NationalIDCard = UserDetails.get(SessionManager.KEY_NATIONALIDCARD);
         PhoneNumber = UserDetails.get(SessionManager.KEY_PHONENUMBER);
         AddressDB = UserDetails.get(SessionManager.KEY_ADDRESS);
+        GenderDB = UserDetails.get(SessionManager.KEY_GENDER);
         Email = UserDetails.get(SessionManager.KEY_EMAIL);
 
         Query CheckHas = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").child(UserID);
@@ -404,6 +405,7 @@ public class UserFragment extends Fragment {
                 final TextView Phone = bottomSheetView.findViewById(R.id.Phone);
                 final TextView EmailShow = bottomSheetView.findViewById(R.id.Email);
                 final TextView Address = bottomSheetView.findViewById(R.id.Address);
+                final TextView Gender = bottomSheetView.findViewById(R.id.Gender);
                 final ImageView ProfileImageDialog = bottomSheetView.findViewById(R.id.ProfileImageDialog);
 
                 Name.setText(Fullname);
@@ -412,6 +414,7 @@ public class UserFragment extends Fragment {
                 Phone.setText(PhoneNumber);
                 EmailShow.setText(Email);
                 Address.setText(AddressDB);
+                Gender.setText(GenderDB);
                 ProfileImageDialog.setImageDrawable(image);
 
                 bottomSheetView.findViewById(R.id.SAVE).setOnClickListener(new View.OnClickListener() {

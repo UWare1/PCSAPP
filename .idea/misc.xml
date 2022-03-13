@@ -26,17 +26,19 @@
         <entry key="..\:/PCS/app/src/main/res/drawable/ic_history.xml" value="0.1255" />
         <entry key="..\:/PCS/app/src/main/res/drawable/morebutton.xml" value="0.1335" />
         <entry key="..\:/PCS/app/src/main/res/drawable/personaldoctorbutton.xml" value="0.1915" />
+        <entry key="..\:/PCS/app/src/main/res/drawable/personaldoctorbutton2.xml" value="0.1945" />
         <entry key="..\:/PCS/app/src/main/res/drawable/personaldoctorbuttononclick.xml" value="0.1915" />
         <entry key="..\:/PCS/app/src/main/res/drawable/pgbutton2.xml" value="0.114" />
+        <entry key="..\:/PCS/app/src/main/res/drawable/pgbuttonborn.xml" value="0.144" />
         <entry key="..\:/PCS/app/src/main/res/drawable/thumbscroll.xml" value="0.151" />
         <entry key="..\:/PCS/app/src/main/res/layout/about_layout_dialog.xml" value="0.264" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet.xml" value="0.176" />
-        <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet2.xml" value="0.152" />
+        <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet2.xml" value="0.264" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet3.xml" value="0.20863616930312098" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet4.xml" value="0.176" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet5.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet6.xml" value="0.176" />
-        <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet7.xml" value="0.152" />
+        <entry key="..\:/PCS/app/src/main/res/layout/activity_bottom_sheet7.xml" value="0.264" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_dfpass.xml" value="0.12708333333333333" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_dnew_pin_change.xml" value="0.264" />
         <entry key="..\:/PCS/app/src/main/res/layout/activity_dregis.xml" value="0.2" />
@@ -60,7 +62,7 @@
         <entry key="..\:/PCS/app/src/main/res/layout/change_profile_dialog.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/custom_spinner.xml" value="0.12708333333333333" />
         <entry key="..\:/PCS/app/src/main/res/layout/custom_spinner_dropdown.xml" value="0.12708333333333333" />
-        <entry key="..\:/PCS/app/src/main/res/layout/fragment_chat.xml" value="0.152" />
+        <entry key="..\:/PCS/app/src/main/res/layout/fragment_chat.xml" value="0.2" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_chat_doctor.xml" value="0.144" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_history.xml" value="0.144" />
         <entry key="..\:/PCS/app/src/main/res/layout/fragment_history_doctor.xml" value="0.264" />

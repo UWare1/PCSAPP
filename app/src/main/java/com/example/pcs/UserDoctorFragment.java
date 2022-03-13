@@ -71,7 +71,7 @@ public class UserDoctorFragment extends Fragment {
     boolean IFCHOOSE = false, PLAY = false, On = true;
     int Brightness, resID, resID1;
     Drawable image, image1;
-    String ProfileID, DoctorID, Fullname, BornDB, NationalIDCard, PhoneNumber, AddressDB, Email, ProfileIDImage;
+    String ProfileID, DoctorID, Fullname, BornDB, NationalIDCard, PhoneNumber, AddressDB, GenderDB, Email, ProfileIDImage, UID;
 
     AnimatorSet animSet1;
 
@@ -143,6 +143,7 @@ public class UserDoctorFragment extends Fragment {
         NationalIDCard = UserDetails.get(SessionManagerDoctor.KEY_NATIONALIDCARD);
         PhoneNumber = UserDetails.get(SessionManagerDoctor.KEY_PHONENUMBER);
         AddressDB = UserDetails.get(SessionManagerDoctor.KEY_ADDRESS);
+        GenderDB = UserDetails.get(SessionManagerDoctor.KEY_GENDER);
         Email = UserDetails.get(SessionManagerDoctor.KEY_EMAIL);
 
         Query CheckHas = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Doctor").child(DoctorID);
@@ -151,6 +152,7 @@ public class UserDoctorFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Map map = (Map) snapshot.getValue();
                 ProfileID = String.valueOf(map.get("profileID"));
+                UID = String.valueOf(map.get("uid"));
                 ProfileIDImage = ProfileID;
 
                 resID = getResources().getIdentifier(ProfileIDImage, "drawable", getActivity().getPackageName());
@@ -399,16 +401,22 @@ public class UserDoctorFragment extends Fragment {
                 final TextView Phone = bottomSheetView.findViewById(R.id.Phone);
                 final TextView EmailShow = bottomSheetView.findViewById(R.id.Email);
                 final TextView Address = bottomSheetView.findViewById(R.id.Address);
+                final TextView Gender = bottomSheetView.findViewById(R.id.Gender);
+                final TextView DoctorUID = bottomSheetView.findViewById(R.id.DID);
                 final ImageView ProfileImageDialog = bottomSheetView.findViewById(R.id.ProfileImageDialog);
 
+                DoctorUID.setVisibility(View.VISIBLE);
+                DoctorUID.setText(UID);
                 Name.setText(Fullname);
                 Born.setText(BornDB);
                 IDCard.setText(NationalIDCard);
                 Phone.setText(PhoneNumber);
                 EmailShow.setText(Email);
                 Address.setText(AddressDB);
+                Gender.setText(GenderDB);
                 ProfileImageDialog.setImageDrawable(image);
 
+                bottomSheetView.findViewById(R.id.SAVE).animate().translationY(20);
                 bottomSheetView.findViewById(R.id.SAVE).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
