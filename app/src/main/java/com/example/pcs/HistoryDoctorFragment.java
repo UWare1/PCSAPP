@@ -11,6 +11,8 @@ import android.os.Bundle;
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -83,6 +85,10 @@ public class HistoryDoctorFragment extends Fragment {
             TypeComment, NameComments, NameColor;
     AnimatorSet animSet1;
 
+    RecyclerView recyclerView;
+    ArrayList<User> list;
+    DatabaseReference databaseReference;
+    MyAdapter adapter;
     public HistoryDoctorFragment() {
         // Required empty public constructor
     }
@@ -192,6 +198,30 @@ public class HistoryDoctorFragment extends Fragment {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         PatientID = arrayList.get(i);
+
+                        databaseReference = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").child(PatientID).child("PatientInfo");
+                        list = new ArrayList<>();
+                        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+                        layoutManager.setReverseLayout(true);
+                        layoutManager.setStackFromEnd(true);
+                        recyclerView.setLayoutManager(layoutManager);
+                        adapter = new MyAdapter(getContext(), list);
+                        recyclerView.setAdapter(adapter);
+                        databaseReference.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                list.clear();
+                                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+                                    User user = dataSnapshot.getValue(User.class);
+                                    list.add(user);
+                                }
+                                adapter.notifyDataSetChanged();
+                            }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                            }
+                        });
+
                         Query CheckInsidePatient = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Teacher").child(PatientID);
                         CheckInsidePatient.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
