@@ -42,14 +42,13 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="14dp"
+            android:layout_marginHorizontal="14dp"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="14dp"
             android:layout_marginBottom="1dp"
-            android:scrollbarThumbVertical="@drawable/thumb"
-            android:scrollbars="vertical"
+            android:scrollIndicators="end"
             android:scrollbarSize="3dp"
-            android:scrollIndicators="end"/>
+            android:scrollbarThumbVertical="@drawable/thumb"
+            android:scrollbars="vertical" />
 
         <!--<HorizontalScrollView
             android:layout_width="match_parent"

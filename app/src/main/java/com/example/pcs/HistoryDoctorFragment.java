@@ -143,7 +143,7 @@ public class HistoryDoctorFragment extends Fragment {
 
         HistoryDoctorLay = view.findViewById(R.id.HistoryDoctorLay);
         LayH01 = view.findViewById(R.id.LayH01);
-
+        recyclerView = view.findViewById(R.id.recyclerviewdoctor);
         //-----------------------------------------------------
         animSet1 = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.fade);
         animSet1.setTarget(HistoryDoctorLay);
@@ -318,6 +318,7 @@ public class HistoryDoctorFragment extends Fragment {
                         reference.child(DoctorID).child("PatientInCare").child(PatientID).child(AboutMent).child("currentTime").setValue(currentTime);
 
                         bottomSheetDialog.dismiss();
+                        Toast.makeText(mContext, "Add " + TypeComment + " Success!", Toast.LENGTH_SHORT).show();
                     }
                 });
                 bottomSheetDialog.setContentView(bottomSheetView);
@@ -418,6 +419,7 @@ public class HistoryDoctorFragment extends Fragment {
 
                         referencePatient.child(PatientID).child("color").setValue(NameColor);
                         bottomSheetDialog.dismiss();
+                        Toast.makeText(mContext, "Add Color Success!", Toast.LENGTH_SHORT).show();
                     }
                 });
                 bottomSheetDialog.setContentView(bottomSheetView);

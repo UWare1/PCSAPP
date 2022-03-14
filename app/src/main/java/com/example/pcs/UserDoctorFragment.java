@@ -406,7 +406,7 @@ public class UserDoctorFragment extends Fragment {
                 final ImageView ProfileImageDialog = bottomSheetView.findViewById(R.id.ProfileImageDialog);
 
                 DoctorUID.setVisibility(View.VISIBLE);
-                DoctorUID.setText(UID);
+                DoctorUID.setText("UID: " + UID);
                 Name.setText(Fullname);
                 Born.setText(BornDB);
                 IDCard.setText(NationalIDCard);

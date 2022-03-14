@@ -218,6 +218,7 @@ public class HistoryFragment extends Fragment {
                         reference.child(UserID).child("PatientInfo").child(numberOfinfo + "").setValue(addNewHistory);
                         reference.child(UserID).child("numberOfinfo").setValue(numberOfinfo);
                         bottomSheetDialog.dismiss();
+                        Toast.makeText(mContext, "Add Symptom Success!", Toast.LENGTH_SHORT).show();
                     }
                 });
                 bottomSheetDialog.setContentView(bottomSheetView);

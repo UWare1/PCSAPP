@@ -13,7 +13,7 @@ public class Main2Activity extends AppCompatActivity {
 
     //Initialize variable
     MeowBottomNavigation bottomNavigation;
-    //View decorView;
+    View decorView;
     MediaPlayer mediaPlayer;
 
 
@@ -25,7 +25,7 @@ public class Main2Activity extends AppCompatActivity {
 
         //Assign variable
         bottomNavigation = findViewById(R.id.bottom_navigation);
-        //decorView = getWindow().getDecorView();
+        decorView = getWindow().getDecorView();
 
         mediaPlayer = MediaPlayer.create(Main2Activity.this, R.raw.bgsound);
         mediaPlayer.setLooping(true);
@@ -98,13 +98,13 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
-        /*decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
+        decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
             @Override
             public void onSystemUiVisibilityChange(int visibility) {
                 if (visibility == 0)
                     decorView.setSystemUiVisibility(hideSystemBars());
             }
-        });*/
+        });
 
     }
     private void loadFragment(Fragment fragment) {
@@ -114,7 +114,7 @@ public class Main2Activity extends AppCompatActivity {
                 .replace(R.id.frame_layout,fragment)
                 .commit();
     }
-    /*@Override
+    @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus){
@@ -128,7 +128,7 @@ public class Main2Activity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
-    }*/
+    }
     @Override
     public void onResume() {
         super.onResume();
