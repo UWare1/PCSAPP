@@ -19,14 +19,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/promptlight"
-            android:text="You are not connected to a"
+            android:text="@string/you_are_not_connected_to_a"
             android:textSize="20sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/promptbold"
-            android:text="Doctor"
+            android:text="@string/doctor"
             android:textSize="80sp"
             android:textStyle="bold" />
 
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/promptbold"
-            android:text="Please provide Doctor ID and UID"
+            android:text="@string/please_provide_doctor_id_and_uid"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -100,7 +100,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/yobutton"
             android:fontFamily="@font/promptbold"
-            android:text="Connection Request"
+            android:text="@string/connection_request"
             android:textColor="#fff"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -126,7 +126,7 @@
             android:background="@drawable/personaldoctorbutton2"
             android:fontFamily="@font/promptbold"
             android:gravity="center"
-            android:text="Personal Doctor"
+            android:text="@string/personal_doctor"
             android:textColor="@color/white"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -451,7 +451,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/promptbold"
                                 android:gravity="center_horizontal"
-                                android:text="Welcome\nThis is History!!!\nYou are In."
+                                android:text="@string/welcome_nthis_is_history_nyou_are_in"
                                 android:textSize="32sp" />
                         </LinearLayout>
 
@@ -695,215 +695,10 @@
                         android:layout_marginEnd="20dp"
                         android:fontFamily="@font/promptlight"
                         android:gravity="center"
-                        android:text="Don't have any Comments\n from your Doctor"
+                        android:text="@string/don_t_have_any_comments_n_from_your_doctor"
                         android:textSize="20sp" />
 
                 </LinearLayout>
-
-                <!--<LinearLayout
-                    android:id="@+id/ShowObject1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="20dp"
-                    android:orientation="vertical"
-                    android:visibility="invisible">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/personaldoctorbutton"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="20dp"
-                        android:layout_marginBottom="17dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center_horizontal">
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/user5"
-                                android:layout_marginEnd="20dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Yutthana Piyawongwatthana"
-                                android:textSize="20sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center_horizontal">
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/email"
-                                android:layout_marginEnd="20dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="yutthana.pi@ku.th"
-                                android:textSize="20sp" />
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center_horizontal">
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/phone1"
-                                android:layout_marginEnd="20dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="080-970-3295"
-                                android:textSize="20sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center_horizontal">
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/graduation"
-                                android:layout_marginEnd="20dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Kasetsart University"
-                                android:textSize="20sp" />
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_horizontal">
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/address"
-                                android:layout_marginEnd="20dp"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="111 Ratchaburi"
-                                android:textSize="20sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/ShowObject2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="20dp"
-                    android:orientation="vertical"
-                    android:visibility="invisible">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/personaldoctorbutton"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="20dp"
-                        android:layout_marginBottom="17dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center_horizontal">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="This is History!!!"
-                                android:textSize="32sp"
-                                android:fontFamily="@font/promptbold"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/ShowObject3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="20dp"
-                    android:orientation="vertical"
-                    android:visibility="invisible">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:background="@drawable/personaldoctorbutton"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:padding="20dp"
-                        android:layout_marginBottom="17dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Comments"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="12dp"
-                            android:background="#3A3838" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                            android:textSize="20sp" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:background="@drawable/personaldoctorbutton"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:padding="20dp"
-                        android:layout_marginBottom="17dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Comments"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="12dp"
-                            android:background="#3A3838" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                            android:textSize="20sp" />
-                    </LinearLayout>
-                </LinearLayout>-->
             </FrameLayout>
         </LinearLayout>
     </LinearLayout>

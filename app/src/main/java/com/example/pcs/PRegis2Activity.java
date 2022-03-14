@@ -139,7 +139,7 @@ public class PRegis2Activity extends AppCompatActivity {
     private boolean validateFullName() {
         String val = Fullname.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
-            Fullname.setError("Field can not be empty");
+            Fullname.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else {
             Fullname.setError(null);
@@ -151,7 +151,7 @@ public class PRegis2Activity extends AppCompatActivity {
     private boolean validateMedical() {
         String val = Medical.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
-            Medical.setError("Field can not be empty");
+            Medical.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else {
             Medical.setError(null);
@@ -162,7 +162,7 @@ public class PRegis2Activity extends AppCompatActivity {
     private boolean validateAllergy() {
         String val = Allergy.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
-            Allergy.setError("Field can not be empty");
+            Allergy.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else {
             Allergy.setError(null);
@@ -174,7 +174,7 @@ public class PRegis2Activity extends AppCompatActivity {
     private boolean validateAddress() {
         String val = Address.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
-            Address.setError("Field can not be empty");
+            Address.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else {
             Address.setError(null);
@@ -184,7 +184,7 @@ public class PRegis2Activity extends AppCompatActivity {
     }
     private boolean validateGender() {
         if (radioGroup.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "Please Select Gender", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.please_select_gender), Toast.LENGTH_SHORT).show();
             return false;
         } else {
             return true;
@@ -197,7 +197,7 @@ public class PRegis2Activity extends AppCompatActivity {
         int isAgeValid = currentYear - userAge;
 
         if (isAgeValid < 14) {
-            Toast.makeText(this, "You are not eligible to apply", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.you_are_not_eligible_to_apply), Toast.LENGTH_SHORT).show();
             return false;
         } else
             return true;

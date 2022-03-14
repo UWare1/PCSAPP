@@ -150,7 +150,7 @@
                                 android:layout_marginHorizontal="10dp"
                                 android:fontFamily="@font/promptlight"
                                 android:gravity="center"
-                                android:text="for application"
+                                android:text="@string/for_application"
                                 android:textColor="@color/white"
                                 android:textSize="14sp" />
 
@@ -160,7 +160,7 @@
                                 android:layout_marginHorizontal="10dp"
                                 android:fontFamily="@font/promptlight"
                                 android:gravity="center"
-                                android:text="development guidelines"
+                                android:text="@string/development_guidelines"
                                 android:textColor="@color/white"
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -200,7 +200,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
                                 android:fontFamily="@font/promptbold"
-                                android:text="Packages Form"
+                                android:text="@string/packages_form"
                                 android:textColor="@color/white"
                                 android:textSize="24sp" />
 
@@ -217,7 +217,7 @@
                                 android:layout_marginHorizontal="10dp"
                                 android:fontFamily="@font/promptlight"
                                 android:gravity="center"
-                                android:text="for application"
+                                android:text="@string/for_application"
                                 android:textColor="@color/white"
                                 android:textSize="14sp" />
 
@@ -227,7 +227,7 @@
                                 android:layout_marginHorizontal="10dp"
                                 android:fontFamily="@font/promptlight"
                                 android:gravity="center"
-                                android:text="config guidelines"
+                                android:text="@string/config_guidelines"
                                 android:textColor="@color/white"
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -267,7 +267,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
                                 android:fontFamily="@font/promptbold"
-                                android:text="Hospital Form"
+                                android:text="@string/hospital_form"
                                 android:textColor="@color/grey"
                                 android:textSize="24sp" />
 
@@ -284,7 +284,7 @@
                                 android:layout_marginHorizontal="10dp"
                                 android:fontFamily="@font/promptlight"
                                 android:gravity="center"
-                                android:text="for application increase"
+                                android:text="@string/for_application_increase"
                                 android:textColor="@color/grey"
                                 android:textSize="14sp" />
 
@@ -294,7 +294,7 @@
                                 android:layout_marginHorizontal="10dp"
                                 android:fontFamily="@font/promptlight"
                                 android:gravity="center"
-                                android:text="hospital guidelines"
+                                android:text="@string/hospital_guidelines"
                                 android:textColor="@color/grey"
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -334,7 +334,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
                                 android:fontFamily="@font/promptbold"
-                                android:text="Vaccine Form"
+                                android:text="@string/vaccine_form"
                                 android:textColor="@color/grey"
                                 android:textSize="24sp" />
 
@@ -351,7 +351,7 @@
                                 android:layout_marginHorizontal="10dp"
                                 android:fontFamily="@font/promptlight"
                                 android:gravity="center"
-                                android:text="for application help"
+                                android:text="@string/for_application_help"
                                 android:textColor="@color/grey"
                                 android:textSize="14sp" />
 
@@ -361,7 +361,7 @@
                                 android:layout_marginHorizontal="10dp"
                                 android:fontFamily="@font/promptlight"
                                 android:gravity="center"
-                                android:text="vaccine guidelines"
+                                android:text="@string/vaccine_guidelines"
                                 android:textColor="@color/grey"
                                 android:textSize="14sp" />
                         </LinearLayout>

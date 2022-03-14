@@ -55,36 +55,6 @@ public class PRegisActivity extends AppCompatActivity {
         Back = findViewById(R.id.Back);
         decorView = getWindow().getDecorView();
 
-        /*User        = UserID.getEditText().getText().toString().trim();
-        Pass        = Password.getEditText().getText().toString().trim();
-        ConP        = ConPass.getEditText().getText().toString().trim();
-        Emai        = Email.getEditText().getText().toString().trim();
-        NationalID  = NationalIDCard.getEditText().getText().toString().trim();*/
-        /*X1 = getIntent().getStringExtra("X1");
-        X2 = getIntent().getStringExtra("X2");
-        X3 = getIntent().getStringExtra("X3");
-        X4 = getIntent().getStringExtra("X4");
-
-        String x1 = "Isas", x2 = "Isas";
-
-        int x = 1;
-        if(!X1.isEmpty()){
-            UserID.getEditText().setText(X1);
-        } else if(!X2.isEmpty()){
-            Password.getEditText().setText(X2);
-            ConPass.getEditText().setText(X2);
-        } else if(!X3.isEmpty()){
-            Email.getEditText().setText(X3);
-        } else if(!X4.isEmpty()){
-            NationalIDCard.getEditText().setText(X4);
-        } else {
-            UserID.getEditText().setText("");
-            Password.getEditText().setText("");
-            ConPass.getEditText().setText("");
-            Email.getEditText().setText("");
-            NationalIDCard.getEditText().setText("");
-        }*/
-
         Patient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,7 +105,7 @@ public class PRegisActivity extends AppCompatActivity {
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PRegisActivity.this, pairs);
             startActivity(call, options.toBundle());
         } else {
-            Toast.makeText(PRegisActivity.this, "Password Mismatch!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(PRegisActivity.this, getString(R.string.passwprd_not_match), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -145,7 +115,7 @@ public class PRegisActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    UserID.setError("User has been use!");
+                    UserID.setError(getString(R.string.user_has_been_use));
                     UserID.setErrorEnabled(true);
                     x = false;
                 } else {
@@ -157,7 +127,7 @@ public class PRegisActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(PRegisActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PRegisActivity.this, getString(R.string.error), Toast.LENGTH_SHORT).show();
             }
         });
         return x;
@@ -169,7 +139,7 @@ public class PRegisActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    Email.setError("Email has been use!");
+                    Email.setError(getString(R.string.email_has_been_use));
                     Email.setErrorEnabled(true);
                     y = false;
                 } else {
@@ -182,7 +152,7 @@ public class PRegisActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(PRegisActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PRegisActivity.this, getString(R.string.error), Toast.LENGTH_SHORT).show();
             }
         });
         return y;
@@ -210,13 +180,13 @@ public class PRegisActivity extends AppCompatActivity {
         String val = UserID.getEditText().getText().toString().trim();
         String checkspaces = "\\A\\w{1,20}\\z";
         if (val.isEmpty()) {
-            UserID.setError("Field can not be empty");
+            UserID.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else if (val.length() > 20) {
-            UserID.setError("Username is too large!");
+            UserID.setError(getString(R.string.username_is_too_large));
             return false;
         } else if (!val.matches(checkspaces)) {
-            UserID.setError("No White spaces are allowed!");
+            UserID.setError(getString(R.string.no_white_spaces_are_allowed));
             return false;
         } else {
             UserID.setError(null);
@@ -233,16 +203,16 @@ public class PRegisActivity extends AppCompatActivity {
                 "$";
         Pattern special = Pattern.compile("[!/@#$<>?}{)(%^&+=*+-]");
         if (val.isEmpty()) {
-            Password.setError("Field can not be empty");
+            Password.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else if (!val.matches(checkPassword)) {
-            Password.setError("Password should contain 4 characters!");
+            Password.setError(getString(R.string.password_should_contain_4_characters));
             return false;
         } else if (val.contains(" ")) {
-            Password.setError("Password should not space");
+            Password.setError(getString(R.string.password_should_not_space));
             return false;
         } else if (special.matcher(val).find()) {
-            Password.setError("Password should have Alphabet or Number");
+            Password.setError(getString(R.string.password_should_have_alphabet_or_number));
             return false;
         } else {
             Password.setError(null);
@@ -259,16 +229,16 @@ public class PRegisActivity extends AppCompatActivity {
                 "$";
         Pattern special = Pattern.compile("[!/@#$<>?}{)(%^&+=*+-]");
         if (val.isEmpty()) {
-            ConPass.setError("Field can not be empty");
+            ConPass.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else if (!val.matches(checkPassword)) {
-            ConPass.setError("Password should contain 4 characters!");
+            ConPass.setError(getString(R.string.password_should_contain_4_characters));
             return false;
         } else if (val.contains(" ")) {
-            ConPass.setError("Password should not space");
+            ConPass.setError(getString(R.string.password_should_not_space));
             return false;
         } else if (special.matcher(val).find()) {
-            ConPass.setError("Password should have Alphabet or Number");
+            ConPass.setError(getString(R.string.password_should_have_alphabet_or_number));
             return false;
         } else {
             ConPass.setError(null);
@@ -281,10 +251,10 @@ public class PRegisActivity extends AppCompatActivity {
         String val = Email.getEditText().getText().toString().trim();
         String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+.+[a-z]+";
         if (val.isEmpty()) {
-            Email.setError("Field can not be empty");
+            Email.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else if (!val.matches(checkEmail)) {
-            Email.setError("Invalid Email!");
+            Email.setError(getString(R.string.invalid_email));
             return false;
         } else {
             Email.setError(null);
@@ -302,7 +272,7 @@ public class PRegisActivity extends AppCompatActivity {
             NationalIDCard.setError(getString(R.string.nationalidcard_toolarge));
             return false;
         } else if (val.length() < 13) {
-            NationalIDCard.setError("National ID Card is too short!");
+            NationalIDCard.setError(getString(R.string.national_id_card_is_too_short));
             return false;
         } else {
             NationalIDCard.setError(null);

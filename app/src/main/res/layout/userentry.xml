@@ -19,15 +19,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingRight="@android:dimen/app_icon_size">
+            android:paddingEnd="@android:dimen/app_icon_size">
 
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptbold"
-                android:text="Date"
+                android:text="@string/date"
                 android:textColor="@color/white"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -44,7 +44,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptbold"
                 android:textColor="@color/white"
-                android:textSize="15dp" />
+                android:textSize="15sp"
+                android:maxLines="1"
+                android:autoSizeTextType="uniform"/>
 
 
         </LinearLayout>
@@ -55,15 +57,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingRight="@android:dimen/app_icon_size">
+            android:paddingEnd="@android:dimen/app_icon_size">
 
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptbold"
-                android:text="Time"
+                android:text="@string/time"
                 android:textColor="@color/white"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -80,7 +82,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptbold"
                 android:textColor="@color/white"
-                android:textSize="15dp" />
+                android:textSize="15sp"
+                android:maxLines="1"
+                android:autoSizeTextType="uniform"/>
 
 
         </LinearLayout>
@@ -90,15 +94,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingRight="@android:dimen/app_icon_size">
+            android:paddingEnd="@android:dimen/app_icon_size">
 
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptbold"
-                android:text="Temperature"
+                android:text="@string/temperature"
                 android:textColor="@color/white"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -115,7 +119,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptbold"
                 android:textColor="@color/white"
-                android:textSize="15dp" />
+                android:textSize="15sp"
+                android:maxLines="1"
+                android:autoSizeTextType="uniform"/>
 
 
         </LinearLayout>
@@ -126,15 +132,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingRight="@android:dimen/app_icon_size">
+            android:paddingEnd="@android:dimen/app_icon_size">
 
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptbold"
-                android:text="Pressure"
+                android:text="@string/pressure"
                 android:textColor="@color/white"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -151,7 +157,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptbold"
                 android:textColor="@color/white"
-                android:textSize="15dp" />
+                android:textSize="15sp"
+                android:maxLines="1"
+                android:autoSizeTextType="uniform"/>
 
 
         </LinearLayout>
@@ -162,15 +170,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingRight="@android:dimen/app_icon_size">
+            android:paddingEnd="@android:dimen/app_icon_size">
 
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptbold"
-                android:text="Description"
+                android:text="@string/description"
                 android:textColor="@color/white"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -187,7 +195,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptbold"
                 android:textColor="@color/white"
-                android:textSize="15dp" />
+                android:textSize="15sp"
+                android:maxLines="4"
+                android:autoSizeTextType="uniform"/>
 
         </LinearLayout>
     </LinearLayout>

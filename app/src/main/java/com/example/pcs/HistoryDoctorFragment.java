@@ -174,7 +174,7 @@ public class HistoryDoctorFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, getString(R.string.error), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -253,14 +253,14 @@ public class HistoryDoctorFragment extends Fragment {
                                 MoreDetails.setVisibility(View.VISIBLE);
                                 MoreDetails.animate().alpha(1).setDuration(300);
 
-                                ColorPatient.setText("Color : " + NameColor);
+                                ColorPatient.setText(getString(R.string.color) + " : " + NameColor);
                                 ColorPatient.setVisibility(View.VISIBLE);
                                 ColorPatient.animate().alpha(1).setDuration(300);
                             }
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError error) {
-                                Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, getString(R.string.error), Toast.LENGTH_SHORT).show();
                             }
                         });
                         bottomSheetDialog.dismiss();
@@ -318,7 +318,7 @@ public class HistoryDoctorFragment extends Fragment {
                         reference.child(DoctorID).child("PatientInCare").child(PatientID).child(AboutMent).child("currentTime").setValue(currentTime);
 
                         bottomSheetDialog.dismiss();
-                        Toast.makeText(mContext, "Add " + TypeComment + " Success!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, getString(R.string.add2) + TypeComment + getString(R.string.success), Toast.LENGTH_SHORT).show();
                     }
                 });
                 bottomSheetDialog.setContentView(bottomSheetView);
@@ -412,14 +412,14 @@ public class HistoryDoctorFragment extends Fragment {
                 bottomSheetView.findViewById(R.id.Understand).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ColorPatient.setText("Color : " + NameColor);
+                        ColorPatient.setText(getString(R.string.color) + " : " + NameColor);
 
                         FirebaseDatabase rootNode = FirebaseDatabase.getInstance("https://pcsapp-5fb3d-default-rtdb.asia-southeast1.firebasedatabase.app/");
                         DatabaseReference referencePatient = rootNode.getReference("Teacher");
 
                         referencePatient.child(PatientID).child("color").setValue(NameColor);
                         bottomSheetDialog.dismiss();
-                        Toast.makeText(mContext, "Add Color Success!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, getString(R.string.add_color_success), Toast.LENGTH_SHORT).show();
                     }
                 });
                 bottomSheetDialog.setContentView(bottomSheetView);
@@ -435,7 +435,7 @@ public class HistoryDoctorFragment extends Fragment {
     private boolean validateComments() {
         String val = Comments.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
-            Comments.setError("Field can not be empty");
+            Comments.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else {
             Comments.setError(null);

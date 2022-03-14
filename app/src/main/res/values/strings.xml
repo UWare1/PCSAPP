@@ -17,8 +17,8 @@
     <string name="other">Other</string>
     <string name="select_your_age">Select Your Age</string>
     <string name="symptom">Symptom</string>
-    <string name="date">Date:</string>
-    <string name="time">Time:</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
     <string name="pressure">Pressure</string>
     <string name="temperature">Temperature</string>
     <string name="description">Description</string>
@@ -28,7 +28,7 @@
     <string name="doctor">Doctor</string>
     <string name="phone_number">Phone Number</string>
     <string name="next">Next</string>
-    <string name="password_updated">Password Updated !</string>
+    <string name="password_updated">Password Updated!</string>
     <string name="your_password_has_been_changed">your password has been changed</string>
     <string name="medical_condition">Medical Condition</string>
     <string name="allergy">Allergy</string>
@@ -87,7 +87,7 @@
     <string name="warning">Warning</string>
     <string name="appointment">Appointment</string>
     <string name="select">Select...</string>
-    <string name="uid_not_match">UID not match!</string>
+    <string name="uid_not_match">UID does not match!</string>
     <string name="docterid_not_has">DoctorID not has!</string>
     <string name="no_such_user_exist">No such user exist!</string>
     <string name="field_can_not_be_empty">Field can not be empty</string>
@@ -113,12 +113,12 @@
     <string name="password_should_have_alphabet_or_number">Password should have Alphabet or Number</string>
     <string name="please_select_a_language">Please select a Language</string>
     <string name="pincode_does_not_match">Pincode does not match!</string>
-    <string name="com_user_and_phone_number_does_not_match">com.example.pcs.SplashActivity.User and Phone Number does not match!</string>
+    <string name="com_user_and_phone_number_does_not_match">User and Phone Number does not match!</string>
     <string name="username_is_too_large">Username is too large!</string>
     <string name="choose_success">Choose Success</string>
     <string name="verification_completed">Verification Completed</string>
     <string name="verification_not_completed">Verification Not Completed! Try again.</string>
-    <string name="color">"Color : "</string>
+    <string name="color">"Color"</string>
     <string name="enter_one_time_password_sent_on">"Enter One Time Password Sent On "</string>
     <string name="phone">Phone</string>
     <string name="birthday">Birthday</string>
@@ -137,4 +137,16 @@
     <string name="for_application_help">for application help</string>
     <string name="vaccine_guidelines">vaccine guidelines</string>
     <string name="welcome_nthis_is_history_nyou_are_in">Welcome\nThis is History!!!\nYou are In.</string>
+    <string name="user_has_been_use">User has been use!</string>
+    <string name="add_symptom_success">Add Symptom Success!</string>
+    <string name="color_none">Color: None</string>
+    <string name="add_color_success">Add Color Success!</string>
+    <string name="add2">\"Add \"</string>
+    <string name="success">\" Success!\"</string>
+    <string name="doctor_has_been_use">DoctorID has been use!</string>
+    <string name="doctor_not_has">DoctorID not has!</string>
+    <string name="national_id">National ID</string>
+    <string name="medical">Medical</string>
+    <string name="don_t_have_any_comments_n_from_your_doctor">Don\'t have any Comments\n from your Doctor</string>
+    <string name="m_no_nr_ne">M\no\nr\ne</string>
 </resources>

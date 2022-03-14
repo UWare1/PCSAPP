@@ -164,9 +164,9 @@ public class HistoryFragment extends Fragment {
                 Map map = (Map) snapshot.getValue();
                 numberOfinfo = Integer.parseInt(String.valueOf(map.get("numberOfinfo")));
                 try {
-                    ColorShow.setText("Color: " + String.valueOf(map.get("color")));
+                    ColorShow.setText(getString(R.string.color) + ": " + String.valueOf(map.get("color")));
                 } catch (Exception e){
-                    ColorShow.setText("Color: None");
+                    ColorShow.setText(getString(R.string.color_none));
                 }
 
             }
@@ -193,8 +193,8 @@ public class HistoryFragment extends Fragment {
                 Pressure = (TextInputLayout) bottomSheetView.findViewById(R.id.Pressure);
                 Temperature = (TextInputLayout) bottomSheetView.findViewById(R.id.Temperature);
                 Description = (TextInputLayout) bottomSheetView.findViewById(R.id.Description);
-                Date.setText("Date: " + currentDate);
-                Time.setText("Time: " + currentTime);
+                Date.setText(getString(R.string.date) + ": " + currentDate);
+                Time.setText(getString(R.string.time) + ": " + currentTime);
 
                 Dated = (Date.getText().toString().trim()).substring(6);
                 Timed = (Time.getText().toString().trim()).substring(6);
@@ -218,7 +218,7 @@ public class HistoryFragment extends Fragment {
                         reference.child(UserID).child("PatientInfo").child(numberOfinfo + "").setValue(addNewHistory);
                         reference.child(UserID).child("numberOfinfo").setValue(numberOfinfo);
                         bottomSheetDialog.dismiss();
-                        Toast.makeText(mContext, "Add Symptom Success!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, getString(R.string.add_symptom_success), Toast.LENGTH_SHORT).show();
                     }
                 });
                 bottomSheetDialog.setContentView(bottomSheetView);
@@ -231,7 +231,7 @@ public class HistoryFragment extends Fragment {
     private boolean validatePressure() {
         String val = Pressure.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
-            Pressure.setError("Field can not be empty");
+            Pressure.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else {
             Pressure.setError(null);
@@ -243,7 +243,7 @@ public class HistoryFragment extends Fragment {
     private boolean validateTemperature() {
         String val = Temperature.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
-            Temperature.setError("Field can not be empty");
+            Temperature.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else {
             Temperature.setError(null);
@@ -255,7 +255,7 @@ public class HistoryFragment extends Fragment {
     private boolean validateDescription() {
         String val = Description.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
-            Description.setError("Field can not be empty");
+            Description.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else {
             Description.setError(null);

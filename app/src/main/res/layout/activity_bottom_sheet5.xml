@@ -52,7 +52,7 @@
             android:id="@+id/Comments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Comments"
+            android:text="@string/comments"
             android:fontFamily="@font/promptlight"/>
 
         <RadioButton
@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Warning"
+            android:text="@string/warning"
             android:fontFamily="@font/promptlight"/>
 
         <RadioButton
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="Appointment"
+            android:text="@string/appointment"
             android:fontFamily="@font/promptlight"/>
     </RadioGroup>
 

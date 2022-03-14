@@ -46,7 +46,7 @@ public class DSetNewPincode extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), DNewPinChange.class));
             finish();
         } else {
-            Toast.makeText(this, "Password not match!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.passwprd_not_match), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -58,16 +58,16 @@ public class DSetNewPincode extends AppCompatActivity {
                 "$";
         Pattern special = Pattern.compile("[!/@#$<>?}{)(%^&+=*+-]");
         if (val.isEmpty()) {
-            Pincode.setError("Field can not be empty");
+            Pincode.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else if (!val.matches(checkPassword)) {
-            Pincode.setError("Password should contain 4 characters!");
+            Pincode.setError(getString(R.string.password_should_contain_4_characters));
             return false;
         } else if (val.contains(" ")) {
-            Pincode.setError("Password should not space");
+            Pincode.setError(getString(R.string.password_should_not_space));
             return false;
         } else if (special.matcher(val).find()) {
-            Pincode.setError("Password should have Alphabet or Number");
+            Pincode.setError(getString(R.string.password_should_have_alphabet_or_number));
             return false;
         } else {
             Pincode.setError(null);
@@ -84,16 +84,16 @@ public class DSetNewPincode extends AppCompatActivity {
                 "$";
         Pattern special = Pattern.compile("[!/@#$<>?}{)(%^&+=*+-]");
         if (val.isEmpty()) {
-            ConPass.setError("Field can not be empty");
+            ConPass.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else if (!val.matches(checkPassword)) {
-            ConPass.setError("Password should contain 4 characters!");
+            ConPass.setError(getString(R.string.password_should_contain_4_characters));
             return false;
         } else if (val.contains(" ")) {
-            ConPass.setError("Password should not space");
+            ConPass.setError(getString(R.string.password_should_not_space));
             return false;
         } else if (special.matcher(val).find()) {
-            ConPass.setError("Password should have Alphabet or Number");
+            ConPass.setError(getString(R.string.password_should_have_alphabet_or_number));
             return false;
         } else {
             ConPass.setError(null);

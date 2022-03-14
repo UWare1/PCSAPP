@@ -50,14 +50,6 @@
             android:scrollbarThumbVertical="@drawable/thumb"
             android:scrollbars="vertical" />
 
-        <!--<HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbarThumbHorizontal="@drawable/thumbscroll">
-
-        </HorizontalScrollView>-->
-
-
         <Button
             android:id="@+id/ADDHistory"
             android:layout_width="match_parent"

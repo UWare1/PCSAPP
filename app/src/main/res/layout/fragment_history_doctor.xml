@@ -31,7 +31,7 @@
                 android:background="@drawable/morebutton"
                 android:backgroundTint="@null"
                 android:fontFamily="@font/promptbold"
-                android:text="M\no\nr\ne"
+                android:text="@string/m_no_nr_ne"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:visibility="invisible"/>
@@ -43,7 +43,7 @@
                 android:layout_gravity="end"
                 android:layout_margin="20dp"
                 android:fontFamily="@font/promptbold"
-                android:text="Select..."
+                android:text="@string/select"
                 android:textColor="@color/grey" />
 
             <LinearLayout
@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:fontFamily="@font/promptbold"
-                    android:text="Comments"
+                    android:text="@string/comments"
                     android:visibility="invisible" />
             </LinearLayout>
         </FrameLayout>
@@ -121,7 +121,7 @@
                 android:layout_gravity="center_horizontal |bottom"
                 android:background="@drawable/pgbutton"
                 android:fontFamily="@font/promptbold"
-                android:text="Color : None"
+                android:text="@string/color_none"
                 android:visibility="invisible" />
         </FrameLayout>
     </LinearLayout>

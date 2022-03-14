@@ -120,11 +120,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void letTheUserLoggedIn(View view) {
-
-        if (!isConnected(this)) {
-            showCustomDialog();
-        }
-
+        
         if (!validateFields()) {
             return;
         }
@@ -164,32 +160,18 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     } else {
-                        Toast.makeText(MainActivity.this, "Password does not match!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, getString(R.string.passwprd_not_match), Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(MainActivity.this, "No such user exist!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, getString(R.string.no_such_user_exist), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getString(R.string.error), Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    private boolean isConnected(MainActivity mainActivity) {
-
-        ConnectivityManager connectivityManager = (ConnectivityManager) mainActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        NetworkInfo wifiConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        NetworkInfo mobileConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-
-        if ((wifiConn != null && wifiConn.isConnected() || (mobileConn != null && mobileConn.isConnected()))) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     public void CallBack(View view) {
@@ -206,28 +188,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             startActivity(call);
         }
-    }
-
-    private void showCustomDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setMessage("Please connect to the internet to proceed further")
-                .setCancelable(false)
-                .setPositiveButton("Connect", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
-                    }
-                })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        finish();
-                    }
-                });
-
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
     }
 
     private boolean validateFields() {

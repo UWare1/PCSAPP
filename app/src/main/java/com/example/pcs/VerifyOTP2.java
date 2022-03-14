@@ -64,7 +64,7 @@ public class VerifyOTP2 extends AppCompatActivity {
         Gender = getIntent().getStringExtra("Gender");
         Date = getIntent().getStringExtra("Date");
 
-        otpDescriptionText.setText("Enter One Time Password Sent On " + _phoneNo);
+        otpDescriptionText.setText(getString(R.string.enter_one_time_password_sent_on) + _phoneNo);
         SendVerificationCodeToUser(_phoneNo);
 
         Exit.setOnClickListener(new View.OnClickListener() {
@@ -123,7 +123,7 @@ public class VerifyOTP2 extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(VerifyOTP2.this, "Verification Completed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(VerifyOTP2.this, getString(R.string.verification_completed), Toast.LENGTH_SHORT).show();
                             if (whatToDO.equals("updateData")) {
                                 updateOldDoctorData();
                             } else {
@@ -131,7 +131,7 @@ public class VerifyOTP2 extends AppCompatActivity {
                             }
                         } else {
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                                Toast.makeText(VerifyOTP2.this, "Verification Not Completed! Try again.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(VerifyOTP2.this, getString(R.string.verification_not_completed), Toast.LENGTH_SHORT).show();
                             }
                         }
                     }

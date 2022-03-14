@@ -63,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptbold"
-                android:text="Email"
+                android:text="@string/email"
                 android:textColor="@color/black" />
 
             <TextView
@@ -91,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptbold"
-                android:text="Phone"
+                android:text="@string/phone"
                 android:textColor="@color/black" />
 
             <TextView
@@ -119,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/promptbold"
-                android:text="Birthday"
+                android:text="@string/birthday"
                 android:textColor="@color/black" />
 
             <TextView
@@ -158,7 +158,7 @@
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptbold"
-                    android:text="National ID   "
+                    android:text="@string/national_id"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
                 <TextView
@@ -190,7 +190,7 @@
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptbold"
-                    android:text="Address       "
+                    android:text="@string/address"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
                 <TextView
@@ -225,7 +225,7 @@
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptbold"
-                    android:text="Allergy         "
+                    android:text="@string/allergy"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
                 <TextView
@@ -261,7 +261,7 @@
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/promptbold"
-                    android:text="Medical        "
+                    android:text="@string/medical"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
                 <TextView

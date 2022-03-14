@@ -100,10 +100,6 @@ public class MainDoctorActivity extends AppCompatActivity {
 
     public void letTheUserLoggedIn(View view) {
 
-        /*if (!isConnected(this)) {
-            showCustomDialog();
-        }*/
-
         if (!validateFields()) {
             return;
         }
@@ -144,16 +140,16 @@ public class MainDoctorActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     } else {
-                        Toast.makeText(MainDoctorActivity.this, "Pincode does not match!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainDoctorActivity.this, getString(R.string.pincode_does_not_match), Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(MainDoctorActivity.this, "No such user exist!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainDoctorActivity.this, getString(R.string.no_such_user_exist), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(MainDoctorActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainDoctorActivity.this, getString(R.string.error), Toast.LENGTH_SHORT).show();
             }
         });
     }

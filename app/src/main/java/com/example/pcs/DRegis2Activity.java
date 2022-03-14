@@ -24,7 +24,7 @@ import java.util.Calendar;
 
 public class DRegis2Activity extends AppCompatActivity {
 
-    String[] university = {"KU","MH","SU","TU","BU","RU"};
+    String[] university = {"Kasetsart University","Mahidol University","Silapakorn University","Thammasat University","Bangkok University","Rangsit University"};
     AutoCompleteTextView autoCompleteUni;
     ArrayAdapter<String> adapterUni;
 
@@ -151,7 +151,7 @@ public class DRegis2Activity extends AppCompatActivity {
     private boolean validateFullName() {
         String val = Fullname.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
-            Fullname.setError("Field can not be empty");
+            Fullname.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else {
             Fullname.setError(null);
@@ -163,7 +163,7 @@ public class DRegis2Activity extends AppCompatActivity {
     private boolean validateRegularHospital() {
         String val = RegularHospital.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
-            RegularHospital.setError("Field can not be empty");
+            RegularHospital.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else {
             RegularHospital.setError(null);
@@ -175,7 +175,7 @@ public class DRegis2Activity extends AppCompatActivity {
     private boolean validateAddress() {
         String val = Address.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
-            Address.setError("Field can not be empty");
+            Address.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else {
             Address.setError(null);
@@ -185,7 +185,7 @@ public class DRegis2Activity extends AppCompatActivity {
     }
     private boolean validateGender() {
         if (radioGroup.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "Please Select Gender", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.please_select_gender), Toast.LENGTH_SHORT).show();
             return false;
         } else {
             return true;
@@ -198,7 +198,7 @@ public class DRegis2Activity extends AppCompatActivity {
         int isAgeValid = currentYear - userAge;
 
         if (isAgeValid < 14) {
-            Toast.makeText(this, "You are not eligible to apply", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.you_are_not_eligible_to_apply), Toast.LENGTH_SHORT).show();
             return false;
         } else
             return true;

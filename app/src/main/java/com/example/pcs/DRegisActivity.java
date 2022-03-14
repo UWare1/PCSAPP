@@ -107,7 +107,7 @@ public class DRegisActivity extends AppCompatActivity {
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(DRegisActivity.this, pairs);
             startActivity(call, options.toBundle());
         } else {
-            Toast.makeText(DRegisActivity.this, "Pincode Mismatch!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(DRegisActivity.this, getString(R.string.pincode_mismatch), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -117,7 +117,7 @@ public class DRegisActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    DocterID.setError("DoctorID has been use!");
+                    DocterID.setError(getString(R.string.doctor_has_been_use));
                     DocterID.setErrorEnabled(true);
                     x = false;
                 } else {
@@ -129,7 +129,7 @@ public class DRegisActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DRegisActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DRegisActivity.this, getString(R.string.error), Toast.LENGTH_SHORT).show();
             }
         });
         return x;
@@ -141,7 +141,7 @@ public class DRegisActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    Email.setError("Email has been use!");
+                    Email.setError(getString(R.string.email_has_been_use));
                     Email.setErrorEnabled(true);
                     y = false;
                 } else {
@@ -154,7 +154,7 @@ public class DRegisActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DRegisActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DRegisActivity.this, getString(R.string.error), Toast.LENGTH_SHORT).show();
             }
         });
         return y;
@@ -182,13 +182,13 @@ public class DRegisActivity extends AppCompatActivity {
         String val = DocterID.getEditText().getText().toString().trim();
         String checkspaces = "\\A\\w{1,20}\\z";
         if (val.isEmpty()) {
-            DocterID.setError("Field can not be empty");
+            DocterID.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else if (val.length() > 20) {
-            DocterID.setError("Doctor ID is too large!");
+            DocterID.setError(getString(R.string.docter_id_is_too_long));
             return false;
         } else if (!val.matches(checkspaces)) {
-            DocterID.setError("No White spaces are allowed!");
+            DocterID.setError(getString(R.string.no_white_spaces_are_allowed));
             return false;
         } else {
             DocterID.setError(null);
@@ -205,16 +205,16 @@ public class DRegisActivity extends AppCompatActivity {
                 "$";
         Pattern special = Pattern.compile("[!/@#$<>?}{)(%^&+=*+-]");
         if (val.isEmpty()) {
-            Pincode.setError("Field can not be empty");
+            Pincode.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else if (!val.matches(checkPassword)) {
-            Pincode.setError("Pincode should contain 4 characters!");
+            Pincode.setError(getString(R.string.pincode_should_contain_4_character));
             return false;
         } else if (val.contains(" ")) {
-            Pincode.setError("Pincode should not space");
+            Pincode.setError(getString(R.string.pincode_should_not_space));
             return false;
         } else if (special.matcher(val).find()) {
-            Pincode.setError("Pincode should have Alphabet or Number");
+            Pincode.setError(getString(R.string.pincode_should_have_alphabet_or_number));
             return false;
         } else {
             Pincode.setError(null);
@@ -231,16 +231,16 @@ public class DRegisActivity extends AppCompatActivity {
                 "$";
         Pattern special = Pattern.compile("[!/@#$<>?}{)(%^&+=*+-]");
         if (val.isEmpty()) {
-            ConPass.setError("Field can not be empty");
+            ConPass.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else if (!val.matches(checkPassword)) {
-            ConPass.setError("Pincode should contain 4 characters!");
+            ConPass.setError(getString(R.string.pincode_should_contain_4_character));
             return false;
         } else if (val.contains(" ")) {
-            ConPass.setError("Pincode should not space");
+            ConPass.setError(getString(R.string.pincode_should_not_space));
             return false;
         } else if (special.matcher(val).find()) {
-            ConPass.setError("Pincode should have Alphabet or Number");
+            ConPass.setError(getString(R.string.pincode_should_have_alphabet_or_number));
             return false;
         } else {
             ConPass.setError(null);
@@ -253,10 +253,10 @@ public class DRegisActivity extends AppCompatActivity {
         String val = Email.getEditText().getText().toString().trim();
         String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+.+[a-z]+";
         if (val.isEmpty()) {
-            Email.setError("Field can not be empty");
+            Email.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else if (!val.matches(checkEmail)) {
-            Email.setError("Invalid Email!");
+            Email.setError(getString(R.string.invalid_email));
             return false;
         } else {
             Email.setError(null);
@@ -268,13 +268,13 @@ public class DRegisActivity extends AppCompatActivity {
     private boolean validateNationalIDCard() {
         String val = NationalIDCard.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
-            NationalIDCard.setError("Field can not be empty");
+            NationalIDCard.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else if (val.length() > 13) {
-            NationalIDCard.setError("National ID Card is too large!");
+            NationalIDCard.setError(getString(R.string.nationalidcard_toolarge));
             return false;
         } else if (val.length() < 13) {
-            NationalIDCard.setError("National ID Card is too short!");
+            NationalIDCard.setError(getString(R.string.national_id_card_is_too_short));
             return false;
         } else {
             NationalIDCard.setError(null);

@@ -143,7 +143,7 @@ public class PRegis3Activity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    PhoneNumber.setError("Phone Number has been use!");
+                    PhoneNumber.setError(getString(R.string.phone_number_has_been_use));
                     PhoneNumber.setErrorEnabled(true);
                     x = false;
                 } else {
@@ -155,7 +155,7 @@ public class PRegis3Activity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(PRegis3Activity.this, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PRegis3Activity.this, getString(R.string.error), Toast.LENGTH_SHORT).show();
             }
         });
         return x;
@@ -164,10 +164,10 @@ public class PRegis3Activity extends AppCompatActivity {
     private boolean validatePhoneNumber() {
         String val = PhoneNumber.getEditText().getText().toString().trim();
         if (val.isEmpty()) {
-            PhoneNumber.setError("Field can not be empty");
+            PhoneNumber.setError(getString(R.string.field_can_not_be_empty));
             return false;
         } else if (val.length() > 10) {
-            PhoneNumber.setError("Phone Number is too large!");
+            PhoneNumber.setError(getString(R.string.phone_number_is_too_long));
             return false;
         } else {
             PhoneNumber.setError(null);

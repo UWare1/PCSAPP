@@ -88,7 +88,7 @@ public class LanguagePage extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else {
-                    Toast.makeText(LanguagePage.this, "Please select a Language", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LanguagePage.this, getString(R.string.please_select_a_language), Toast.LENGTH_SHORT).show();
 
                 }
 

@@ -233,25 +233,24 @@ public class ChatFragment extends Fragment {
                             if (uidDB.equals(uid)) {
                                 CheckHas.getRef().child("myDoctor").setValue(uid);
                                 CheckHas.getRef().child("nameDoctor").setValue(doctored);
-                                CheckHas.getRef().child("color").setValue("None");
                                 CheckDTHas.getRef().child(doctored).child("PatientInCare").child(UserID).child("name").setValue(UserID);
                                 Before.setVisibility(View.INVISIBLE);
                                 After.setVisibility(View.VISIBLE);
                                 animSet1.setTarget(After);
                                 animSet1.start();
                             } else {
-                                CheckUID.setError("UID not match!");
+                                CheckUID.setError(getString(R.string.uid_not_match));
                                 CheckUID.setErrorEnabled(true);
                             }
                         } else {
-                            CheckDoctorID.setError("DoctorID not has!");
+                            CheckDoctorID.setError(getString(R.string.doctor_not_has));
                             CheckDoctorID.setErrorEnabled(true);
                         }
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, getString(R.string.error), Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -452,7 +451,7 @@ public class ChatFragment extends Fragment {
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-                            Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, getString(R.string.error), Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -497,7 +496,7 @@ public class ChatFragment extends Fragment {
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-                            Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, getString(R.string.error), Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -542,7 +541,7 @@ public class ChatFragment extends Fragment {
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-                            Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, getString(R.string.error), Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
