@@ -133,4 +133,16 @@
     <string name="for_application_help">للحصول على تعليمات التطبيق</string>
     <string name="vaccine_guidelines">إرشادات اللقاح</string>
     <string name="welcome_nthis_is_history_nyou_are_in">مرحبا بكم هذا هو التاريخ !!! أنت في.</string>
+    <string name="user_has_been_use">تم استخدام المستخدم!</string>
+    <string name="add_symptom_success">أضف نجاح الأعراض!</string>
+    <string name="color_none">اللون: لا شيء</string>
+    <string name="add_color_success">أضف نجاح اللون!</string>
+    <string name="add2">يضيف</string>
+    <string name="success">نجاح!</string>
+    <string name="doctor_has_been_use">تم استخدام DoctorID!</string>
+    <string name="doctor_not_has">DoctorID لم يقم بذلك!</string>
+    <string name="national_id">الهوية الوطنية</string>
+    <string name="medical">طبي</string>
+    <string name="don_t_have_any_comments_n_from_your_doctor">ليس لديك أي تعليقات من طبيبك</string>
+    <string name="m_no_nr_ne">أكثر</string>
 </resources>

@@ -132,4 +132,16 @@
     <string name="for_application_help">pour l\'aide à l\'application</string>
     <string name="vaccine_guidelines">lignes directrices sur les vaccins</string>
     <string name="welcome_nthis_is_history_nyou_are_in">Bienvenue C\'est l\'Histoire !!! Tu es dans.</string>
+    <string name="user_has_been_use">L\'utilisateur a été utilisé !</string>
+    <string name="add_symptom_success">Ajouter un symptôme réussi !</string>
+    <string name="color_none">Couleur : Aucune</string>
+    <string name="add_color_success">Ajoutez de la couleur Succès !</string>
+    <string name="add2">Ajouter</string>
+    <string name="success">Succès!</string>
+    <string name="doctor_has_been_use">DoctorID a été utilisé !</string>
+    <string name="doctor_not_has">DoctorID n\'a pas!</string>
+    <string name="national_id">carte d\'identité</string>
+    <string name="medical">Médical</string>
+    <string name="don_t_have_any_comments_n_from_your_doctor">Ne pas avoir de commentaires de votre médecin</string>
+    <string name="m_no_nr_ne">S\nu\ni\nt\ne</string>
 </resources>

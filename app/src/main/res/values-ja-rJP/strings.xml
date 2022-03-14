@@ -132,5 +132,16 @@
     <string name="for_application_help">アプリケーションヘルプ用</string>
     <string name="vaccine_guidelines">ワクチンガイドライン</string>
     <string name="welcome_nthis_is_history_nyou_are_in">ようこそこれは歴史です!!! あなたは入っています。</string>
-
+    <string name="user_has_been_use">ユーザーが使用されました！</string>
+    <string name="add_symptom_success">症状の成功を追加してください！</string>
+    <string name="color_none">色：なし</string>
+    <string name="add_color_success">カラーサクセスを追加！</string>
+    <string name="add2">追加</string>
+    <string name="success">成功！</string>
+    <string name="doctor_has_been_use">DoctorIDが使用されました！</string>
+    <string name="doctor_not_has">DoctorIDにはありません！</string>
+    <string name="national_id">国民ID</string>
+    <string name="medical">医学</string>
+    <string name="don_t_have_any_comments_n_from_your_doctor">あなたの医者からのコメントはありません</string>
+    <string name="m_no_nr_ne">も\nっ\nと</string>
 </resources>

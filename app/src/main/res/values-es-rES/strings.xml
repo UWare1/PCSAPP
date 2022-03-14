@@ -132,4 +132,16 @@
     <string name="please_provide_doctor_id_and_uid">Ingrese el nombre de usuario y el nombre del abrigo de su médico.</string>
     <string name="connection_request">Solicitud de conexión</string>
     <string name="personal_doctor">médico personal</string>
+    <string name="user_has_been_use">¡El usuario ha sido usado!</string>
+    <string name="add_symptom_success">¡Agregue Síntoma Éxito!</string>
+    <string name="color_none">Color: Ninguno</string>
+    <string name="add_color_success">¡Agregue Color Exitoso!</string>
+    <string name="add2">agregar</string>
+    <string name="success">¡Éxito!</string>
+    <string name="doctor_has_been_use">¡DoctorID ha sido útil!</string>
+    <string name="doctor_not_has">¡DoctorID no tiene!</string>
+    <string name="national_id">Identificación nacional</string>
+    <string name="medical">médico</string>
+    <string name="don_t_have_any_comments_n_from_your_doctor">No tengo ningún comentario de su médico</string>
+    <string name="m_no_nr_ne">m\ná\ns</string>
 </resources>

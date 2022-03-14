@@ -11,8 +11,8 @@
     <string name="full_name">"ชื่อ-นามสกุล "</string>
     <string name="address">ที่อยู่</string>
     <string name="choose_gender">"เลือกเพศ "</string>
-    <string name="date">"วันที่: "</string>
-    <string name="time">"เวลา: "</string>
+    <string name="date">"วันที่"</string>
+    <string name="time">"เวลา"</string>
     <string name="pressure">ความดัน</string>
     <string name="temperature">อุณหภูมิ</string>
     <string name="description">รายละเอียด</string>
@@ -89,7 +89,7 @@
     <string name="field_can_not_be_empty">ฟิลด์ไม่สามารถเว้นว่างได้</string>
     <string name="phone_number_is_too_long">หมายเลขโทรศัพท์มีขนาดใหญ่เกินไป!</string>
     <string name="phone_number_has_been_use">หมายเลขโทรศัพท์ถูกใช้แล้ว!</string>
-    <string name="docter_id_has_been_use">ชื่อผู้ใช้หมอ ถูกใช้แล้ว!</string>
+    <string name="docter_id_has_been_use">ชื่อผู้ใช้หมอถูกใช้แล้ว!</string>
     <string name="pincode_mismatch">รหัสพินไม่ตรงกัน!</string>
     <string name="error">ข้อผิดพลาด</string>
     <string name="email_has_been_use">อีเมลถูกใช้แล้ว!</string>
@@ -107,15 +107,15 @@
     <string name="password_should_contain_4_characters">รหัสผ่านควรมี 4 ตัวอักษร!</string>
     <string name="password_should_not_space">รหัสผ่านไม่ควรเว้นวรรค</string>
     <string name="password_should_have_alphabet_or_number">รหัสผ่านควรมีตัวอักษรหรือตัวเลข</string>
-    <string name="please_select_a_language">กรุณาเลือก ภาษา</string>
+    <string name="please_select_a_language">กรุณาเลือกภาษา</string>
     <string name="pincode_does_not_match">รหัสพินไม่ตรงกัน!</string>
-    <string name="com_user_and_phone_number_does_not_match">com.example.pcs.SplashActivity. ผู้ใช้และหมายเลขโทรศัพท์ไม่ตรงกัน!</string>
+    <string name="com_user_and_phone_number_does_not_match">ผู้ใช้และหมายเลขโทรศัพท์ไม่ตรงกัน!</string>
 
-    <string name="username_is_too_large">ชื่อผู้ใช้มีขนาดใหญ่เกินไป!</string>
-    <string name="choose_success">เลือกความสำเร็จ</string>
+    <string name="username_is_too_large">ชื่อผู้ใช้มีความยาวเกินไป!</string>
+    <string name="choose_success">เลือกสำเร็จ</string>
     <string name="verification_completed">การยืนยันเสร็จสิ้น</string>
-    <string name="verification_not_completed">ตวจสอบไม่สำเร็จ! ลองอีกครั้ง.</string>
-    <string name="color">สี :</string>
+    <string name="verification_not_completed">ตรวจสอบไม่สำเร็จ! โปรดลองอีกครั้ง.</string>
+    <string name="color">สี</string>
     <string name="enter_one_time_password_sent_on">ป้อนรหัสผ่านครั้งเดียวที่ส่งเมื่อ</string>
     <string name="phone">โทรศัพท์</string>
     <string name="birthday">วันเกิด</string>
@@ -132,6 +132,18 @@
     <string name="hospital_guidelines">แนวปฏิบัติของโรงพยาบาล</string>
     <string name="vaccine_form">แบบฟอร์มวัคซีน</string>
     <string name="for_application_help">เพื่อขอความช่วยเหลือในการใช้งาน</string>
-    <string name="vaccine_guidelines">แนวทางวัคซีน</string>
+    <string name="vaccine_guidelines">แนวทางการฉีดวัคซีน</string>
     <string name="welcome_nthis_is_history_nyou_are_in">ยินดีต้องรับสู่หน้าประวัติ</string>
+    <string name="user_has_been_use">ผู้ใช้ถูกใช้แล้ว!</string>
+    <string name="add_symptom_success">เพิ่มอาการสำเร็จ!</string>
+    <string name="color_none">สีอาการ: ยังไม่ระบุ</string>
+    <string name="add_color_success">เพิ่มสีอาการสำเร็จ!</string>
+    <string name="add2">เพิ่ม</string>
+    <string name="success">สำเร็จ!</string>
+    <string name="doctor_has_been_use">ชื่อผู้ใช้หมอถูกใช้ไปแล้ว!</string>
+    <string name="doctor_not_has">ชื่อผู้ใช้หมอไม่มี!</string>
+    <string name="national_id">บัตรประจำตัวประชาชน</string>
+    <string name="medical">ยาที่แพ้</string>
+    <string name="don_t_have_any_comments_n_from_your_doctor">ไม่มีความคิดเห็นใด ๆ จากแพทย์ของคุณในตอนนี้</string>
+    <string name="m_no_nr_ne">เพิ่ม\nเติม</string>
 </resources>

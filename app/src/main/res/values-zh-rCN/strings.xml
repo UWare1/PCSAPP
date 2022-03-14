@@ -133,4 +133,16 @@
     <string name="for_application_help">申请帮助</string>
     <string name="vaccine_guidelines">疫苗指南</string>
     <string name="welcome_nthis_is_history_nyou_are_in">欢迎\n这是历史！！！\n你在。</string>
+    <string name="user_has_been_use">用户已使用！</string>
+    <string name="add_symptom_success">添加症状成功！</string>
+    <string name="color_none">颜色：无</string>
+    <string name="add_color_success">添加颜色成功！</string>
+    <string name="add2">添加</string>
+    <string name="success">成功！</string>
+    <string name="doctor_has_been_use">DoctorID已被使用！</string>
+    <string name="doctor_not_has">DoctorID没有！</string>
+    <string name="national_id">国民身份证</string>
+    <string name="medical">医疗的</string>
+    <string name="don_t_have_any_comments_n_from_your_doctor">您的医生没有任何意见</string>
+    <string name="m_no_nr_ne">更\n多\n的</string>
 </resources>

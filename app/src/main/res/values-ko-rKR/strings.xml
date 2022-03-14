@@ -132,4 +132,16 @@
     <string name="for_application_help">신청 도움을 위해</string>
     <string name="vaccine_guidelines">백신 지침</string>
     <string name="welcome_nthis_is_history_nyou_are_in">환영합니다 이것은 역사입니다!!! 당신은 인입니다.</string>
+    <string name="user_has_been_use">사용자가 사용되었습니다!</string>
+    <string name="add_symptom_success">추가 성공!</string>
+    <string name="color_none">색상: 없음</string>
+    <string name="add_color_success">색상 추가 성공!</string>
+    <string name="add2">추가하다</string>
+    <string name="success">성공!</string>
+    <string name="doctor_has_been_use">DoctorID가 사용되었습니다!</string>
+    <string name="doctor_not_has">DoctorID는 없습니다!</string>
+    <string name="national_id">국립 ID</string>
+    <string name="medical">의료</string>
+    <string name="don_t_have_any_comments_n_from_your_doctor">의사의 의견이 없습니다.</string>
+    <string name="m_no_nr_ne">더</string>
 </resources>

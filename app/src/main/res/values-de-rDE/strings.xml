@@ -132,5 +132,16 @@
     <string name="for_application_help">für Bewerbungshilfe</string>
     <string name="vaccine_guidelines">Impfrichtlinien</string>
     <string name="welcome_nthis_is_history_nyou_are_in">Willkommen Das ist Geschichte!!! Sie sind in.</string>
-
+    <string name="user_has_been_use">Benutzer wurde verwendet!</string>
+    <string name="add_symptom_success">Symptomerfolg hinzufügen!</string>
+    <string name="color_none">Farbe: Keine</string>
+    <string name="add_color_success">Fügen Sie Farbe hinzu Erfolg!</string>
+    <string name="add2">Addieren</string>
+    <string name="success">Erfolg!</string>
+    <string name="doctor_has_been_use">DoctorID wurde verwendet!</string>
+    <string name="doctor_not_has">DoctorID hat nicht!</string>
+    <string name="national_id">Personalausweis</string>
+    <string name="medical">Medizinisch</string>
+    <string name="don_t_have_any_comments_n_from_your_doctor">Sie haben keine Kommentare von Ihrem Arzt</string>
+    <string name="m_no_nr_ne">M\ne\nh\nr</string>
 </resources>
