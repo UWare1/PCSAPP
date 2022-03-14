@@ -365,11 +365,15 @@ public class HistoryDoctorFragment extends Fragment {
                 AllergySelect.setText(AllergyDBPatient);
                 MedicalSelect.setText(MedicalDBPatient);
 
-                if (GenderDBPatient.equals("ผู้ชาย") | GenderDBPatient.equals("Male")) {
+                if (GenderDBPatient.equals("ผู้ชาย") | GenderDBPatient.equals("Male") | GenderDBPatient.equals("الذكر") |
+                    GenderDBPatient.equals("男性") | GenderDBPatient.equals("Masculin") | GenderDBPatient.equals("männlich") |
+                    GenderDBPatient.equals("男") | GenderDBPatient.equals("남성") | GenderDBPatient.equals("macho") | GenderDBPatient.equals("masculino")) {
                     resID = getResources().getIdentifier("man", "drawable", getActivity().getPackageName());
                     image = getResources().getDrawable(resID);
                     GenderImage.setImageDrawable(image);
-                } else if (GenderDBPatient.equals("ผู้หญิง") | GenderDBPatient.equals("Female")) {
+                } else if (GenderDBPatient.equals("ผู้หญิง") | GenderDBPatient.equals("Female") | GenderDBPatient.equals("أنثى") |
+                        GenderDBPatient.equals("女性") | GenderDBPatient.equals("Femme") | GenderDBPatient.equals("weiblich") |
+                        GenderDBPatient.equals("mujer") | GenderDBPatient.equals("여자") | GenderDBPatient.equals("fêmea")) {
                     resID = getResources().getIdentifier("woman", "drawable", getActivity().getPackageName());
                     image = getResources().getDrawable(resID);
                     GenderImage.setImageDrawable(image);
